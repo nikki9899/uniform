@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className='p-5'>
       <ImageGallery data={data}/>
-      <Dropdown/>
+      {/* <Dropdown/> */}
     </main>
   )
 }
