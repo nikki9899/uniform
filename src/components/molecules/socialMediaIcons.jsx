@@ -1,11 +1,12 @@
 import { memo } from "react";
 
 const SocialMediaIcons = (props) => {
-  let { name, iconPath } = props.socialMedia;
+  let { name, iconPath ,link } = props.socialMedia;
 
   return (
     <a
-      href="#"
+      href={link}
+      target="_blank"
       className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
     >
       <svg
