@@ -1,9 +1,23 @@
-import {Wish} from './Icons.jsx';
-const ImageCard = (props) => {
-    return (
-        <div className = "w-[308px] h-[418px] rounded-2xl shrink-0 back ml-2">
-            <Wish icon = {`${props.icon}`}/>
-        </div>
-    );
-}
+import Search from "./Icons/Search";
+import Wish from "./Icons/Wish";
+const ImageCard = ({ iconDisplay, classnames }) => {
+  return (
+    <div className={classnames}>
+      <Search
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+        classnames="float-right mr-2 mt-2 cursor-pointer"
+      />
+      <Wish
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+        classnames={`${iconDisplay} float-right mr-2 mt-2 cursor-pointer`}
+      />
+    </div>
+  );
+};
 export default ImageCard;
