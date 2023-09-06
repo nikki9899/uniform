@@ -2,19 +2,20 @@
 
 import React from "react";
 import ImageContainer from "./ImageContainer";
-import { ProductDetailPageImages } from "../../../images/index";
+import {
+  CircularDownButton,
+  CircularUpButton,
+} from "@/components/atoms/button";
 
-const ImageSelector = ({ data, OnImageClick, selectedImage }) => {
-  
-
+const ImageSelector = ({ data, onImageClick, selectedImage }) => {
   const upButtonHandler = () => {
-    if (selectedImage === 0) OnImageClick(data.length - 1);
-    else OnImageClick(selectedImage - 1);
+    if (selectedImage === 0) return;
+    else onImageClick(selectedImage - 1);
   };
 
   const downButtonHandler = () => {
-    if (selectedImage === data.length - 1) OnImageClick(0);
-    else OnImageClick(selectedImage + 1);
+    if (selectedImage === data.length - 1) return;
+    else onImageClick(selectedImage + 1);
   };
 
   return (
@@ -23,32 +24,26 @@ const ImageSelector = ({ data, OnImageClick, selectedImage }) => {
         {data.map((ele, index) => (
           <ImageContainer
             key={ele.id}
-            src={ele.img}
+            src={ele.src}
             alt={ele.alt}
             selected={selectedImage === index}
-            onImageClick={OnImageClick.bind(null, index)}
+            onImageClick={onImageClick.bind(null, index)}
           />
         ))}
       </div>
 
       <div className="flex flex-col gap-y-5 w-fit">
-        <button
+        <CircularUpButton
           onClick={upButtonHandler}
-          className={
-            "bg-black flex justify-center py-4 px-3 w-fit rounded-full"
-          }
-        >
-          <img src={ProductDetailPageImages.carrot.src} alt="down button" className={'rotate-180'}/>
-        </button>
+          backgroundColor={`${selectedImage === 0 ? "white" : "black"}`}
+        />
 
-        <button
+        <CircularDownButton
           onClick={downButtonHandler}
-          className={
-            "bg-black flex justify-center py-4 px-3 w-fit rounded-full"
-          }
-        >
-          <img src={ProductDetailPageImages.carrot.src} alt="down button" />
-        </button>
+          backgroundColor={`${
+            selectedImage === data.length - 1 ? "white" : "black"
+          }`}
+        />
       </div>
     </div>
   );

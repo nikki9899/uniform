@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import ImageSelector from "../atoms/ImageSelector/ImageSelector";
-import ReactImageMagnify from "react-image-magnify";
+import ImageSelector from "@/components/atoms/ImageSelector/ImageSelector";
+import ImageMagnifier from "@/components/atoms/ImageMagnifier";
 
 const ImageGallery = ({ data }) => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -14,47 +14,15 @@ const ImageGallery = ({ data }) => {
     <div className={"flex"}>
       <ImageSelector
         data={data}
-        OnImageClick={onImageClickHandler}
+        onImageClick={onImageClickHandler}
         selectedImage={selectedImage}
       />
-      <ReactImageMagnify
-        isHintEnabled
-        shouldHideHintAfterFirstActivation={false}
-        hoverDelayInMs={100}
-        {...{
-          style: { marginLeft: "2rem" },
-          smallImage: {
-            alt: "Small Image",
-            src: data[selectedImage].img,
-            isFluidWidth : true,
-          },
-          largeImage: {
-            alt: "Large Image",
-            src: data[selectedImage].img,
-            width: 1200,
-            height: 1800,
-          },
 
-          enlargedImageContainerStyle: {
-            borderRadius: "1rem",
-          },
-
-          enlargedImageStyle: {
-            backgroundPosition: "center",
-            maxWidth: "max-content",
-            borderRadius: "1rem",
-          },
-
-          shouldUsePositiveSpaceLens: true,
-
-          imageStyle: {
-            borderRadius: "1rem",
-          },
-
-          lensStyle: {
-            borderRadius: "1rem",
-          },
-        }}
+      <ImageMagnifier
+        smallImageSrc={data[selectedImage].src}
+        largeImageSrc={data[selectedImage].src}
+        width={500}
+        height={600}
       />
     </div>
   );
