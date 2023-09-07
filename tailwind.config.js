@@ -9,8 +9,12 @@ module.exports = {
     extend: {
       boxShadow : {
         uniform : '0 0 100px 1px black'
+      },
+      fontFamily: {
+        manrope: ['var(--font-manrope)']
       }
     },
+
   },
   plugins: [],
 }
