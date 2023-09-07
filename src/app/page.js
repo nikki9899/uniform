@@ -1,11 +1,10 @@
-import Image from 'next/image'
+import Popular from "@/components/popular";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
-    Hello Hello 
-    
+    <main className="flex min-h-screen flex-col items-start  p-2">
+      <Popular />
     </main>
-  )
+  );
 }
