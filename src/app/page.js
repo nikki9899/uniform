@@ -1,10 +1,15 @@
+import EmblaCarousel from '@/components/atoms/Crousel'
 import Image from 'next/image'
+
+const OPTIONS = { dragFree: true, containScroll: 'trimSnaps' }
+const SLIDE_COUNT = 8
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className='py-4'>
       
-    Hello Hello 
+    <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
     
     </main>
   )
