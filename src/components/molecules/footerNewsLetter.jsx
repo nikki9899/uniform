@@ -1,13 +1,13 @@
 'use client';
-import { footerLabels } from "@/utils/label";
+
+import { footerLabels } from "@/utils/labels/footerLabels";
 import { memo } from "react";
 
 
 const FooterNewsLetter = (props) => {
   const { title, subTitle, button } = footerLabels.newsLater;
-  footerLabels;
 
-  const  HandelOnSubscribe  = (event) => {
+  const  handelSubscribe  = (event) => {
 
   }
   return (
@@ -26,7 +26,7 @@ const FooterNewsLetter = (props) => {
                 placeholder="e-mail"
               />
             </div>
-            <button className="relative py-3 text-black" onClick={HandelOnSubscribe} >
+            <button className="relative py-3 text-black" onClick={handelSubscribe} >
               {button}
               <span className=" z-[-1] absolute my-2 inset-y-0 right-0 h-8 w-8 bg-red-500"></span>
             </button>
