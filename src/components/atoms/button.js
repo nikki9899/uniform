@@ -10,7 +10,7 @@ function Button({ variant, rounded, onClick }) {
     className += " rounded-lg text-24 font-normal px-4 py-2  border-gray-700";
   } else {
     className +=
-      " text-white text-24 font-normal lowercase bg-[#C46145] border-none p-4 space-x-2 rounded-lg font-manrope";
+      " text-white text-24 font-normal bg-customBrown border-none p-4 space-x-2 rounded-lg ";
   }
 
   return (
