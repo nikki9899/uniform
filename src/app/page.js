@@ -1,12 +1,13 @@
-import ImageGallery from "@/components/molecules/ImageGallery"
-import {imageMagnifierData} from '@/mockData/imageMagnifier'
-
+import ImageCard from '../components/atoms/ImageCard';
+import AboutUs from '@/components/aboutUs';
 
 export default function Home() {
 
   return (
-    <main className='p-5'>
-      <ImageGallery data={imageMagnifierData}/>
+    <div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24   ">
+    <AboutUs/>
     </main>
+    </div>
   )
 }
