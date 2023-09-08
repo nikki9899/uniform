@@ -1,11 +1,6 @@
 import React from "react";
 import ImageContainer from "./ImageContainer";
-import {
-  CircularDownButton,
-  CircularUpButton,
-} from "@/components/atoms/button";
 import { Carrot } from "@svgs/index";
-
 import CircularButton from "@/components/atoms/CircularButton";
 
 const ImageSelector = ({ data, onImageClick, selectedImage }) => {
