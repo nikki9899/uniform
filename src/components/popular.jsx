@@ -5,7 +5,7 @@ import Button from "./atoms/button";
 import { wish_list } from "@/utils/constants";
 import { searchLabels } from "@/utils/labels/label";
 
-const Popular = (data) => {
+const Popular = () => {
   // console.log(product_card);
   const handleAddToWishList = () => {
     alert("Added To WishList");
