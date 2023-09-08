@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import product_card from "@/data/data";
-import Button from "@/atoms/button";
+import Button from "./atoms/button";
 import { wish_list } from "@/utils/constants";
 import { searchLabels } from "@/utils/labels/label";
 
