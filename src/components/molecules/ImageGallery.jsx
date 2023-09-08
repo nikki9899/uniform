@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ImageSelector from "@/components/atoms/ImageSelector/ImageSelector";
+import ImageSelector from "@/components/atoms/ImageSelector";
 import ImageMagnifier from "@/components/atoms/ImageMagnifier";
 
 const ImageGallery = ({ data }) => {
@@ -19,8 +19,8 @@ const ImageGallery = ({ data }) => {
       />
 
       <ImageMagnifier
-        smallImageSrc={data[selectedImage].src}
-        largeImageSrc={data[selectedImage].src}
+        smallImageSrc={data[selectedImage].smallImageSrc}
+        largeImageSrc={data[selectedImage].largeImageSrc}
         width={500}
         height={600}
       />

@@ -1,11 +1,12 @@
-"use client";
-
 import React from "react";
 import ImageContainer from "./ImageContainer";
 import {
   CircularDownButton,
   CircularUpButton,
 } from "@/components/atoms/button";
+import { Carrot } from "@svgs/index";
+
+import CircularButton from "@/components/atoms/CircularButton";
 
 const ImageSelector = ({ data, onImageClick, selectedImage }) => {
   const upButtonHandler = () => {
@@ -21,11 +22,11 @@ const ImageSelector = ({ data, onImageClick, selectedImage }) => {
   return (
     <div className={"flex flex-col w-fit gap-y-12 items-center"}>
       <div className="flex flex-col">
-        {data.map((ele, index) => (
+        {data.map(({ id, smallImageSrc, alt }, index) => (
           <ImageContainer
-            key={ele.id}
-            src={ele.src}
-            alt={ele.alt}
+            key={id}
+            src={smallImageSrc}
+            alt={alt}
             selected={selectedImage === index}
             onImageClick={onImageClick.bind(null, index)}
           />
@@ -33,17 +34,21 @@ const ImageSelector = ({ data, onImageClick, selectedImage }) => {
       </div>
 
       <div className="flex flex-col gap-y-5 w-fit">
-        <CircularUpButton
+        <CircularButton
           onClick={upButtonHandler}
           backgroundColor={`${selectedImage === 0 ? "white" : "black"}`}
-        />
+        >
+          <Carrot className={`text-${selectedImage === 0 ? 'black' : 'white'} text-xl`} />
+        </CircularButton>
 
-        <CircularDownButton
+        <CircularButton
           onClick={downButtonHandler}
           backgroundColor={`${
             selectedImage === data.length - 1 ? "white" : "black"
           }`}
-        />
+        >
+          <Carrot className={`text-${selectedImage === data.length-1 ? 'black' : 'white'} rotate-180 text-xl`} />
+        </CircularButton>
       </div>
     </div>
   );
