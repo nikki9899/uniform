@@ -6,14 +6,14 @@ const ImageCard = ({ iconDisplay, classnames }) => {
       <Search
         width="24"
         height="24"
-        fill="none"
+        fill="#1E1E1E"
         viewBox="0 0 24 24"
         classnames="float-right mr-2 mt-2 cursor-pointer"
       />
       <Wish
         width="24"
         height="24"
-        fill="none"
+        stroke="#1E1E1E"
         viewBox="0 0 24 24"
         classnames={`${iconDisplay} float-right mr-2 mt-2 cursor-pointer`}
       />
