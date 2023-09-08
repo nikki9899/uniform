@@ -12,18 +12,19 @@ export default function Home() {
         }}
         navigationButtons={true}
       >
-        {crouselData.map((item) => (
+        {crouselData.map(({id, src, category}) => (
+          
           <div
             className="grow-0 shrink-0 basis-[calc(100%/3)] px-2 relative rounded-lg"
-            key={item.id}
+            key={id}
           >
             <img
               className="h-[26rem] w-full rounded-lg"
-              src={item.src}
+              src={src}
               alt="Your alt text"
             />
             <button className="absolute top-4 left-4 font-manrope font-normal text-base lowercase border border-black rounded-3xl px-6 py-2">
-              {item.category}
+              {category}
             </button>
           </div>
         ))}

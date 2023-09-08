@@ -1,4 +1,3 @@
-"use client";
 import React, { useCallback, useEffect, useState } from "react";
 
 export const usePrevNextButtons = (emblaApi) => {
@@ -35,7 +34,6 @@ export const usePrevNextButtons = (emblaApi) => {
     onNextButtonClick,
   };
 };
-
 
 export const CrouselButton = ({ children, ...restProps }) => {
   return <button {...restProps}>{children}</button>;
