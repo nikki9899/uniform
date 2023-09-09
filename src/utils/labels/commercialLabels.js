@@ -1,9 +1,8 @@
-export const commercialLabels ={
-    heading: "Commercial",
-    heading1:" & Work Uniform",
-    text: "Commercial and work uniforms provide a cohesive and",
-    text1:"professional appearance, promoting a sense of unity among",
-    text2:"employees while establishing a recognizable brand identity.",
-    Caption:"Enhance Your Business's Image with Professional Uniforms"
-
-}
+export const commercialLabels = {
+  Heading: "Commercial",
+  Heading1: " & Work Uniform",
+  Text: "Commercial and work uniforms provide a cohesive and",
+  Text1: "professional appearance, promoting a sense of unity among",
+  Text2: "employees while establishing a recognizable brand identity.",
+  Caption: "Enhance Your Business's Image with Professional Uniforms",
+};
