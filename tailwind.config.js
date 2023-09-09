@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow : {
+        uniform : '0 0 100px 1px black'
+      },
+      fontFamily: {
+        manrope: ['var(--font-manrope)']
+      },
+      colors: {
+        background: '#EFEFEF'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,6 +25,7 @@ module.exports = {
         "customBrown": "#C46145",
       },
     },
+
   },
   plugins: [],
 };
