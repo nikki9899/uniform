@@ -1,12 +1,13 @@
-import Image from 'next/image'
-import ImageCard from '../components/atoms/ImageCard';
-import AboutUs from '@/components/aboutUs';
+import ImageCard from "../components/atoms/ImageCard";
 export default function Home() {
   return (
     <div>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24   ">
-    <AboutUs/>
-    </main>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <ImageCard
+        iconDisplay="flex"
+        classnames="w-[308px] h-[418px] rounded-2xl shrink-0 back ml-2"
+      />
+      </main>
     </div>
-  )
+  );
 }
