@@ -1,4 +1,3 @@
-import ImageCard from "../components/atoms/ImageCard";
 export default function Home() {
   return (
     <div>
