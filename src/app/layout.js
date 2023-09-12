@@ -1,9 +1,12 @@
+import Footer from '@/components/footer'
 import './globals.css'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">  
-      <body>{children}</body>
+      <body>{children}
+      <Footer/>
+      </body>
     </html>
-  )
+  );
 }
