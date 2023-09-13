@@ -1,10 +1,13 @@
 import React from "react";
 import { commercialLabels } from "@/utils/labels/commercialLabels";
+import Maskgroup from "/public/Maskgroup.svg";
+import Button from "./atoms/button";
 
 function commercialUniformSection() {
-  let { heading, heading1, text, text1, text2, caption } = commercialLabels;
+  let { heading, heading1, text, text1, text2, caption, caption1 } =
+    commercialLabels;
   return (
-    <div className="  display-flex">
+    <div className=" relative py-9">
       <div className=" h-[2px] text-black text-5xl font-semibold leading-normal tracking-[-2px] font-manrope">
         <h2>
           {heading} <br /> {heading1}
@@ -19,8 +22,17 @@ function commercialUniformSection() {
         </p>
       </div>
 
-      <div className="  pt-48 text-black text-center text-7xl  font-medium leading-normal tracking-[-3.123px] font-mADE Outer Sans">
-        <p>{caption}</p>
+      <div className="  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
+        <div className="  w-[260px] -z-10 absolute my-[-160px]  ml-[380px]  ">
+          <img src={Maskgroup.src}></img>
+        </div>
+        <p>
+          {caption}
+          <br /> {caption1}
+        </p>
+      </div>
+      <div className=" h-[70px] flex justify-center items-center">
+        <Button variant="shop now" rounded="Full" />
       </div>
     </div>
   );
