@@ -1,6 +1,6 @@
-const Grid = (cardPerRow,children)=>{
+const Grid = (cardsPerRow,children)=>{
     return (
-        <div className={`grid grid-cols-${cardPerRow} gap-${cardPerRow}`}>
+        <div className={`grid grid-cols-${cardsPerRow} gap-${cardPerRow}`}>
             {children}
         </div>
     )
