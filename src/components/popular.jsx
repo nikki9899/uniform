@@ -3,7 +3,7 @@ import product_card from "@/data/data";
 import { wish_list } from "@/utils/constants";
 import { searchLabels } from "@/utils/labels/label";
 
-const Popular = (props) => {
+const Popular = () => {
   const items = product_card.map(
     ({ id, product_name, description, product_image, product_price }) => (
       <div className="mx-7 w-500 mb-12" key={id}>
