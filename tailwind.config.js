@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         manrope: ['var(--font-manrope)']
-      }
+      },
       colors: {
         background: '#EFEFEF'
       }

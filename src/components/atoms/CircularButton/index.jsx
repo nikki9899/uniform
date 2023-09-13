@@ -3,11 +3,12 @@ import React from "react";
 const CircularButton = ({
   backgroundColor = "black",
   children,
+  border = false,
   ...restProps
 }) => {
   return (
     <button
-      className={`flex justify-center py-5 px-5 w-fit rounded-full bg-${backgroundColor}`}
+      className={`relative flex justify-center py-4 px-4 w-fit rounded-full bg-${backgroundColor} ${border ? 'border border-black hover:border-gray-500':''} hover:text-gray-500`}
       {...restProps}
     >
       {children}
