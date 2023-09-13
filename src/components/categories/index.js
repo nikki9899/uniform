@@ -13,7 +13,7 @@ const Categories = () => {
                     />
                     <h5 className="mt-2 mb-2">{title}</h5>
                     {/* need to discuss about explore button Link */}
-                    <Button rounded="semi" variant="explore" />
+                    <Button rounded="Full" variant="explore" />
                 </div>
             ))}
         </div>
