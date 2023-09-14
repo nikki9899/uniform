@@ -16,14 +16,14 @@ const Popular = () => {
         <div>
           <div className="flex justify-between ">
             <h3 className="text-sm font-semibold leading-7">{product_name}</h3>
-            <h3 className="text-sm font-semibold leading-7">{product_price}</h3>
+            <h4 className="text-sm font-semibold leading-7">{product_price}</h3>
           </div>
           <p className="text-xs font-medium text-start text-gray-500 leading-7">
             {description}
           </p>
           <div className="text-left">
             <button class="text-xs border-black border-2 text-black font-normal py-2 px-4 rounded-full">
-              Enquire now
+              {searchLabels.buttontext}
             </button>
           </div>
         </div>

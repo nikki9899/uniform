@@ -1,4 +1,4 @@
-import Popular from "@/components/popular";
+import Popular from "@/components/molecules/popular";
 import Image from "next/image";
 
 export default function Home() {
