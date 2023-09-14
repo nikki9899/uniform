@@ -1,60 +1,30 @@
 import { memo } from 'react'
+import { ChatIcon } from '@svgs/index'
+import { Star } from '@svgs/index'
 
 const Rating = (props) => {
-    let { rating =0, review =0  } = props?.productRating;
-    let ratingStar = [{} , {} , {} , {} , {}]
+    let { rating = 0, review = 0 } = props?.productRating
+    let ratingStar = []
+
+    for (let i = 0; i < 5; i++) {
+        let color = i < rating ? '#E9DB15' : '#4b5563'
+        ratingStar.push({ color })
+    }
+
     return (
-        <div class="flex content-center items-center">
-            <div class="flex flex-row w-35 mx-2">
-                {ratingStar.map(( items, index) => {
-                    let  color =  index < rating ? "#E9DB15" : "#4b5563";
-                    return (
-                        <svg
-                            key={index}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="26"
-                            height="26"
-                            viewBox="0 0 26 26"
-                            fill="none"
-                        >
-                            <path
-                                d="M10.9887 7.17988C11.8409 5.05546 12.267 3.99326 12.9997 3.99326C13.7323 3.99326 14.1584 5.05546 15.0106 7.17988L15.0503 7.2788C15.5317 8.47899 15.7724 9.07909 16.263 9.44383C16.7536 9.80858 17.3976 9.86626 18.6856 9.98161L18.9184 10.0025C21.0264 10.1912 22.0803 10.2856 22.3059 10.9562C22.5314 11.6268 21.7487 12.3389 20.1832 13.7631L19.6607 14.2385C18.8683 14.9595 18.472 15.3199 18.2874 15.7924C18.2529 15.8805 18.2243 15.9708 18.2016 16.0627C18.0802 16.5553 18.1963 17.0782 18.4283 18.1242L18.5006 18.4497C18.927 20.3719 19.1403 21.333 18.768 21.7476C18.6288 21.9025 18.448 22.014 18.2471 22.0688C17.7096 22.2155 16.9464 21.5936 15.42 20.3498C14.4178 19.5331 13.9166 19.1248 13.3413 19.0329C13.115 18.9968 12.8843 18.9968 12.658 19.0329C12.0827 19.1248 11.5815 19.5331 10.5793 20.3498C9.0529 21.5936 8.28972 22.2155 7.75217 22.0688C7.5513 22.014 7.37048 21.9025 7.23135 21.7476C6.85903 21.333 7.07227 20.3719 7.49875 18.4497L7.57099 18.1242C7.80304 17.0782 7.91907 16.5553 7.79768 16.0627C7.77504 15.9708 7.7464 15.8805 7.71195 15.7924C7.52727 15.3199 7.13103 14.9595 6.33857 14.2385L5.8161 13.7631C4.25063 12.3389 3.4679 11.6268 3.69343 10.9562C3.91896 10.2856 4.97294 10.1912 7.0809 10.0025L7.31375 9.98161C8.60174 9.86626 9.24574 9.80858 9.73633 9.44383C10.2269 9.07909 10.4676 8.47899 10.9491 7.2788L10.9887 7.17988Z"
-                                fill={color}
-                            />
-                        </svg>
-                    )
+        <div className="flex content-center items-center">
+            <div className="flex flex-row w-35 mx-2">
+                {ratingStar.map(({ color }, index) => {
+                    return <Star key={index} fill={color} />
                 })}
             </div>
-            <div class="flex-initial text-sm font-semibold">{rating}</div>
-            <div class="flex-initial  ms-5">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                >
-                    <path
-                        d="M19.3259 5.77772C20 6.78661 20 8.19108 20 11C20 13.8089 20 15.2134 19.3259 16.2223C19.034 16.659 18.659 17.034 18.2223 17.3259C17.3409 17.9148 16.1577 17.9892 14 17.9986V18L12.8944 20.2111C12.5259 20.9482 11.4741 20.9482 11.1056 20.2111L10 18V17.9986C7.8423 17.9892 6.65907 17.9148 5.77772 17.3259C5.34096 17.034 4.96596 16.659 4.67412 16.2223C4 15.2134 4 13.8089 4 11C4 8.19108 4 6.78661 4.67412 5.77772C4.96596 5.34096 5.34096 4.96596 5.77772 4.67412C6.78661 4 8.19108 4 11 4H13C15.8089 4 17.2134 4 18.2223 4.67412C18.659 4.96596 19.034 5.34096 19.3259 5.77772Z"
-                        stroke="#1E1E1E"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M9 9L15 9"
-                        stroke="#1E1E1E"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M9 13H12"
-                        stroke="#1E1E1E"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
+            <div className="flex-initial text-sm font-semibold">{rating}</div>
+            <div className="flex-initial  ms-5">
+                <ChatIcon />
             </div>
-            <div class="flex-initial mx-2 font-medium text-xs">{review} reviews</div>
+            <div className="flex-initial mx-2 font-medium text-xs">
+                {review} reviews
+            </div>
         </div>
     )
 }
