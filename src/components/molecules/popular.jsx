@@ -16,7 +16,7 @@ const Popular = () => {
         <div>
           <div className="flex justify-between ">
             <h3 className="text-sm font-semibold leading-7">{product_name}</h3>
-            <h4 className="text-sm font-semibold leading-7">{product_price}</h3>
+            <h4 className="text-sm font-semibold leading-7">{product_price}</h4>
           </div>
           <p className="text-xs font-medium text-start text-gray-500 leading-7">
             {description}

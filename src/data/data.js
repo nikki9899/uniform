@@ -11,7 +11,6 @@ const product_card = [
     product_name: "Rubber Suit",
     description: "full body resistance",
     product_image: "./images/2.png",
-
     product_price: "8000 INR",
   },
   {
