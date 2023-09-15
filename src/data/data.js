@@ -12,6 +12,7 @@ const product_card = [
     description: "full body resistance",
     product_image: "./images/2.png",
     product_price: "8000 INR",
+    ch,
   },
   {
     id: 3,
