@@ -1,40 +1,48 @@
 import React from 'react'
-import CircularButton from '../CircularButton'
 import { Carrot } from '@/components/svgs'
+import Button from './button'
+
+const PrevButton = ({ onClick }) => {
+    return (
+        <Button caption={'back'} onClick={onClick}>
+            <Carrot className="-rotate-90 text-xl" />
+        </Button>
+    )
+}
+
+const NextButton = ({ onClick }) => {
+    return (
+        <Button caption={'next'} onClick={onClick}>
+            <Carrot className="rotate-90 text-xl" />
+        </Button>
+    )
+}
 
 const Pagination = ({
     totalPage,
     currPage,
     nextPageHandler,
     prevPageHandler,
+    CustomPrevButton = null,
+    CustomNextButton = null,
 }) => {
     return (
         <div className="flex items-center gap-x-4">
-            <CircularButton
-                backgroundColor="white"
-                border={true}
-                onClick={prevPageHandler}
-            >
-                <Carrot className="-rotate-90 text-xl" />
-                <span className="absolute bottom-0 left-0 right-0 translate-y-[100%] pt-1 mx-auto text-xs font-medium">
-                    back
-                </span>
-            </CircularButton>
+            {CustomPrevButton === null ? (
+                <PrevButton onClick={prevPageHandler} />
+            ) : (
+                <CustomPrevButton onClick={prevPageHandler} />
+            )}
 
             <div className="text-base font-medium font-manrope">
                 {currPage} of {totalPage}
             </div>
 
-            <CircularButton
-                backgroundColor="white"
-                border={true}
-                onClick={nextPageHandler}
-            >
-                <Carrot className="rotate-90 text-xl" />
-                <span className="absolute bottom-0 left-0 right-0 translate-y-[100%] pt-1 mx-auto text-xs font-medium">
-                    next
-                </span>
-            </CircularButton>
+            {CustomNextButton === null ? (
+                <NextButton onClick={nextPageHandler} />
+            ) : (
+                <CustomNextButton onClick={nextPageHandler} />
+            )}
         </div>
     )
 }
