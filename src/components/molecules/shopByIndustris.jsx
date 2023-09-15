@@ -5,8 +5,8 @@ import headerData from '@/mockData/asideLinks'
 import ImageCard from '../atoms/ImageCard'
 
 const shopByIndustries = () => {
-    const header = headerData[0]; // Get the first element of headerData array
-    const quickLinks = header?.quicklinks?.listItems || [];
+    const header = headerData[0]
+    const quickLinks = header?.quicklinks?.listItems || []
     return (
         <div className="container mx-auto py-8 ">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
@@ -36,17 +36,15 @@ const shopByIndustries = () => {
                             key={product.id}
                             className="md:col-span-1 rounded h-[678px] "
                         >
-                            {/* <img
-                                src={product.imageSrc}
-                                alt={product.title}
-                                className=" object-cover mb-4"
-                            /> */}
-                            <ImageCard iconDisplay="hidden" classnames="w-[426px] h-[558px] rounded shink-0 bg-[url('/Images/image_10.svg')]" />
+                            <ImageCard
+                                iconDisplay="hidden"
+                                classnames="w-[426px] h-[558px] rounded shink-0 bg-[url('/Images/image_10.svg')]"
+                            />
 
                             <div className="flex justify-between ">
-                                <h2 className="text-gray-900 font-manrope text-sm font-bold leading-6">
+                                <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
                                     {product.title}
-                                </h2>
+                                </h3>
                                 <p className=" mx-[3rem] font-manrope text-sm font-semibold  text-gray-900">
                                     {product.amount}
                                 </p>
@@ -54,7 +52,9 @@ const shopByIndustries = () => {
                             <p className="text-gray-400 font-manrope text-xs font-medium leading-6">
                                 {product.subtitle}
                             </p>
-                            <Button variant="primary" rounded="full"><p>enquire now</p></Button>
+                            <Button variant="primary" rounded="full">
+                                <p>enquire now</p>
+                            </Button>
                         </div>
                     </div>
                 ))}
@@ -64,10 +64,3 @@ const shopByIndustries = () => {
 }
 
 export default shopByIndustries
-
-
-
-
-
-
-// w-[426px] h-[558px]
