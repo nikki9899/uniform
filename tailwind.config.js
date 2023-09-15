@@ -15,7 +15,7 @@ module.exports = {
       },
       colors: {
         background: '#EFEFEF',
-        popularTextColor : "#1E1E1E",
+        popularTextColor: "#1E1E1E",
         popularType : "#9A9B9C"
       },
       backgroundImage: {
@@ -25,6 +25,9 @@ module.exports = {
       },
       backgroundColor: {
         "customBrown": "#C46145",
+      },
+      fontFamily: {
+        'made-outer-sans': "MADE Outer Sans"
       },
     },
 
