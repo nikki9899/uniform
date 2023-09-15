@@ -1,15 +1,10 @@
-import ImageCard from '../components/atoms/ImageCard';
+import Popular from '@/components/molecules/popular'
+import Image from 'next/image'
 
 export default function Home() {
-
-  return (
-    <div>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ImageCard
-        iconDisplay="flex"
-        classnames="w-[308px] h-[418px] rounded-2xl shrink-0 back ml-2"
-      />
-      </main>
-    </div>
-  );
+    return (
+        <main className="flex min-h-screen flex-col items-start  p-2">
+            <Popular />
+        </main>
+    )
 }
