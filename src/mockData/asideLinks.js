@@ -18,6 +18,11 @@ const header = [
                 { id: 11, navlink: 'Working Trouser', link: "/working-trouser" },
             ],
         },
+        linkData: {
+            id: 2,
+            url: '/your-link-url', 
+            label: 'See all', 
+          },
     },
 ]
 
