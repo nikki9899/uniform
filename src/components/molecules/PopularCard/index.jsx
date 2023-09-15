@@ -26,7 +26,9 @@ const PopularCard = ({
                 {productType}
             </div>
             <div className="pl-2">
-                <Button variant="enquire now" rounded="Full" />
+                <Button variant="primary" rounded="full" >
+                    <p className='text-popularTextColor text-xs not-italic font-medium leading-[normal] lowercase'>enquire now</p>
+                </Button>
             </div>
         </div>
     )
