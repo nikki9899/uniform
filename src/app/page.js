@@ -4,7 +4,6 @@ import ShopByIndustries from '@/components/molecules/shopByIndustris'
 import Hero from "@/components/hero";
 import AboutUs from '@/components/aboutUs';
 import Uniform from "@/components/uniform";
-
 export default function Home() {
     return (
         <div>
