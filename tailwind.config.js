@@ -24,6 +24,9 @@ module.exports = {
       backgroundColor: {
         "customBrown": "#C46145",
       },
+      fontFamily: {
+        'made-outer-sans': "MADE Outer Sans"
+      },
     },
 
   },
