@@ -3,8 +3,10 @@ import ImageCard from '@/components/atoms/ImageCard'
 import Button from '@/components/atoms/button'
 import Grid from '@/components/molecules/grid'
 import { categories } from '@/mockData/categories'
+import categoriesLabels from '@/utils/labels/categoriesLabels';
 
 const Categories = () => {
+    const {linkText} = categoriesLabels;
     return (
         <Grid cardsPerRow={4}>
             {categories.map(({ title, image, id }) => (
@@ -16,7 +18,7 @@ const Categories = () => {
                     <h5 className="mt-2 mb-2">{title}</h5>
                     <Link href="#">
                         <Button rounded="full" variant="primary">
-                            explore
+                            {linkText}
                         </Button>
                     </Link>
                 </div>
