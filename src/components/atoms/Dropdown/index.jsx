@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Button from '../button'
 import { Carrot } from '@/components/svgs'
 
-const Dropdown = ({ selected, setSelected, title, options }) => {
+const Dropdown = ({ selected, setSelected, title, options, icon }) => {
     const [isActive, setIsActive] = useState(false)
     const onClickHandler = () => {
         setIsActive(!isActive)
@@ -22,7 +22,7 @@ const Dropdown = ({ selected, setSelected, title, options }) => {
                 addStyle={`${selected && 'bg-black text-white'} mb-3`}
             >
                 <span>{`${selected ? selected : title}`}</span>
-                <Carrot className="inline rotate-180 ml-3" />
+                {icon}
             </Button>
             {isActive && (
                 <ul className="border w-max border-black rounded-lg cursor-pointer absolute bottom-0 left-0 translate-y-[100%]">
