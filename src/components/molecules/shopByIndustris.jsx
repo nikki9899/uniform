@@ -31,22 +31,22 @@ const shopByIndustries = () => {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div className="w-[495px] p-4 key={product.id}">
+                    <div className="w-[495px] p-4 key={product.id} mx-auto">
                         <div
                             key={product.id}
-                            className="md:col-span-1 rounded h-[678px] "
+                            className="md:col-span-1 rounded h-[678px] mx-auto"
                         >
                             <ImageCard  
                                 iconDisplay="hidden"
                                 classnames="w-[426px] h-[500px] rounded shink-0 "
                                 productImage = {product.ImgSrc}
                             />
-
+                            <div className='mx-auto'>
                             <div className="flex justify-between ">
                                 <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
                                     {product.title}
                                 </h3>
-                                <p className=" mx-[3rem] font-manrope text-sm font-semibold  text-gray-900">
+                                <p className=" font-manrope text-sm font-semibold  mx-auto pl-20 text-gray-900 ">
                                     {product.amount}
                                 </p>
                             </div>
@@ -56,6 +56,7 @@ const shopByIndustries = () => {
                             <Button variant="primary" rounded="full">
                                 <p>enquire now</p>
                             </Button>
+                            </div>
                         </div>
                     </div>
                 ))}

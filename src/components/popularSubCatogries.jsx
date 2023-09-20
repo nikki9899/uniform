@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
+import popSubCatImg from "@/mockData/popSubCatImage";
+import Button from "./atoms/button";
 import ImageCard from './atoms/ImageCard';
-import popSubCatImg from '@/mockData/popSubCatImage';
-import Button from './atoms/button';
 
 function PopularSubCatogires() {
-  const reverseImg = [...popSubCatImg].reverse(); 
+  const reverseImg = [...popSubCatImg].reverse();
   const buttonTexts = ["reflective clothing", "safety suits", "Rubber suits"];
   return (
     <div>
@@ -13,35 +13,46 @@ function PopularSubCatogires() {
       </h2>
       <div className="flex gap-3 pt-8 justify-center">
         {popSubCatImg.map((item, index) => (
-          <div key={item.id} className={`w-${index >= 1 ? '3/12' : '5/12'} h-96 relative`}>
-            <ImageCard
-              iconDisplay="hidden"
-              classnames=" w-full h-full rounded shink-0"
-              productImage={item.ImgSrc}
+          <div
+            key={item.id}
+            className={`w-${index >= 1 ? "3/12" : "5/12"} h-96 relative`}
+          >
+            <img
+              src={item.ImgSrc}
+              className="w-full h-full object-cover mb-4"
             />
             <Button
               rounded="full"
               variant="primary"
-              addStyle={item.id === 2 ? 'text-black border-2 border-black absolute top-2 left-2' : 'text-white border-2 border-white absolute top-2 left-2'}
+              addStyle={
+                item.id === 2
+                  ? "text-black border-2 border-black absolute top-7 left-7"
+                  : "text-white border-2 border-white absolute top-7 left-7"
+              }
             >
               <p>{buttonTexts[index]}</p>
             </Button>
           </div>
         ))}
-        
       </div>
       <div className="flex gap-3 pt-3 justify-center">
         {reverseImg.map((item, index) => (
-          <div key={item.id} className={`w-${index <= 1 ? '3/12' : '5/12'} h-96 relative`}>
-            <ImageCard
-              iconDisplay="hidden"
-              classnames="w-full h-full rounded shink-0"
-              productImage={item.ImgSrc}
+          <div
+            key={item.id}
+            className={`w-${index <= 1 ? "3/12" : "5/12"} h-96 relative`}
+          >
+            <img
+              src={item.ImgSrc}
+              className="w-full h-full object-cover mb-4"
             />
             <Button
               rounded="full"
-              variant='primary'
-              addStyle={item.id === 2 ? 'text-black border-2 border-black absolute top-2 left-2' : 'text-white border-2 border-white absolute top-2 left-2'}
+              variant="primary"
+              addStyle={
+                item.id === 2
+                  ? "text-black border-2 border-black absolute top-7 left-7"
+                  : "text-white border-2 border-white absolute top-7 left-7"
+              }
             >
               <p>{buttonTexts[index]}</p>
             </Button>
@@ -53,3 +64,8 @@ function PopularSubCatogires() {
 }
 
 export default PopularSubCatogires;
+
+
+
+
+
