@@ -41,7 +41,7 @@ const Popular = (props) => {
                 {searchLabels.heading}
             </div>
 
-            <div className=" w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
+            <div className="scrollbar w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
                 {items}
             </div>
         </div>
