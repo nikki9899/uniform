@@ -8,13 +8,13 @@ const shopByIndustries = () => {
     const header = headerData[0]
     const quickLinks = header?.quicklinks?.listItems || []
     return (
-        <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-                <div className="md:col-span-1rounded-lg p-1 w-[382px]">
-                    <h2 className="text-black font-manrope font-semibold text-5xl tracking-tight leading-normal">
+        <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full ">
+                <div className="md:col-span-1rounded-lg p-1 w-auto">
+                    <h2 className="text-black font-manrope  font-semibold text-5xl tracking-tight leading-normal">
                         {header?.heading || ''}
                     </h2>
-                    <nav className=" py-4 w-[213px] h-[445px] flex-shrink-0">
+                    <nav className=" py-4 w-52 h-[445px] flex-shrink-0">
                         <ul className="  list-none text-gray-700 font-manrope text-xl font-semibold leading-2 capitalize">
                             {quickLinks.map((link) => (
                                 <li key={link.id}>{link.navlink}</li>
@@ -31,22 +31,22 @@ const shopByIndustries = () => {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div className="w-[495px] p-4 key={product.id} mx-auto">
+                    <div className="w-12/12  key={product.id}">
                         <div
                             key={product.id}
-                            className="md:col-span-1 rounded h-[678px] mx-auto"
+                            className="md:col-span-1 rounded h-[678px]"
                         >
-                            <ImageCard  
+                            <ImageCard
                                 iconDisplay="hidden"
-                                classnames="w-[426px] h-[500px] rounded shink-0 "
-                                productImage = {product.ImgSrc}
+                                classnames="w-full h-[500px] rounded object cover "
+                                productImage={product.ImgSrc}
                             />
-                            <div className='mx-auto'>
+
                             <div className="flex justify-between ">
                                 <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
                                     {product.title}
                                 </h3>
-                                <p className=" font-manrope text-sm font-semibold  mx-auto pl-20 text-gray-900 ">
+                                <p className=" font-manrope text-sm font-semibold   pl-20 text-gray-900 ">
                                     {product.amount}
                                 </p>
                             </div>
@@ -56,7 +56,6 @@ const shopByIndustries = () => {
                             <Button variant="primary" rounded="full">
                                 <p>enquire now</p>
                             </Button>
-                            </div>
                         </div>
                     </div>
                 ))}
