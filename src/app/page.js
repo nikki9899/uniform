@@ -1,26 +1,28 @@
-
-import Popular from '@/components/molecules/popular'
-import ImageCard from '../components/atoms/ImageCard'
-import ShopByIndustries from '@/components/molecules/shopByIndustris'
-import Hero from "@/components/hero";
-import AboutUs from '@/components/aboutUs';
-import Uniform from "@/components/uniform";
+'use client'
+import Dropdown from '@/components/atoms/Dropdown'
+import { useState } from 'react'
+import { Carrot } from '@/components/svgs'
 
 export default function Home() {
+    const options = [
+        { id: '121', data: '300-500' },
+        { id: '123', data: '500-1500' },
+        { id: '124', data: '1500-3000' },
+    ]
+
+    const [selected, setSelected] = useState(undefined)
+
     return (
         <div>
             <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-                <Hero />
-                <Popular />
-                <ImageCard
-                    iconDisplay="flex"
-                    classnames="w-[308px] h-[418px] rounded-2xl shrink-0 back ml-2"
+                <Dropdown
+                    options={options}
+                    selected={selected}
+                    setSelected={setSelected}
+                    title={'Price'}
+                    icon = {<Carrot className="inline rotate-180 ml-3" />}
                 />
-                <ShopByIndustries />
-                <Uniform />
-                <AboutUs />
             </main>
         </div>
-    );
+    )
 }
