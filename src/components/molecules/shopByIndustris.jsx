@@ -8,7 +8,7 @@ const shopByIndustries = () => {
     const header = headerData[0]
     const quickLinks = header?.quicklinks?.listItems || []
     return (
-        <div className="container mx-auto py-8 ">
+        <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
                 <div className="md:col-span-1rounded-lg p-1 w-[382px]">
                     <h2 className="text-black font-manrope font-semibold text-5xl tracking-tight leading-normal">
@@ -36,9 +36,10 @@ const shopByIndustries = () => {
                             key={product.id}
                             className="md:col-span-1 rounded h-[678px] "
                         >
-                            <ImageCard
+                            <ImageCard  
                                 iconDisplay="hidden"
-                                classnames="w-[426px] h-[558px] rounded shink-0 bg-[url('/Images/image_10.svg')]"
+                                classnames="w-[426px] h-[500px] rounded shink-0 "
+                                productImage = {product.ImgSrc}
                             />
 
                             <div className="flex justify-between ">

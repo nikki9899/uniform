@@ -2,28 +2,41 @@ import Link from 'next/link'
 import ImageCard from '@/components/atoms/ImageCard'
 import Button from '@/components/atoms/button'
 import Grid from '@/components/molecules/grid'
-import { categories } from '@/mockData/categories'
-import categoriesLabels from '@/utils/labels/categoriesLabels';
+import { categoriesLabels } from '@/utils/labels/categoriesLabels'
+import { getAPI } from '@/utils/api'
 
-const Categories = () => {
-    const {linkText} = categoriesLabels;
+const Categories = async () => {
+    const { linkText } = categoriesLabels
+    const { data } = await getAPI('categories')
+
+    const categories = data.map((entry) => {
+        return {
+            id: entry.id,
+            name: entry.attributes.name,
+            image: entry.attributes.image.data.attributes.url,
+        }
+    })
+
     return (
-        <Grid cardsPerRow={4}>
-            {categories.map(({ title, image, id }) => (
-                <div key={id}>
-                    <ImageCard
-                        iconDisplay="hidden"
-                        classnames={`w-64 h-80 rounded-2xl shrink-0 back  bg-[url('/Images/productImage1.png')]`}
-                    />
-                    <h5 className="mt-2 mb-2">{title}</h5>
-                    <Link href="#">
-                        <Button rounded="full" variant="primary">
-                            {linkText}
-                        </Button>
-                    </Link>
-                </div>
-            ))}
-        </Grid>
+        <div className="container my-20">
+            <Grid cardsPerRow={4}>
+                {categories.map(({ name, image, id }) => (
+                    <div key={id}>
+                        <ImageCard
+                            iconDisplay="hidden"
+                            classnames={`w-64 h-80 rounded-2xl shrink-0 back `}
+                            productImage={image}
+                        />
+                        <h5 className="mt-2 mb-2">{name}</h5>
+                        <Link href="#">
+                            <Button rounded="full" variant="primary">
+                                {linkText}
+                            </Button>
+                        </Link>
+                    </div>
+                ))}
+            </Grid>
+        </div>
     )
 }
 
