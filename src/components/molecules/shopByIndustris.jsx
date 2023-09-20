@@ -9,7 +9,7 @@ const shopByIndustries = () => {
     const quickLinks = header?.quicklinks?.listItems || []
     return (
         <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full ">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 <div className="md:col-span-1rounded-lg p-1 w-auto">
                     <h2 className="text-black font-manrope  font-semibold text-5xl tracking-tight leading-normal">
                         {header?.heading || ''}
@@ -36,10 +36,10 @@ const shopByIndustries = () => {
                             key={product.id}
                             className="md:col-span-1 rounded h-[678px]"
                         >
-                            <ImageCard
-                                iconDisplay="hidden"
-                                classnames="w-full h-[500px] rounded object cover "
-                                productImage={product.ImgSrc}
+                            <img
+                                src={product.ImgSrc}
+                                alt={product.title}
+                                className="w-full h-[558px] object-cover mb-4"
                             />
 
                             <div className="flex justify-between ">
