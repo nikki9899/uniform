@@ -3,15 +3,12 @@ import ImageCard from '@/components/atoms/ImageCard'
 import Button from '@/components/atoms/button'
 import Grid from '@/components/molecules/grid'
 import { categoriesLabels } from '@/utils/labels/categoriesLabels'
-
-// all Categories API: https://uniformonweb.onrender.com/api/categories?populate=image
+import { getAPI } from '@/utils/api'
 
 const Categories = async () => {
-    const { linkText } = categoriesLabels;
-    const response = await fetch(
-        'https://uniformonweb.onrender.com/api/categories?populate=image'
-    );
-    const { data } = await response.json()
+    const { linkText } = categoriesLabels
+    const { data } = await getAPI('categories')
+
     const categories = data.map((entry) => {
         return {
             id: entry.id,
