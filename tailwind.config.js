@@ -14,7 +14,9 @@ module.exports = {
         manrope: ['var(--font-manrope)']
       },
       colors: {
-        background: '#EFEFEF'
+        background: '#EFEFEF',
+        popularTextColor: "#1E1E1E",
+        popularType : "#9A9B9C"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -23,6 +25,9 @@ module.exports = {
       },
       backgroundColor: {
         "customBrown": "#C46145",
+      },
+      fontFamily: {
+        'made-outer-sans': "MADE Outer Sans"
       },
     },
 
