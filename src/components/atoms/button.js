@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Button({ variant, rounded, onClick, children, addStyle }) {
-    let className = 'font-manrope lowercase '
+    let className = 'font-manrope '
 
     if (rounded === 'full') {
         className +=
