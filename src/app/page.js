@@ -2,12 +2,13 @@
 import Popular from '@/components/molecules/popular'
 import ImageCard from '../components/atoms/ImageCard'
 import ShopByIndustries from '@/components/molecules/shopByIndustris'
-// import Hero from "@/components/hero";
+import Hero from "@/components/hero";
 import AboutUs from '@/components/aboutUs';
-// import Uniform from "@/components/uniform";
-import PopularSubCatogires from '@/components/popularSubCatogries';
+import Uniform from "@/components/uniform";
 
 export default function Home() {
+
+
     return (
         <div>
             <main className="min-h-screen flex-col items-center justify-between p-24">
@@ -24,5 +25,5 @@ export default function Home() {
                 <AboutUs />
             </main>
         </div>
-    );
+    )
 }
