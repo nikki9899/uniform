@@ -43,6 +43,7 @@ module.exports = {
                 },
                 '.scrollbar::-webkit-scrollbar-thumb': {
                     backgroundColor: theme('colors.black'),
+                    borderRadius: '50px',
                 },
                 '.scrollbar::-webkit-scrollbar-track-piece': {
                     backgroundColor: theme('colors.gray.200'),

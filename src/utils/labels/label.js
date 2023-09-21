@@ -1,4 +1,4 @@
 export const searchLabels = {
-  heading: "popular searches",
-  buttontext: "Enquire now",
-};
+    heading: 'popular searches',
+    buttontext: 'enquire now',
+}
