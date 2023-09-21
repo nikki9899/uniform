@@ -31,7 +31,7 @@ import Button from "./atoms/button";
           <br /> {caption1}
         </p>
       </div>
-      <div className="mt-[66px] ml-[540px] h-[83px]  ">
+      <div className="text-center mt-16  ">
         <Button variant="primary" rounded="full" >
           <p>shop now</p>
         </Button>
