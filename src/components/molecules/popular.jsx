@@ -37,7 +37,7 @@ const Popular = (props) => {
         )
     )
     return (
-        <div className="py-5 max-w-full  max-w-screen-full text-center border border-gray-800 lg:py-7">
+        <div className="py-5 max-w-full  max-w-screen-full text-center lg:py-7">
             <div className="text-3xl font-medium mb-2 text-left">
                 {searchLabels.heading}
             </div>
