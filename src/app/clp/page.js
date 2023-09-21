@@ -1,6 +1,6 @@
 import Categories from '@/components/organisms/categories'
 import Pagination from '@/components/atoms/Pagination'
-import Popular from '@/components/popular'
+import Popular from '@/components/molecules/popular'
 
 export const metadata = {
     title: 'Categories',
