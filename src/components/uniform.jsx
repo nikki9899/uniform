@@ -1,6 +1,6 @@
 import React from "react";
 import { commercialLabels } from "@/utils/labels/commercialLabels";
-import Maskgroup from "/public/Maskgroup.svg";
+
 import Button from "./atoms/button";
 
  const CommercialUniformSection=()=> {
@@ -22,17 +22,20 @@ import Button from "./atoms/button";
         </p>
       </div>
 
-      <div className="  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
-        <div className="  w-[260px] -z-10 absolute my-[-160px]  ml-[380px]  ">
-          <img src={Maskgroup.src}></img>
+      <div className="  justify-center  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
+        <div className="   w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
+        <img src="/Images/Mask group.png" />
         </div>
         <p>
           {caption}
           <br /> {caption1}
         </p>
       </div>
-      <div className=" h-[70px] flex justify-center items-center">
-        <Button variant="shop now" rounded="Full" />
+      <div className="text-center mt-16  ">
+        <Button variant="primary" rounded="full" >
+          <p>shop now</p>
+        </Button>
+          
       </div>
     </div>
   );
