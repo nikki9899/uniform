@@ -18,18 +18,18 @@ const Categories = async () => {
     })
 
     return (
-        <div className="container my-20">
+        <div className="container w-full my-10">
             <Grid cardsPerRow={4}>
                 {categories.map(({ name, image, id }) => (
-                    <div key={id}>
+                    <div key={id} className='px-3 mt-9'>
                         <ImageCard
                             iconDisplay="hidden"
-                            classnames={`w-64 h-80 rounded-2xl shrink-0 back `}
+                            classnames={`w-full h-96 rounded-2xl shrink-0 back `}
                             productImage={image}
                         />
-                        <h5 className="mt-2 mb-2">{name}</h5>
+                        <h5 className="mt-2 mb-2 font-semibold text-lg">{name}</h5>
                         <Link href="#">
-                            <Button rounded="full" variant="primary">
+                            <Button rounded="full" variant="primary" addStyle="py-3 px-7 text-xl ">
                                 {linkText}
                             </Button>
                         </Link>
