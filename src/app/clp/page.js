@@ -10,7 +10,7 @@ export const metadata = {
 const Clp = () => {
     return (
         <div>
-            <main className="flex min-h-screen flex-col items-center justify-between p-16">
+            <main className="flex min-h-screen flex-col items-center justify-between">
                 <IndustrialUniform/>
                 <div className="h-px w-full mt-40 bg-black border-0 "></div>
                 <Categories />

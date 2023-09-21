@@ -15,7 +15,7 @@ export default function Home() {
 
     return (
         <div>
-            <main className="min-h-screen flex-col items-center justify-between p-12">
+            <main className="min-h-screen flex-col items-center justify-between ">
                 <Hero />
                <PopularCategories />
                 {/* <PopularSubCatogires /> */}
