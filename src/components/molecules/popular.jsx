@@ -1,9 +1,7 @@
 import Button from '@/components/atoms/button'
 import React from 'react'
 import product_card from '@/data/data'
-import Wish from '@/components/atoms/Icons/Wish'
 import { wish_list } from '@/utils/constants'
-import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 
 const Popular = (props) => {
@@ -13,16 +11,12 @@ const Popular = (props) => {
                 <div className="w-72 relative">
                     <img src={product_image} alt="suit" />
                     <div className="absolute top-3 right-3">
-                        <Wish />
+                        <img src={wish_list.wish} alt="wishlist" />
                     </div>
                 </div>
-                {/* <ImageCard
-                    iconDisplay="flex"
-                    classnames="w-[280px] h-[380px] rounded-2xl shrink-0 back "
-                    productImage={product_image}
-                /> */}
+
                 <div>
-                    <div className="flex justify-between ">
+                    <div className="flex justify-between my-1">
                         <h3 className="text-sm font-semibold leading-7">
                             {product_name}
                         </h3>
@@ -33,7 +27,7 @@ const Popular = (props) => {
                     <p className="text-xs font-medium text-start text-gray-500 leading-7">
                         {description}
                     </p>
-                    <div className="text-left">
+                    <div className="text-left my-2">
                         <Button variant="primary" rounded="full">
                             {searchLabels.buttontext}
                         </Button>
