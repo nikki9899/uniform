@@ -14,7 +14,7 @@ const Popular = (props) => {
                     productImage={product_image}
                 />
                 <div>
-                    <div className="flex justify-between my-1">
+                    <div className="flex justify-between my-1 ml-2">
                         <h3 className="text-sm font-semibold leading-7">
                             {product_name}
                         </h3>
@@ -22,10 +22,10 @@ const Popular = (props) => {
                             {product_price}
                         </h4>
                     </div>
-                    <p className="text-xs font-medium text-start text-gray-500 leading-7">
+                    <p className="text-xs font-medium ml-2 text-start text-gray-500 leading-7">
                         {description}
                     </p>
-                    <div className="text-left my-2">
+                    <div className="text-left ml-2 my-2">
                         <Button variant="primary" rounded="full">
                             {searchLabels.buttontext}
                         </Button>
