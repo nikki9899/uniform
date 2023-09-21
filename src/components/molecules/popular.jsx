@@ -1,20 +1,26 @@
 import Button from '@/components/atoms/button'
 import React from 'react'
 import product_card from '@/data/data'
+import Wish from '@/components/atoms/Icons/Wish'
 import { wish_list } from '@/utils/constants'
-import ImageCard from '../atoms/ImageCard'
+import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 
 const Popular = (props) => {
     const items = product_card.map(
         ({ id, product_name, description, product_image, product_price }) => (
-            <div className=" me-7 w-500 mb-12" key={id}>
-                <ImageCard
+            <div className=" me-7 w-full mb-12" key={id}>
+                <div className="w-72 relative">
+                    <img src={product_image} alt="suit" />
+                    <div className="absolute top-3 right-3">
+                        <Wish />
+                    </div>
+                </div>
+                {/* <ImageCard
                     iconDisplay="flex"
-                    classnames="object w-[308px] h-[418px]  rounded-2xl shrink-0 back "
+                    classnames="w-[280px] h-[380px] rounded-2xl shrink-0 back "
                     productImage={product_image}
-                />
-
+                /> */}
                 <div>
                     <div className="flex justify-between ">
                         <h3 className="text-sm font-semibold leading-7">
