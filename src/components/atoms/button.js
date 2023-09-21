@@ -1,11 +1,11 @@
 import React from 'react'
 
 function Button({ variant, rounded, onClick, children, addStyle }) {
-    let className = 'font-manrope lowercase '
+    let className = 'font-manrope '
 
     if (rounded === 'full') {
         className +=
-            'rounded-full font-medium text-xs py-2 px-4 border border-gray-700 text-gray-900 bg-transparent'
+            'rounded-full font-medium text-xs py-2 px-4 border-gray-700 text-gray-900 bg-transparent'
     } else if (rounded === 'semi') {
         className += 'rounded-lg '
     }

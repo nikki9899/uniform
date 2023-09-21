@@ -3,7 +3,7 @@ import { commercialLabels } from "@/utils/labels/commercialLabels";
 import Maskgroup from "/public/Maskgroup.svg";
 import Button from "./atoms/button";
 
- const commercialUniformSection=()=> {
+ const CommercialUniformSection=()=> {
   let { heading, heading1, text, text1, text2, caption, caption1 } =
     commercialLabels;
   return (
@@ -38,4 +38,4 @@ import Button from "./atoms/button";
   );
 }
 
-export default commercialUniformSection;
+export default CommercialUniformSection;
