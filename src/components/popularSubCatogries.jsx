@@ -1,60 +1,70 @@
-import React from 'react'
-import popSubCatImg from '@/mockData/popSubCatImage'
-import Button from './atoms/button'
+import React from 'react';
+import Button from './atoms/button';
+import { getAPI } from '@/utils/api';
 
-function PopularSubCatogires() {
+async function PopularSubCategories() {
+  const { data } = await getAPI("home-page");
+
+  const popSubCatImg = data.attributes.popularSubCategories.sub_categories.data.map((entry) => {
+    return {
+      Id: entry.id,
+      ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
+      Name: entry.attributes?.name || '',
+    };
+  });
+
   const reverseImg = [...popSubCatImg].reverse();
-  const buttonTexts = ["reflective clothing", "safety suits", "Rubber suits"];
   return (
     <div>
-      <h2 className="text-gray-900 font-manrope font-medium text-4xl lowercase ">
+      <h2 className="text-gray-900 font-manrope font-medium text-4xl lowercase">
         popular sub-categories
       </h2>
-      <div className="flex gap-3 pt-8 justify-center">
-        {popSubCatImg.map((item, index) => (
+      <div className="flex gap-3 pt-10 justify-center">
+        {reverseImg.map((item) => (
           <div
-            key={item.id}
-            className={`w-${index >= 1 ? "4/12" : "6/12 "} h-96 relative`}
+            key={item.Id} // Use the Id as the key
+            className={`w-${item.Id === 2 ? "4/12" : "3/12"} h-96 relative`}
           >
             <img
               src={item.ImgSrc}
-              className="w-full h-full rounded object-cover "
+              className="w-full h-full rounded object-cover"
+              alt={`Category ${item.Id}`}
             />
             <Button
               rounded="full"
               variant="primary"
               addStyle={
-                item.id === 2
+                item.Id === 6
                   ? "text-black border-2 border-black absolute top-7 left-7"
                   : "text-white border-2 border-white absolute top-7 left-7"
               }
             >
-              <p style={{fontSize: "16px"}}>{buttonTexts[index]}</p>
+              <p style={{ fontSize: "16px" }}>{item.Name}</p>
             </Button>
           </div>
         ))}
       </div>
       <div className="flex gap-3 pt-3 justify-center">
-        {reverseImg.map((item, index) => (
+        {popSubCatImg.map((item) => (
           <div
-            key={item.id}
-            className={`w-${index <= 1 ? "4/12" : "6/12"} h-96 relative`}
+            key={item.Id} // Use the Id as the key
+            className={`w-${item.Id <= 1 ? "4/12" : "6/12"} h-96 relative`}
           >
             <img
               src={item.ImgSrc}
               className="w-full h-full rounded object-cover"
+              alt={`Category ${item.Id}`}
             />
-
             <Button
               rounded="full"
               variant="primary"
               addStyle={
-                item.id === 2
+                item.Id === 6
                   ? "text-black border-2 border-black absolute top-7 left-7"
                   : "text-white border-2 border-white absolute top-7 left-7"
               }
             >
-              <p style={{fontSize: "16px"}}>{buttonTexts[index]}</p>
+              <p style={{ fontSize: "16px" }}>{item.Name}</p>
             </Button>
           </div>
         ))}
@@ -63,7 +73,4 @@ function PopularSubCatogires() {
   );
 }
 
-export default PopularSubCatogires;
-
-
-
+export default PopularSubCategories;
