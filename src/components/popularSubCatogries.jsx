@@ -3,7 +3,7 @@ import Button from './atoms/button';
 import { getAPI } from '@/utils/api';
 
 async function PopularSubCategories() {
-  const { data } = await getAPI("home-page");
+  const {data} = await getAPI("home-page");
 
   const popSubCatImg = data.attributes.popularSubCategories.sub_categories.data.map((entry) => {
     return {
