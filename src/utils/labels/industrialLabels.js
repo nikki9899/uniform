@@ -1,4 +1,4 @@
 export const industrialLabels = {
   heading: "Industrial Uniform",
-  description: "buy customized industrial uniform workwear",
+  description: "Buy customized industrial uniform workwear",
 };
