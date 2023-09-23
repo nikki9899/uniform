@@ -1,5 +1,5 @@
 import React from "react";
-import { industrialLabels } from "@/utils/labels/industrialLabels";
+
 
 const IndustrialUniform = ({ heading, description }) => {
   return (
