@@ -18,7 +18,7 @@ const Categories = async () => {
     })
 
     return (
-        <div className="container w-full my-10">
+        <div className="container w-full my-10 ">
             <Grid cardsPerRow={4}>
                 {categories.map(({ name, image, id }) => (
                     <div key={id} className='px-1 mt-9'>
