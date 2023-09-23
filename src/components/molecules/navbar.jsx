@@ -5,7 +5,7 @@ import { NavbarLabels } from '@/utils/labels/navbarLabels'
 const Navbar = () => {
     let { Logo, Tabs, SearchLink, WishLink } = NavbarLabels
     return (
-        <div className="h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full ">
+        <div className="h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full">
             <h1 className="pl-12 pt-9 pb-9 text-black text-2xl not-italic font-black leading-7 tracking-[-1.066px] float-left">
                 {Logo}
             </h1>
