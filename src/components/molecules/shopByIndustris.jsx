@@ -1,6 +1,5 @@
 import Button from '../atoms/button'
 import React from 'react'
-// import products from '@/mockData/productContainerData'
 import headerData from '@/mockData/asideLinks'
 import { getAPI } from '@/utils/api';
 
