@@ -1,10 +1,10 @@
 import React from "react";
-import { industrialLabels } from "@/utils/labels/industrialLabels";
+
 
 const IndustrialUniform = ({ heading, description }) => {
   return (
 
-    <div>
+    <div className="mt-32">
       <div className="mb-[44px] text-center text-black text-[115px] not-italic font-medium leading-[80.724px] tracking-[-4.6px] font-manrope">
         <h1>{heading}</h1>
       </div>
