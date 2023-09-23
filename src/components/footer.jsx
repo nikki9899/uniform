@@ -85,7 +85,7 @@ const Footer = (props) => {
   ];
 
   return (
-    <div>
+   
       <div className="mx-auto w-full">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
@@ -104,7 +104,7 @@ const Footer = (props) => {
           <FooterNewsLetter  />
           </div>
         </div>
-        <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <div className="px-4 mt-16 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
           <span className="text-lg text-gray-500 font-black dark:text-white ">
             Uniform on Web
           </span>
@@ -115,7 +115,7 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 export default Footer;

@@ -21,7 +21,7 @@ const Categories = async () => {
         <div className="container w-full my-10">
             <Grid cardsPerRow={4}>
                 {categories.map(({ name, image, id }) => (
-                    <div key={id} className='px-3 mt-9'>
+                    <div key={id} className='px-1 mt-9'>
                         <ImageCard
                             iconDisplay="hidden"
                             classnames={`w-full h-96 rounded-2xl shrink-0 back `}
@@ -31,6 +31,7 @@ const Categories = async () => {
                         <Link href="#">
                             <Button rounded="full" variant="primary" addStyle="py-3 px-7 text-xl ">
                                 {linkText}
+                                
                             </Button>
                         </Link>
                     </div>

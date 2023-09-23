@@ -1,21 +1,20 @@
 import Button from '@/components/atoms/button'
 import React from 'react'
 import product_card from '@/data/data'
-import { wish_list } from '@/utils/constants'
+import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 
 const Popular = (props) => {
     const items = product_card.map(
         ({ id, product_name, description, product_image, product_price }) => (
-            <div className=" me-7 w-500 mb-12" key={id}>
-                <div className="w-72 relative">
-                    <img src={product_image} alt="suit" />
-                    <div className="absolute top-3 right-3">
-                        <img src={wish_list.wish} alt="wishlist" />
-                    </div>
-                </div>
+            <div className=" me-7 w-full mb-12" key={id}>
+                <ImageCard
+                    iconDisplay="flex"
+                    classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back ml-2"
+                    productImage={product_image}
+                />
                 <div>
-                    <div className="flex justify-between ">
+                    <div className="flex justify-between my-1 ml-2">
                         <h3 className="text-sm font-semibold leading-7">
                             {product_name}
                         </h3>
@@ -23,10 +22,10 @@ const Popular = (props) => {
                             {product_price}
                         </h4>
                     </div>
-                    <p className="text-xs font-medium text-start text-gray-500 leading-7">
+                    <p className="text-xs font-medium ml-2 text-start text-gray-500 leading-7">
                         {description}
                     </p>
-                    <div className="text-left">
+                    <div className="text-left ml-2 my-2">
                         <Button variant="primary" rounded="full">
                             {searchLabels.buttontext}
                         </Button>
@@ -41,7 +40,7 @@ const Popular = (props) => {
                 {searchLabels.heading}
             </div>
 
-            <div className="scrollbar gap-8 w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
+            <div className="scrollbar my-9 w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
                 {items}
             </div>
         </div>
