@@ -5,23 +5,23 @@ import { NavbarLabels } from '@/utils/labels/navbarLabels'
 const Navbar = () => {
     let { Logo, Tabs, SearchLink, WishLink } = NavbarLabels
     return (
-        <div className="h-[103px] shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-[#efefef] flex">
-            <h3 className="pl-[60px] pt-[37px] pb-[38px] text-black text-[26.645px] not-italic font-black leading-[26.645px] tracking-[-1.066px] float-left">
+        <div className="h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full ">
+            <h1 className="pl-12 pt-9 pb-9 text-black text-2xl not-italic font-black leading-7 tracking-[-1.066px] float-left">
                 {Logo}
-            </h3>
-            <div className="inline-flex pl-[250px] h-[17.297px] items-start gap-[54px] shrink-0 pt-[40px] pb-[44px]">
+            </h1>
+            <div className="inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 pt-10 pb-11">
                 {Tabs.map(({ id, TabTitle, src }) => (
                     <div key={id} className="cursor-pointer">
                         <a
                             href={src}
-                            className="text-[#1E1E1E] text-base not-italic font-medium leading-4 tracking-[-0.64px]"
+                            className="text-textColor text-base not-italic font-medium leading-4 tracking-[-0.64px]"
                         >
                             {TabTitle}
                         </a>
                     </div>
                 ))}
             </div>
-            <div className="flex pl-[295px] gap-[10px] pt-[40px] pb-[44px]">
+            <div className="flex pl-[20%] gap-2.5 pt-9 pb-9 float-right">
                 <div className='cursor-pointer'>
                     <a href = {SearchLink}>
                         <Search />

@@ -1,8 +1,10 @@
-import Search from "./Icons/Search";
-import Wish from "./Icons/Wish";
-const ImageCard = ({ iconDisplay, classnames }) => {
-  return (
-    <div className={classnames}>
+import Wish from '@/components/atoms/Icons/Wish'
+const ImageCard = ({ iconDisplay, classnames, productImage }) => {
+    return (
+        <div
+            className={classnames}
+            style={{ backgroundImage: `url(${productImage})` }}
+        >
       <Wish
         width="24"
         height="24"
