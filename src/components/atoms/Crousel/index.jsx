@@ -17,7 +17,7 @@ const Carousel = ({ options, children, navigationButtons }) => {
   return (
     <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex flex-row">{children}</div>
+        <div className="flex flex-row gap-x-2">{children}</div>
       </div>
 
       {navigationButtons && (
