@@ -3,7 +3,7 @@ export const NavbarLabels = {
     Tabs : [
         {
             id : "001",
-            TabTitle : "Uniform by Profession",
+            TabTitle : "UniformbyProfession",
             src : "https://www.google.com/"
         },
         {
