@@ -7,6 +7,11 @@ const PopularCategories = async () => {
     const data = await getAPI('home-page')
     const products = data.data.attributes.popularCategories.categories.data
     return (
+        <div className="w-full pb-8">
+        <p className="text-left py-1 mb-6 text-popularTextColor text-3xl not-italic font-normal leading-[26.645px]">
+          Popular Categories 
+        </p>
+       
         <Carousel
             options={{
                 dragFree: true,
@@ -28,9 +33,10 @@ const PopularCategories = async () => {
                         },
                     },
                     index
-                ) => (
+                ) => {                 
+                    return (
                     <div
-                        className="grow-0 shrink-0 basis-[calc(100%/3)] px-2 relative rounded-lg"
+                        className="grow-0 shrink-0 basis-[calc(100%/3)] relative rounded-lg"
                         key={id}
                     >
                         <Image
@@ -49,9 +55,11 @@ const PopularCategories = async () => {
                             {name}
                         </Button>
                     </div>
-                )
+                )}
             )}
         </Carousel>
+
+        </div>
     )
 }
 
