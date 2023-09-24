@@ -1,10 +1,18 @@
 import Button from '../atoms/button'
 import React from 'react'
-import products from '@/mockData/productContainerData'
 import headerData from '@/mockData/asideLinks'
-import ImageCard from '../atoms/ImageCard'
+import { getAPI } from '@/utils/api';
+import ImageCard from '../atoms/ImageCard';
 
-const shopByIndustries = () => {
+async function shopByIndustries() {
+    const {data} = await getAPI("home-page");
+    const products = data.attributes.shopByCategory.sub_categories.data.map((entry) => {
+        return {
+            id: entry.id,
+            title: entry.attributes?.name || '',
+            ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
+        }
+    })
     const header = headerData[0]
     const quickLinks = header?.quicklinks?.listItems || []
     return (
@@ -31,7 +39,7 @@ const shopByIndustries = () => {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div className="w-[495px] p-4 key={product.id}">
+                    <div className="w-full  key={product.id}">
                         <div
                             key={product.id}
                             className="md:col-span-1 rounded h-[678px] "
@@ -39,19 +47,19 @@ const shopByIndustries = () => {
                             <ImageCard
                                 iconDisplay="hidden"
                                 classnames="w-[426px] h-[558px] rounded shink-0"
-                                productImage={product.imageSrc}
+                                productImage={product.ImgSrc}
                             />
 
                             <div className="flex justify-between ">
                                 <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
                                     {product.title}
                                 </h3>
-                                <p className=" mx-[3rem] font-manrope text-sm font-semibold  text-gray-900">
-                                    {product.amount}
+                                <p className=" font-manrope text-sm font-semibold   pl-20 text-gray-900 ">
+                                    INR 5000
                                 </p>
                             </div>
                             <p className="text-gray-400 font-manrope text-xs font-medium leading-6">
-                                {product.subtitle}
+                            full body resistance
                             </p>
                             <Button variant="primary" rounded="full">
                                 <p>enquire now</p>
