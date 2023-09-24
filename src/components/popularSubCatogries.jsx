@@ -15,15 +15,15 @@ async function PopularSubCategories() {
 
   const reverseImg = [...popSubCatImg].reverse();
   return (
-    <div>
+    <div className="w-full pb-5">
       <h2 className="text-gray-900 font-manrope font-medium text-4xl lowercase">
         popular sub-categories
       </h2>
-      <div className="flex gap-3 pt-10 justify-center">
+      <div className="flex pt-10 gap-3">
         {reverseImg.map((item) => (
           <div
             key={item.Id} // Use the Id as the key
-            className={`w-${item.Id === 2 ? "4/12" : "3/12"} h-96 relative`}
+            className={`h-96 relative  `}
           >
             <img
               src={item.ImgSrc}
@@ -44,7 +44,7 @@ async function PopularSubCategories() {
           </div>
         ))}
       </div>
-      <div className="flex gap-3 pt-3 justify-center">
+      <div className="flex gap-3 pt-3">
         {popSubCatImg.map((item) => (
           <div
             key={item.Id} // Use the Id as the key
