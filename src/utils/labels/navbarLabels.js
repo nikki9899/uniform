@@ -1,5 +1,5 @@
 export const NavbarLabels = {
-    Logo : "UniformOnWeb",
+    Logo : "Uniform On Web",
     Tabs : [
         {
             id : "001",

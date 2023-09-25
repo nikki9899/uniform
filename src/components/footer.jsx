@@ -87,7 +87,7 @@ const Footer = (props) => {
   return (
    
       <div className="mx-auto w-full">
-        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 md:grid-cols-4">
           <div>
             <FooterList contents={quickLink} />
           </div>
