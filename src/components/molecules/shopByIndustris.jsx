@@ -1,8 +1,8 @@
 import Button from '../atoms/button'
 import React from 'react'
 import headerData from '@/mockData/asideLinks'
+import ImageCard from '../atoms/ImageCard'
 import { getAPI } from '@/utils/api';
-import ImageCard from '../atoms/ImageCard';
 
 async function shopByIndustries() {
     const {data} = await getAPI("home-page");
@@ -16,16 +16,16 @@ async function shopByIndustries() {
     const header = headerData[0]
     const quickLinks = header?.quicklinks?.listItems || []
     return (
-        <div className="container mx-auto ">
+        <div className="container mx-auto py-9">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-                <div className="md:col-span-1rounded-lg p-1 w-[382px]">
-                    <h2 className="text-black font-manrope font-semibold text-5xl tracking-tight leading-normal">
-                        {header?.heading || ''}
+                <div className="md:col-span-1 rounded-lg w-[382px]">
+                    <h2 className="text-black font-manrope font-normal text-5xl tracking-tight leading-normal">
+                       Shop by <br/> {header?.heading || ''}
                     </h2>
                     <nav className=" py-4 w-[213px] h-[445px] flex-shrink-0">
-                        <ul className="  list-none text-gray-700 font-manrope text-xl font-semibold leading-2 capitalize">
+                        <ul className="  text-lg list-none text-gray-800 font-manrope  font-medium leading-2 capitalize">
                             {quickLinks.map((link) => (
-                                <li key={link.id}>{link.navlink}</li>
+                                <li key={link.id }   className='py-1'  >{link.navlink}</li>
                             ))}
                         </ul>
                         {header?.linkData ? (
@@ -39,14 +39,14 @@ async function shopByIndustries() {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div className="w-full  key={product.id}">
+                    <div  key={product.id} className="w-full ">
                         <div
-                            key={product.id}
-                            className="md:col-span-1 rounded h-[678px] "
+                           
+                            className="md:col-span-1 "
                         >
                             <ImageCard
                                 iconDisplay="hidden"
-                                classnames="w-[426px] h-[558px] rounded shink-0"
+                                classnames="w-[420px] h-[555px] rounded shink-0  rounded h-[650px] "
                                 productImage={product.ImgSrc}
                             />
 
