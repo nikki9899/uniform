@@ -2,7 +2,7 @@ import React from "react";
 import { heroLabels } from "@/utils/labels/heroLabels";
 import Button from "./atoms/button";
 
-function Hero() {
+function Hero({hero}) {
   let { heading, headingPart2, description } = heroLabels;
 
   return (

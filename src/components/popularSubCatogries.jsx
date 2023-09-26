@@ -1,11 +1,17 @@
 import React from 'react';
 import Button from './atoms/button';
-import { getAPI } from '@/utils/api';
 
-async function PopularSubCategories({popSubCatImg}) {
+async function PopularSubCategories({popularSubCategories :{ sub_categories : { data = [] } }}) {
 
+  const popSubCat = data?.map((entry) => {
+    return {
+      Id: entry.id,
+      ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
+      Name: entry.attributes?.name || '',
+    };
+  }) ?? [] ;
 
-  const reverseImg = [...popSubCatImg].reverse();
+  const reverseImg = [...popSubCat].reverse();
   return (
     <div className="w-full pb-5">
       <h2 className="text-gray-900 font-manrope font-medium text-4xl lowercase">
@@ -37,7 +43,7 @@ async function PopularSubCategories({popSubCatImg}) {
         ))}
       </div>
       <div className="flex gap-3 pt-3">
-        {popSubCatImg.map((item) => (
+        {popSubCat.map((item) => (
           <div
             key={item.Id} // Use the Id as the key
             className={`w-${item.Id <= 1 ? "4/12" : "6/12"} h-96 relative`}

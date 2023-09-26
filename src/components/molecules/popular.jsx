@@ -4,7 +4,7 @@ import product_card from '@/data/data'
 import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 
-const Popular = (props) => {
+const Popular = ({popularSearches}) => {
     const items = product_card.map(
         ({ id, product_name, description, product_image, product_price }) => (
             <div className="me-7 w-full mb-12" key={id}>

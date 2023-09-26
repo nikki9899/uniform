@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Navbar = () => {
     let { Logo, Tabs, SearchLink, WishLink } = NavbarLabels
     return (
-        <div className="h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full py-7">
+        <div className=" px-14 h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full py-7">
             <h1 className="text-black text-3xl not-italic font-black leading-7 tracking-[-1.066px] float-left font-bold ">
                 {Logo}
             </h1>
