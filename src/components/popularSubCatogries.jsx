@@ -5,13 +5,13 @@ import { getAPI } from '@/utils/api';
 async function PopularSubCategories() {
   const {data} = await getAPI("home-page");
 
-  const popSubCatImg = data.attributes.popularSubCategories.sub_categories.data.map((entry) => {
+  const popSubCatImg = data?.attributes?.popularSubCategories.sub_categories.data.map((entry) => {
     return {
       Id: entry.id,
       ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
       Name: entry.attributes?.name || '',
     };
-  });
+  })  ?? [] ;
 
   const reverseImg = [...popSubCatImg].reverse();
   return (

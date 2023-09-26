@@ -9,13 +9,13 @@ const Categories = async () => {
     const { linkText } = categoriesLabels
     const { data } = await getAPI('categories')
 
-    const categories = data.map((entry) => {
+    const categories = data?.map((entry) => {
         return {
             id: entry.id,
             name: entry.attributes.name,
             image: entry.attributes.image.data.attributes.url,
         }
-    })
+    }) ?? [] 
 
     return (
         <div className="container w-full my-10 ">
