@@ -5,7 +5,7 @@ import Button from '@/components/atoms/button'
 
 const PopularCategories = async () => {
     const data = await getAPI('home-page')
-    const products = data?.data?.attributes?.popularCategories.categories.data ?? [] 
+    const products = data?.data?.attributes.popularCategories.categories.data  ?? [] 
     return (
         <div className="w-full pb-8">
         <p className="text-left py-1 mb-6 text-popularTextColor text-3xl not-italic font-normal leading-[26.645px]">

@@ -9,8 +9,18 @@ import PopularCategories from '@/components/molecules/PopularCategories';
 import PopularProducts from '@/components/organisms/popularProducts';
 import CommercialUniformSection from '@/components/uniform';
 import Line from '@/components/atoms/horizontal-line';
+import { getAPI } from '@/utils/api';
 
-export default function Home() {
+ const Home =  async () => {  
+    const {data} = await getAPI("home-page");
+
+    const popSubCatImg = data.attributes.popularSubCategories.sub_categories.data.map((entry) => {
+      return {
+        Id: entry.id,
+        ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
+        Name: entry.attributes?.name || '',
+      };
+    });
 
 
     return (
@@ -20,7 +30,7 @@ export default function Home() {
                 <Line />
                <PopularCategories />
                <Line />
-                <PopularSubCatogires />
+                <PopularSubCatogires popSubCatImg={popSubCatImg} />
                 <Line />
                <PopularProducts/>
                <Line />
@@ -34,3 +44,5 @@ export default function Home() {
         </div>
     )
 }
+
+export default  Home 

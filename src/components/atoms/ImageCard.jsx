@@ -3,7 +3,7 @@ const ImageCard = ({ iconDisplay, classnames, productImage }) => {
     return (
         <div
             className={classnames}
-            style={{ backgroundImage: `url(${productImage})` }}
+            style={{ "backgroundImage": `url(${productImage})` }}
         >
       <Wish
         width="24"

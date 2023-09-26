@@ -10,7 +10,7 @@ function Hero() {
       <div className=" text-center font-manrope text-[115px] font-normal leading-[152px] tracking-[-4.6px]">
         <h2>{heading}</h2>
         <div className=" -z-10 absolute top-48 left-96 transform -translate-x-1/2 -translate-y-1/2">
-          <img src="/Images/Doctor.png" />
+          <img src="/Images/Doctor.png" alt="test data"/>
         </div>
         <h3 className="pl-[301px]">{headingPart2}</h3>
       </div>

@@ -1,6 +1,7 @@
 import Search from '@/components/atoms/Icons/Search'
 import Wish from '@/components/atoms/Icons/Wish'
 import { NavbarLabels } from '@/utils/labels/navbarLabels'
+import Link from 'next/link'
 
 const Navbar = () => {
     let { Logo, Tabs, SearchLink, WishLink } = NavbarLabels
@@ -12,12 +13,7 @@ const Navbar = () => {
             <div className="inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800">
                 {Tabs.map(({ id, TabTitle, src }) => (
                     <div key={id} className="cursor-pointer">
-                        <a
-                            href={src}
-                            className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"
-                        >
-                            {TabTitle}
-                        </a>
+                <Link href={src}   className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"  > {TabTitle}</Link>
                     </div>
                 ))}
             </div>

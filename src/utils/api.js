@@ -4,7 +4,7 @@ const baseUrl = "https://uniformonweb.onrender.com/api";
 export const getAPI = async (path) => {
     let url = `${baseUrl}/${path}?populate=deep`;
     try {
-      const loadData = await fetch(url, { cache: 'no-store' });
+      const loadData = await fetch(url, { cache: 'force-cache' });
   
       if (loadData.ok) {
         let result = await loadData.json();

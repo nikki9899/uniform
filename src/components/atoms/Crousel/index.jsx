@@ -2,7 +2,7 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { usePrevNextButtons, CrouselButton } from "./CrouselButton";
-import { RightArrow } from "@svgs/index";
+import Image from "next/image";
 
 const Carousel = ({ options, children, navigationButtons }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -27,7 +27,15 @@ const Carousel = ({ options, children, navigationButtons }) => {
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
           >
-            <RightArrow className="rotate-180 text-3xl" />
+
+                      <Image
+                            className="rotate-180 text-3xl"
+                            width={24}
+                            height={24}
+                            src="/svgs/RightArrow.svg"
+                            alt="RightArrow"
+                        />
+            {/* <RightArrow className="rotate-180 text-3xl" /> */}
           </CrouselButton>
 
           <CrouselButton
@@ -35,7 +43,14 @@ const Carousel = ({ options, children, navigationButtons }) => {
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
           >
-            <RightArrow className="text-3xl" />
+              <Image
+                            className="text-3xl"
+                            width={24}
+                            height={24}
+                            src="/svgs/RightArrow.svg"
+                            alt="RightArrow"
+                        />
+            {/* <RightArrow className="text-3xl" /> */}
           </CrouselButton>
         </div>
       )}
