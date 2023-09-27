@@ -1,6 +1,7 @@
 import Carousel from '@/components/atoms/Crousel'
 import Image from 'next/image'
 import Button from '@/components/atoms/button'
+import Link from 'next/link'
 
 const PopularCategories = async ({ popularCategories : {  categories : {  data = [] } }}) => {
   
@@ -34,11 +35,13 @@ const PopularCategories = async ({ popularCategories : {  categories : {  data =
                 ) => {                 
                     return (
                     <div
-                        className="grow-0 shrink-0 basis-[calc(100%/3)] relative rounded-lg"
+                        className={`${ ( ( index + 1 ) % 3 === 0 ) ? 'basis-[46%]' : 'basis-[27%]' } grow-0 shrink-0 relative rounded-lg`}
                         key={id}
+                    
                     >
+                        <Link href={ `/clp/${name}`}  > 
                         <Image
-                            className="h-[26rem] w-full rounded-lg"
+                            className="h-[26rem] w-full rounded-lg object-cover object-top"
                             width={500}
                             height={500}
                             src={url}
@@ -52,6 +55,7 @@ const PopularCategories = async ({ popularCategories : {  categories : {  data =
                         >
                             {name}
                         </Button>
+                        </Link>
                     </div>
                 )}
             )}

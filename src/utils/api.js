@@ -1,8 +1,9 @@
 
 const baseUrl = "https://uniformonweb.onrender.com/api";
 
-export const getAPI = async (path) => {
+export const getAPI = async (path ) => {
     let url = `${baseUrl}/${path}?populate=deep`;
+
     try {
       const loadData = await fetch(url, { cache: 'force-cache' });
   
@@ -15,5 +16,10 @@ export const getAPI = async (path) => {
     } catch (error) {
       throw error;
     }
-  };
+};
+
+export const getSubCategories = async ( category) =>{
+   let SubCategoryUrl  = `sub-categories?polulate=*&filters[category][name][$eq]=${category}`
+      return  await getAPI(SubCategoryUrl) ;
+}
   

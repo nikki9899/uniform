@@ -4,7 +4,7 @@ export const NavbarLabels = {
         {
             id : "001",
             TabTitle : "UniformbyProfession",
-            src : "/clp"
+            src : "/clp/industrial Clothing"
         },
         {
             id : "002",
