@@ -2,11 +2,10 @@ import Button from '../atoms/button'
 import React from 'react'
 import headerData from '@/mockData/asideLinks'
 import ImageCard from '../atoms/ImageCard'
-import { getAPI } from '@/utils/api';
 
-async function shopByIndustries() {
-    const {data} = await getAPI("home-page");
-    const products = data.attributes.shopByCategory.sub_categories.data.map((entry) => {
+
+async function shopByIndustries(  { shopByCategory }) {
+    const products = shopByCategory.sub_categories.data.map((entry) => {
         return {
             id: entry.id,
             title: entry.attributes?.name || '',
@@ -16,9 +15,9 @@ async function shopByIndustries() {
     const header = headerData[0]
     const quickLinks = header?.quicklinks?.listItems || []
     return (
-        <div className="container mx-auto py-9">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-                <div className="md:col-span-1 rounded-lg w-[382px]">
+        <div className="container mx-auto pt-9 pb-5">
+            <div className="grid  grid-cols-3 gap-x-5 gap-y-9 ">
+                <div className="col-span-1 rounded-lg ">
                     <h2 className="text-black font-manrope font-normal text-5xl tracking-tight leading-normal">
                        Shop by <br/> {header?.heading || ''}
                     </h2>
@@ -31,7 +30,7 @@ async function shopByIndustries() {
                         {header?.linkData ? (
                             <a
                                 href={header.linkData.url}
-                                className="text-gray-900 font-manrope text-3xl font-bold leading-10"
+                                className="text-gray-900 font-manrope text-2xl font-semibold leading-10"
                             >
                                 {header.linkData.label}
                             </a>
@@ -39,26 +38,26 @@ async function shopByIndustries() {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div  key={product.id} className="w-full ">
+                    <div  key={product.id} >
                         <div
                            
-                            className="md:col-span-1 "
+                            className="col-span-1 "
                         >
                             <ImageCard
                                 iconDisplay="hidden"
-                                classnames="w-[420px] h-[555px] rounded shink-0  rounded h-[650px] "
+                                classnames="rounded  h-[34rem] rounded h-[650px] bg-cover bg-top bg-no-repeat "
                                 productImage={product.ImgSrc}
                             />
 
-                            <div className="flex justify-between ">
+                            <div className="flex justify-between mt-3 ">
                                 <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
                                     {product.title}
                                 </h3>
-                                <p className=" font-manrope text-sm font-semibold   pl-20 text-gray-900 ">
+                                <p className=" font-manrope text-sm font-semibold  text-gray-900 ">
                                     INR 5000
                                 </p>
                             </div>
-                            <p className="text-gray-400 font-manrope text-xs font-medium leading-6">
+                            <p className="text-gray-400 font-manrope text-xs my-1 font-medium leading-6">
                             full body resistance
                             </p>
                             <Button variant="primary" rounded="full">

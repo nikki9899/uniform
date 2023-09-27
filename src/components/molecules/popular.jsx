@@ -3,13 +3,13 @@ import Button from '@/components/atoms/button'
 import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 
-const Popular =  ({ popularSearches : { products : { data = [] } }}) => {
+const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] } }  =   {  data : [] }  } ) => {
    
     const items = data.map(({ id , attributes : {  Title  ,description , image } }) =>  (
-        <div className=" me-7 w-full mb-12" key={id}>
+        <div className="me-7 w-full mb-12" key={id}>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back ml-2"
+                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back"
                 productImage={image.data.attributes.url}
             />
             <div>
@@ -31,12 +31,12 @@ const Popular =  ({ popularSearches : { products : { data = [] } }}) => {
         </div>
     ))
     return (
-        <div className="py-5 max-w-full  max-w-screen-full text-center lg:py-7">
-            <div className="text-3xl font-medium mb-2 text-left">
+        <div className="py-4 max-w-full  max-w-screen-full text-center ">
+            <div className="text-3xl font-normal mb-2 text-left">
                 {searchLabels.heading}
             </div>
 
-            <div className="scrollbar my-9 w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
+            <div className="scrollbar my-9 max-w-screen-full lg flex flex-nowrap overflow-x-scroll  ">
                 {items}
             </div>
         </div>

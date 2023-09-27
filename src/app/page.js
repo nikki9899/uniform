@@ -34,8 +34,8 @@ import { getAPI } from '@/utils/api';
                 <Line />
                <PopularProducts popularProducts={popularProducts}/>
                <Line />
-                {/* <ShopByIndustries shopByCategory={shopByCategory} />
-                <Line /> */}
+                <ShopByIndustries shopByCategory={shopByCategory} />
+                <Line />
                 <CommercialUniformSection />
                 <Line />
                 <Popular popularSearches={popularSearches} />
