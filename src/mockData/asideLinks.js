@@ -1,7 +1,8 @@
 const header = [
     {
         id: 1,
-        heading: 'Industrial Sectors',
+        heading1: "Shop by",
+        heading2: 'Industrial Sectors',
         quicklinks: {
             title: 'Quick Links',
             listItems: [

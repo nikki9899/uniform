@@ -22,12 +22,12 @@ async function PopularSubCategories() {
       <div className="flex pt-10 gap-3">
         {reverseImg.map((item) => (
           <div
-            key={item.Id} // Use the Id as the key
-            className={`h-96 relative  `}
+            key={item.Id} 
+            className={`w-full h-96 relative overflow-hidden ${item.Id !== 2 ? 'w-8/12' : ''}`}
           >
             <img
               src={item.ImgSrc}
-              className="w-full h-full rounded object-cover"
+              className="w-full h-full rounded transition-transform transform hover:scale-110"
               alt={`Category ${item.Id}`}
             />
             <Button
@@ -47,12 +47,12 @@ async function PopularSubCategories() {
       <div className="flex gap-3 pt-3">
         {popSubCatImg.map((item) => (
           <div
-            key={item.Id} // Use the Id as the key
-            className={`w-${item.Id <= 1 ? "4/12" : "6/12"} h-96 relative`}
+            key={item.Id} 
+            className={`w-full h-96 relative overflow-hidden ${item.Id !== 2 ? 'w-8/12' : ''}`}
           >
             <img
               src={item.ImgSrc}
-              className="w-full h-full rounded object-cover"
+              className="w-full h-full rounded transition-transform transform hover:scale-110"
               alt={`Category ${item.Id}`}
             />
             <Button
