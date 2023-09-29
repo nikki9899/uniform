@@ -11,14 +11,14 @@ const PopularCard = ({
         <div>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[290px] h-[418px] rounded-2xl shrink-0 back "
+                classnames="w-[320px] h-[410px] rounded-2xl shrink-0 back "
                 productImage={productImage}
             />
             <div className="mt-2">
                 <span className="text-popularTextColor text-center text-sm not-italic font-bold leading-[26.645px]">
                     {productTitle}
                 </span>
-                <span className="text-popularTextColor text-center text-sm not-italic font-bold leading-[26.645px] float-right">
+                <span className="text-popularTextColor text-center text-sm not-italic font-bold leading-[26.645px] float-right pr-4">
                     {productPrice}
                 </span>
             </div>
