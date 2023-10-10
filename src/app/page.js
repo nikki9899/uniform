@@ -14,7 +14,7 @@ import { getAPI } from '@/utils/api';
  const Home =  async () => {  
    const { data: { attributes : {
      hero,
-     popularCategories,
+     popularCategories = [],
      popularProducts,
      shopByCategory,
      popularSearches,
