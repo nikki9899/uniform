@@ -2,7 +2,7 @@ import PopularCard from '@/components/molecules/PopularCard'
 import { popularProductsData } from '@/mockData/popularProductsData'
 import { popularLabels } from '@/utils/labels/popularLabels'
 
-const PopularProducts = () => {
+const PopularProducts = ( { popularProducts = {} }) => {
     let { heading } = popularLabels
     return (
         <div className="w-full">

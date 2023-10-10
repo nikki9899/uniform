@@ -1,29 +1,20 @@
-import Button from '@/components/atoms/button'
 import React from 'react'
+import Button from '@/components/atoms/button'
 import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
-import { getAPI } from '@/utils/api'
 
-const Popular = async (props) => {
-    const { data } = await getAPI('products')
-    const products = data.map((entry) => {
-        return {
-            id: entry.id,
-            title: entry.attributes.Title,
-            image: entry.attributes.image.data.attributes.url,
-            description: entry.attributes.description,
-        }
-    })
-    const items = products.map(({ title, image, id, description }) => (
-        <div className=" me-7 w-full mb-12" key={id}>
+const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] } }  =   {  data : [] }  } ) => {
+   
+    const items = data.map(({ id , attributes : {  Title  ,description , image } }) =>  (
+        <div className="me-7 w-full mb-12" key={id}>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back ml-2"
-                productImage={image}
+                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back"
+                productImage={image.data.attributes.url}
             />
             <div>
                 <div className="flex justify-between my-1 ml-2">
-                    <h3 className="text-sm font-semibold leading-7">{title}</h3>
+                    <h3 className="text-sm font-semibold leading-7">{Title}</h3>
                     <h4 className="text-sm font-semibold leading-7">
                         INR 5000
                     </h4>
@@ -40,12 +31,12 @@ const Popular = async (props) => {
         </div>
     ))
     return (
-        <div className="py-5 max-w-full  max-w-screen-full text-center lg:py-7">
-            <div className="text-3xl font-medium mb-2 text-left">
+        <div className="py-4 max-w-full  max-w-screen-full text-center ">
+            <div className="text-3xl font-normal mb-2 text-left">
                 {searchLabels.heading}
             </div>
 
-            <div className="scrollbar my-9 w-calc(100% / 3) max-w-screen-full lg flex flex-nowrap overflow-x-auto  ">
+            <div className="scrollbar my-9 max-w-screen-full lg flex flex-nowrap overflow-x-scroll  ">
                 {items}
             </div>
         </div>
