@@ -11,7 +11,7 @@ const PopularCard = ({
         <div>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[320px] h-[410px] rounded-2xl shrink-0 back "
+                classnames="w-[280px] h-[390px] rounded-2xl shrink-0 back "
                 productImage={productImage}
             />
             <div className="mt-2">
