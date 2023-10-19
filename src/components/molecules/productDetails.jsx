@@ -1,47 +1,88 @@
-'use client'
-import React, { useState } from 'react'
+import React from 'react'
+import ImageGallery from './ImageGallery'
+import Line from '../atoms/horizontal-line'
 import Button from '../atoms/button'
-import { productDetailsLabels } from '@/utils/labels/productdetailsLabels'
-export const Product = () => {
-    // const [color, setColor] = useState('#80CED7')
-    const { buttonone, buttontwo } = productDetailsLabels
+import { imageMagnifierData } from '@/mockData/imageMagnifier'
+import AboutProduct from './aboutProduct'
+import Rating from './rating'
+import { RightArrow } from '../svgs'
+import { Rs } from '../svgs'
+
+function productDetails() {
+    const rating = 5
+    let productName = "Full body suit in Black " 
+    const price = 3000
     return (
         <div>
-            <div>
-                <h1 className=" text-5xl font-semibold leading-20">
-                    Full Body Suit in Black
-                </h1>
-                <h2 className=" text-2xl font-semibold leading-10">
-                    Rs. 5000 / piece
-                </h2>
-                <h3 className="my-5 text-base leading-4 ">Colors available</h3>
-                <button
-                    className="w-12 h-12 px-6 py-4  mr-4  bg-black w-15 h-15 rounded-full "
-                    onClick={() => setColor('#80CED7')}
-                ></button>
-                <button
-                    className=" w-12 h-12 px-6 py-4  mr-4  bg-yellow w-15 h-15 rounded-full "
-                    onClick={() => setColor('#80CED7')}
-                ></button>
-                <button
-                    className=" w-12 h-12 px-6 py-4  mr-4  bg-green-800 w-15 h-15 rounded-full "
-                    onClick={() => setColor('#80CED7')}
-                ></button>
-                <button
-                    className=" w-12 h-12 px-6 py-4  mr-4  bg-gray-800 w-15 h-15 rounded-full leading-6 gap-2"
-                    onClick={() => setColor('#80CED7')}
-                ></button>
+            <div className="ml-40 mt-14 inline-flex h-[38.086px] p-[4.862px 21.879px] justify-center items-center gap-8.103px flex-shrink-0">
+                <div className="flex px-2
+                 text-gray-900 font-manrope font-medium text-xs lowercase">
+                    <p className="px-1">home</p>
+                    <RightArrow className='mt-1' />
+                    <p className="px-1">Uniform by profession</p>
+                    <RightArrow className='mt-1' />
+                    <p className="px-1">{productName}</p>
+                </div>
             </div>
-            <div className="my-10">
-                <button className=" px-6 py-4  mr-4 text-white text-2xl bg-brown rounded-2xl leading-6 gap-2">
-                    {buttonone}
-                    <span className=""></span>
-                </button>
-                <button className=" px-6 py-4 border-black text-black text-2xl font-normal border-2 rounded-2xl leading-6">
-                    {buttontwo}
-                    <span className=""></span>
-                </button>
+
+            <div className="grid grid-cols-3 gap-3">
+                <div className="grid  grid-cols-2 gap-3">
+                    <div className=" w-[600px]  h-[882px] border">
+                        <ImageGallery data={imageMagnifierData} />
+                        {/* Your content for the second sub-column */}
+                    </div>
+                </div>
+                <div className="ml-52 w-[600px] px-8">
+                    <div>
+                        <h1 className="text-gray-800 font-manrope text-4xl font-semibold">
+                           {productName}
+                        </h1>
+                        <div className=" py-2 flex ">
+                            <Rating productRating={{ rating }} />
+                        </div>
+                        <div className="mt-14 flex">
+                            <Rs className= 'w-9 h-9 py-1 ' />
+                            <p className="text-gray-900 ml-[-5px] font-Manrope text-2xl font-semibold">
+                                {price} / piece
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="mt-10 flex">
+                        <Button variant="secondary" rounded="semi">
+                            <p className="font-Manrope text-lg leading-none px-1">
+                                call on 8888888
+                            </p>
+                        </Button>
+                        <div className="mx-2">
+                            {' '}
+                            <Button variant="primary" rounded="semi">
+                                <p className="text-lg leading-none px-1 py-2">
+                                    enquire now
+                                </p>
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="mt-24">
+                        <Line />
+                    </div>
+                    <AboutProduct />
+                </div>
             </div>
         </div>
     )
+}
+
+export default productDetails
+
+{
+    /* <p className="mt-10 px-2 text-black font-Manrope text-base font-medium leading-none">
+                        Colors available
+                    </p>
+                    <div className="flex p-1">
+                        <div className="px-1">{black}</div>{' '}
+                        <div className="px-1">{yellow}</div>{' '}
+                        <div className="px-1">{white}</div> <div>{black}</div>
+                       
+                    </div> */
 }

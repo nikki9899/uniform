@@ -24,8 +24,8 @@ export default function Home() {
                 <Line />
                <PopularProducts/>
                <Line />
-                {/* <ShopByIndustries />
-                <Line /> */}
+                <ShopByIndustries />
+                <Line />
                 <CommercialUniformSection />
                 <Line />
                 <Popular />
