@@ -9,7 +9,7 @@ const PopularProducts = ( { popularProducts = {} }) => {
             <p className="text-left text-popularTextColor text-[34px] not-italic font-medium leading-[26.645px]">
                 {heading}
             </p>
-            <div className="grid grid-cols-4 grid-rows-2 gap-6 mt-12">
+            <div className="grid grid-cols-4 grid-rows-2 gap-4 mt-12">
                 {popularProductsData.map(
                     ({ id, productTitle, productType, productPrice, src }) => (
                         <div key={id}>
