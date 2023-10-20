@@ -10,7 +10,7 @@ const CircularButton = ({
 }) => {
   return (
     <button
-      className={`relative flex justify-center py-${paddingValue} px-${paddingValue} w-fit rounded-full bg-${backgroundColor} ${border ? 'border border-black hover:border-gray-500':''} hover:text-gray-500`}
+      className={`relative flex justify-center p-${paddingValue} w-fit rounded-full bg-${backgroundColor} ${border ? 'border border-black hover:border-gray-500':''} hover:text-gray-500`}
       {...restProps}
     >
       {children}

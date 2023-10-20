@@ -1,6 +1,6 @@
+import Image from 'next/image'
 import { memo } from 'react'
-import { ChatIcon } from '@svgs/index'
-import { Star } from '@svgs/index'
+
 
 const Rating = (props) => {
     let { rating = 5, review = 0 } = props?.productRating
@@ -9,12 +9,20 @@ const Rating = (props) => {
         <div className="flex content-center items-center">
             <div className="flex flex-row w-35">
                 {ratingStar.map(( item, index) => {
-                    return <Star className='w-6 h-6' key={item} fill={( index < rating ? '#E9DB15' : '#4b5563') } />
+                    index
+                    // return <Star key={item} fill={( index < rating ? '#E9DB15' : '#4b5563') } /> './star.svg'
                 })}
             </div>
             <div className="flex-initial text-sm font-semibold">{rating}</div>
             <div className="flex-initial  ms-5">
-                <ChatIcon className='w-6 h-6' />
+                {/* <ChatIcon /> */}
+                       <Image
+                          
+                            width={24}
+                            height={24}
+                            src="/svgs/chatIcon.svg"
+                            alt="RightArrow"
+                        />
             </div>
             <div className=" mx-2 font-medium text-sm">
                 {review} reviews

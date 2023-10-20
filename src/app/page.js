@@ -9,28 +9,40 @@ import PopularCategories from '@/components/molecules/PopularCategories';
 import PopularProducts from '@/components/organisms/popularProducts';
 import CommercialUniformSection from '@/components/uniform';
 import Line from '@/components/atoms/horizontal-line';
+import { getAPI } from '@/utils/api';
 
-export default function Home() {
+ const Home =  async () => {  
+   const { data: { attributes : {
+     hero,
+     popularCategories,
+     popularProducts,
+     shopByCategory,
+     popularSearches,
+     aboutUs,
+     popularSubCategories
+   } } } = await getAPI("home-page");
 
 
     return (
         <div>
             <main className="min-h-screen flex-col items-center justify-between">
-                <Hero />
+                <Hero hero={hero} />
                 <Line />
-               <PopularCategories />
+               <PopularCategories  popularCategories={popularCategories} />
                <Line />
-                <PopularSubCatogires />
+                <PopularSubCatogires popularSubCategories={popularSubCategories} />
                 <Line />
-               <PopularProducts/>
+               <PopularProducts popularProducts={popularProducts}/>
                <Line />
-                <ShopByIndustries />
+                <ShopByIndustries shopByCategory={shopByCategory} />
                 <Line />
                 <CommercialUniformSection />
                 <Line />
-                <Popular />
-                <AboutUs />
+                <Popular popularSearches={popularSearches} />
+                <AboutUs aboutUs={aboutUs} />
             </main>
         </div>
     )
 }
+
+export default  Home 

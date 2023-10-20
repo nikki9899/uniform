@@ -1,6 +1,6 @@
 import React from "react";
 import ImageContainer from "./ImageContainer";
-import { Carrot } from "@svgs/index";
+import Carrot from '@/components/atoms/Icons/Carrot'
 import CircularButton from "@/components/atoms/CircularButton";
 
 const ImageSelector = ({ data, onImageClick, selectedImage }) => {
