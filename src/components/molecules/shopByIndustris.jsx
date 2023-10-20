@@ -68,9 +68,6 @@ async function shopByIndustries(  { shopByCategory }) {
                 ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
   );
 }
 
