@@ -10,6 +10,7 @@ import PopularProducts from '@/components/organisms/popularProducts';
 import CommercialUniformSection from '@/components/uniform';
 import Line from '@/components/atoms/horizontal-line';
 import { getAPI } from '@/utils/api';
+import Tabs from '@/components/atoms/Tabs/tabs';
 
  const Home =  async () => {  
    const { data: { attributes : {
@@ -40,6 +41,7 @@ import { getAPI } from '@/utils/api';
                 <Line />
                 <Popular popularSearches={popularSearches} />
                 <AboutUs aboutUs={aboutUs} />
+                <Tabs/>
             </main>
         </div>
     )
