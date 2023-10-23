@@ -22,4 +22,8 @@ export const getSubCategories = async ( category) =>{
    let SubCategoryUrl  = `sub-categories?polulate=*&filters[category][name][$eq]=${category}`
       return  await getAPI(SubCategoryUrl) ;
 }
-  
+
+
+
+//  get Product 
+// https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*

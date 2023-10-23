@@ -67,8 +67,8 @@ async function shopByIndustries(  { shopByCategory }) {
                     </div>
                 ))}
             </div>
-        </div>
-    )
+          </div>
+  );
 }
 
-export default shopByIndustries
+export default shopByIndustries;
