@@ -1,3 +1,3 @@
 export const wish_list = {
-  wish: "./images/heart.png",
+  wish: "./Images/heart.png",
 };

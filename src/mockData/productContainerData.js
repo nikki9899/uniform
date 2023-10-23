@@ -4,35 +4,35 @@ const products = [
         title: 'Black Full body suit',
         subtitle: 'full body resistance',
         amount: 'INR 5000',
-        ImgSrc: "/Images/image_10.svg"
+        imageSrc: '/images/image_20.svg',
     },
     {
         id: 2,
         title: 'Black Full body suit',
         subtitle: 'full body resistance',
         amount: 'INR 5000',
-        ImgSrc: "/Images/image_20.svg"
+        imageSrc: '/images/image_21.svg',
     },
     {
         id: 3,
         title: 'Black Full body suit',
         subtitle: 'full body resistance',
         amount: 'INR 5000',
-        ImgSrc: "/Images/image_21.svg"
+        imageSrc: '/images/image_10.svg',
     },
     {
         id: 4,
         title: 'Black Full body suit',
         subtitle: 'full body resistance',
         amount: 'INR 5000',
-        ImgSrc: "/Images/image_22.svg"
+        imageSrc: '/images/image_22.svg',
     },
     {
         id: 5,
         title: 'Black Full body suit',
         subtitle: 'full body resistance',
         amount: 'INR 5000',
-        ImgSrc: "/Images/image_10.svg"
+        imageSrc: '/images/image_20.svg',
     },
 ]
 

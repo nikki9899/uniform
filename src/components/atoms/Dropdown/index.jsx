@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Button from '../button'
-import { Carrot } from '@/components/svgs'
 
 const Dropdown = ({ selected, setSelected, title, options, icon }) => {
     const [isActive, setIsActive] = useState(false)

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Carrot } from '@/components/svgs'
 import Button from './button'
+import Carrot from '@/components/atoms/Icons/Carrot'
 
 const PrevButton = ({ onClick }) => {
     return (

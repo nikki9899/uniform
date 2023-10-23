@@ -2,7 +2,7 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { usePrevNextButtons, CrouselButton } from "./CrouselButton";
-import { RightArrow } from "@svgs/index";
+import Image from "next/image";
 
 const Carousel = ({ options, children, navigationButtons }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -17,25 +17,40 @@ const Carousel = ({ options, children, navigationButtons }) => {
   return (
     <div className="relative">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex flex-row">{children}</div>
+        <div className="flex flex-row gap-x-2">{children}</div>
       </div>
 
       {navigationButtons && (
         <div className="Naivgation-buttons">
           <CrouselButton
-            className="absolute -translate-y-1/2 top-1/2 left-0 shadow-uniform rounded-full p-5 backdrop-blur-[3px]"
+            className="absolute -translate-y-1/2 top-1/2 -left-5 shadow-uniform rounded-full p-6 backdrop-blur-[3px]"
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
           >
-            <RightArrow className="rotate-180 text-2xl" />
+
+                      <Image
+                            className="rotate-180 text-3xl"
+                            width={24}
+                            height={24}
+                            src="/svgs/RightArrow.svg"
+                            alt="RightArrow"
+                        />
+            {/* <RightArrow className="rotate-180 text-3xl" /> */}
           </CrouselButton>
 
           <CrouselButton
-            className="absolute -translate-y-1/2 top-1/2 right-0 shadow-uniform rounded-full p-5 backdrop-blur-[3px]"
+            className="absolute -translate-y-1/2 top-1/2 -right-5 shadow-uniform rounded-full p-6 backdrop-blur-[3px]"
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
           >
-            <RightArrow className="text-2xl" />
+              <Image
+                            className="text-3xl"
+                            width={24}
+                            height={24}
+                            src="/svgs/RightArrow.svg"
+                            alt="RightArrow"
+                        />
+            {/* <RightArrow className="text-3xl" /> */}
           </CrouselButton>
         </div>
       )}

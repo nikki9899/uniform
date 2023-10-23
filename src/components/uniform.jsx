@@ -22,8 +22,8 @@ import Button from "./atoms/button";
         </p>
       </div>
 
-      <div className="  justify-center  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
-        <div className="   w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
+      <div className="justify-center  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
+        <div className=" w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
         <img src="/Images/Mask group.png" />
         </div>
         <p>

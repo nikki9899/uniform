@@ -1,12 +1,16 @@
 import Carousel from '@/components/atoms/Crousel'
 import Image from 'next/image'
-import { getAPI } from '@/utils/api'
 import Button from '@/components/atoms/button'
+import Link from 'next/link'
 
-const PopularCategories = async () => {
-    const data = await getAPI('home-page')
-    const products = data.data.attributes.popularCategories.categories.data
+const PopularCategories = async ({ popularCategories : {  categories : {  data = [] } }}) => {
+  
     return (
+        <div className="w-full pb-8">
+        <p className="text-left py-1 mb-6 text-popularTextColor text-3xl not-italic font-normal leading-[26.645px]">
+          Popular Categories 
+        </p>
+       
         <Carousel
             options={{
                 dragFree: true,
@@ -14,7 +18,7 @@ const PopularCategories = async () => {
             }}
             navigationButtons={true}
         >
-            {products.map(
+            {data.map(
                 (
                     {
                         id,
@@ -28,13 +32,16 @@ const PopularCategories = async () => {
                         },
                     },
                     index
-                ) => (
+                ) => {                 
+                    return (
                     <div
-                        className="grow-0 shrink-0 basis-[calc(100%/3)] px-2 relative rounded-lg"
+                        className={`${ ( ( index + 1 ) % 3 === 0 ) ? 'basis-[46%]' : 'basis-[27%]' } grow-0 shrink-0 relative rounded-lg`}
                         key={id}
+                    
                     >
+                        <Link href={ `/clp/${name}`}  > 
                         <Image
-                            className="h-[26rem] w-full rounded-lg"
+                            className="h-[26rem] w-full rounded-lg object-cover object-top"
                             width={500}
                             height={500}
                             src={url}
@@ -48,10 +55,13 @@ const PopularCategories = async () => {
                         >
                             {name}
                         </Button>
+                        </Link>
                     </div>
-                )
+                )}
             )}
         </Carousel>
+
+        </div>
     )
 }
 
