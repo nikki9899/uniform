@@ -1,7 +1,5 @@
 'use client'
-
 import React, { useState } from 'react'
-import './tabs.css'
 import Description from './description'
 import Specifications from './specifications'
 import VendorReviews from './vendorReviews'
@@ -9,23 +7,6 @@ import QuestionAndAnswers from './question&Answers'
 
 const Tabs = () => {
 
-    const tabs = [{
-        id: 1,
-        tab: "Description"
-    },
-    {
-        id: 2,
-        tab: "Description"
-    },
-    {
-        id: 3,
-        tab: "Description"
-    },
-    {
-        id: 4,
-        tab: "Description"
-    }]
-    
     const [toggle, setToggle] = useState(1)
     const [underline, setUnderline] = useState(1)
 
@@ -90,16 +71,16 @@ const Tabs = () => {
                         </span>
                     </li>
                 </ul>
-                <div className={toggle === 1 ? 'show-content' : 'content'}>
+                <div className={toggle === 1 ? 'block' : 'hidden'}>
                     <Description />
                 </div>
-                <div className={toggle === 2 ? 'show-content' : 'content'}>
+                <div className={toggle === 2 ? 'block' : 'hidden'}>
                     <Specifications />
                 </div>
-                <div className={toggle === 3 ? 'show-content' : 'content'}>
+                <div className={toggle === 3 ? 'block' : 'hidden'}>
                     <VendorReviews />
                 </div>
-                <div className={toggle === 4 ? 'show-content' : 'content'}>
+                <div className={toggle === 4 ? 'block' : 'hidden'}>
                     <QuestionAndAnswers />
                 </div>
             </div>
