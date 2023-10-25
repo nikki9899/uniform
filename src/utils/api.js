@@ -44,4 +44,3 @@ export const getProducts = async (SubCategoryName) => {
 
 //  get Product
 // https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
-
