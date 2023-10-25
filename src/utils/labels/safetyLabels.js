@@ -1,4 +1,4 @@
 export const safetyLabels = {
   heading: " Full Body Safety Suit",
-  description: "Find safety suits pricing, cost & reviews",
+  description: "find safety suits pricing, cost & reviews",
 };
