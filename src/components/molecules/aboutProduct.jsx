@@ -1,7 +1,7 @@
-;import React from "react";
+import React from "react";
 import { descriptionLabels } from "@/utils/labels/descriptionLabels";
 
-const description = () => {
+const description = ({ productData }) => {
   let {
     text,
     text1,
@@ -21,17 +21,17 @@ const description = () => {
     feature3
   } = descriptionLabels;
 
-  // Create an array to repeat feature1 three times (as you want it to appear 4 times including the first one)
+
   const feature1Array = Array(3).fill(feature1);
 
   return (
     <div className="mt-20">
       <div className="text-gray-900 font-manrope text-lg">
         <h1>
-          <span className="font-bold">{text}:</span> {data}
+          <span className="font-bold">{text}:</span>{productData.brand}
         </h1>
         <p>
-          <span className="font-bold">{text1}:</span> {data1}
+          <span className="font-bold">{text1}:</span> {productData.availability}
         </p>
         <p>
           <span className="font-bold">{text2}:</span> {data2}
@@ -43,8 +43,9 @@ const description = () => {
           <span className="font-bold">{text4}:</span> {data4}
         </p>
         <p>
-          <span className="font-bold">{text5}:</span> {data5}
+          <span className="font-bold">{text5}:</span>  {productData.PlaceOfMfg}
         </p>
+      
         <p>
         <span className="font-bold">{heading}:</span> <span className="ml-3">{feature1}</span>
         </p>

@@ -1,3 +1,4 @@
+
 const baseUrl = 'https://uniformonweb.onrender.com/api'
 
 export const getAPI = async (path) => {
@@ -41,6 +42,93 @@ export const getProducts = async (SubCategoryName) => {
         throw error
     }
 }
+
+
+// export const getProductDetailsById = async (productId) => {
+    
+//     productId=10
+//     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
+    
+//     try {
+//         const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+
+//         if (response.ok) {
+//             const data = await response.json();
+//             const imageMagnifierData = data.data[0].attributes.images.data.map((image, index) => ({
+//                 id: index + 10,
+//                 smallImageSrc: image.attributes.url,
+//                 largeImageSrc: image.attributes.url,
+//                 alt: "Product Image",
+//             }));
+    
+//             console.log("Fetched image data:", imageMagnifierData);
+          
+//         //    console.log(data.data[0].attributes.QnA)
+//             return data;
+//         } else {
+//             return response;
+//         }
+//     } catch (error) {
+//         throw error;
+//     }
+// }
+
+
+export const getProductDetailsById = async (productId) => {
+    productId = 10;
+    const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
+    
+    try {
+        const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+
+        if (response.ok) {
+            const data = await response.json();
+           
+            return data 
+        } else {
+            return response;
+        }
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getProductDetailsByImage = async (productId) => {
+    productId = 10;
+    const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
+    
+    try {
+        const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+
+        if (response.ok) {
+            const data = await response.json();
+            const imageMagnifierData = data.data[0].attributes.images.data.map((image, index) => ({
+                id: index + 10,
+                smallImageSrc: image.attributes.url,
+                largeImageSrc: image.attributes.url,
+                alt: 'Product Image',
+            }));
+            console.log("Fetched image data:", imageMagnifierData);
+            return  imageMagnifierData 
+        } else {
+            return response;
+        }
+    } catch (error) {
+        throw error;
+    }
+};
+
+
+// data.data[0].attributes.images.data.map(image => image.attributes.url)
+
+
+// {Title}=response.data[0].attributes.product.data.attributes;
+    
+    // const productData = productDescriptionSubcategoryMockData.data[0].attributes;
+    // const {price,rating}=data.data[0].attributes
+
+// https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=10
+
 
 //  get Product
 // https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*

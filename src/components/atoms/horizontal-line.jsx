@@ -1,6 +1,6 @@
 const Line = () => {
     return (
-        <hr className = "h-0.5 w-full bg-black mt-11 mb-9"></hr>
+        <hr className = "h-0.5 w-full bg-black mt-7 mb-7 "></hr>
     )
 }
 

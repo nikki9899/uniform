@@ -41,7 +41,7 @@ import Tabs from '@/components/atoms/Tabs/tabs';
                 <Line />
                 <Popular popularSearches={popularSearches} />
                 <AboutUs aboutUs={aboutUs} />
-                <Tabs/>
+               
             </main>
         </div>
     )

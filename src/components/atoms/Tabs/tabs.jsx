@@ -5,7 +5,8 @@ import Specifications from './specifications'
 import VendorReviews from './vendorReviews'
 import QuestionAndAnswers from './question&Answers'
 
-const Tabs = () => {
+const Tabs = ({data}) => {
+  
 
     const [toggle, setToggle] = useState(1)
     const [underline, setUnderline] = useState(1)
@@ -81,7 +82,7 @@ const Tabs = () => {
                     <VendorReviews />
                 </div>
                 <div className={toggle === 4 ? 'block' : 'hidden'}>
-                    <QuestionAndAnswers />
+                <QuestionAndAnswers data={data} />
                 </div>
             </div>
         </div>
