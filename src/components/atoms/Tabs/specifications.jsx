@@ -28,7 +28,7 @@ const Specifications = () => {
             <div className="specification-container pt-8">
                 <div className="description">
                     {specifications.map((item) => (
-                        <p>{item.specification}</p>
+                        <p key={item.id}>{item.specification}</p>
                     ))}
                 </div>
                 <div className="specFeatures flex list-none pt-3.5">

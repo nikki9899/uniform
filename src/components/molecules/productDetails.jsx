@@ -11,7 +11,7 @@ import { Rs } from '../svgs'
 import { productDescriptionSubcategoryMockData } from '@/mockData/productDescription'
 import { getProductDetailsById, getProductDetailsByImage } from '@/utils/api';
 
-function productDetails({ productId }) {
+function ProductDetails({ productId }) {
     const [productData, setProductData] = useState(null);
     const [imageMagnifierData, setImageMagnifierData] = useState([]);
 
@@ -97,7 +97,7 @@ function productDetails({ productId }) {
     )
 }
 
-export default productDetails
+export default ProductDetails
 
 {
     /* <p className="mt-10 px-2 text-black font-Manrope text-base font-medium leading-none">
