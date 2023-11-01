@@ -28,7 +28,7 @@ const VendorReviews = () => {
             <div className="vendorReviews-container pt-8">
                 <div className="description">
                     {vendorReviews.map((item) => (
-                        <p>{item.vendorReview}</p>
+                        <p key={item.id}>{item.vendorReview}</p>
                     ))}
                 </div>
                 <div className="vendorReviewsFeatures flex list-none pt-3.5">
