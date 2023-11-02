@@ -22,7 +22,7 @@ const nextConfig = {
         })
         return config
     },
-    staticPageGenerationTimeout:2000
+    staticPageGenerationTimeout:3000
 }
 
 
