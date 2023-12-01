@@ -5,7 +5,24 @@ export const getAPI = async (path) => {
     let url = `${baseUrl}/${path}?populate=deep`
 
     try {
-        const loadData = await fetch(url, { cache: 'force-cache' })
+        const loadData = await fetch(url, { cache: 'no-cache' })
+        console.log(loadData)
+        if (loadData.ok) {
+            let result = await loadData.json()
+            return result
+        } else {
+            return loadData
+        }
+    } catch (error) {
+        throw error
+    }
+  
+}
+
+export const getSubCategories = async (category) => {
+    let SubCategoryUrl = baseUrl+"/"+`sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
+    try {
+        const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
 
         if (loadData.ok) {
             let result = await loadData.json()
@@ -16,11 +33,7 @@ export const getAPI = async (path) => {
     } catch (error) {
         throw error
     }
-}
-
-export const getSubCategories = async (category) => {
-    let SubCategoryUrl = `sub-categories?polulate=*&filters[category][name][$eq]=${category}`
-    return await getAPI(SubCategoryUrl)
+   
 }
 
 export const getProducts = async (SubCategoryName) => {
@@ -75,7 +88,7 @@ export const getProducts = async (SubCategoryName) => {
 
 
 export const getProductDetailsById = async (productId) => {
-    productId = 10;
+    productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -83,6 +96,7 @@ export const getProductDetailsById = async (productId) => {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
            
             return data 
         } else {
@@ -93,8 +107,30 @@ export const getProductDetailsById = async (productId) => {
     }
 };
 
+// export const getProductDetailsBySlug = async (productSlug) => {
+//     try {
+//         const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][slug][$eq]=${productSlug}`;
+//         const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+
+//         if (response.ok) {
+//             const data = await response.json();
+//             console.log(data);
+//             return data;
+//         } else {
+//             throw new Error(`Failed to fetch product details. Status: ${response.status}, ${response.statusText}`);
+//         }
+//     } catch (error) {
+//         throw error;
+//     }
+// };
+
+// apiUtils.js
+
+
+
+
 export const getProductDetailsByImage = async (productId) => {
-    productId = 10;
+    productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -132,3 +168,18 @@ export const getProductDetailsByImage = async (productId) => {
 
 //  get Product
 // https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
+
+// utils/api.js
+
+
+export const fetchPopularSearches = async () => {
+  try {
+    const response = await getAPI('home-page');
+    return response.data.attributes.popularSearches;
+  } catch (error) {
+    // Handle errors here
+    console.error('Error fetching popular searches:', error);
+    throw error;
+  }
+};
+

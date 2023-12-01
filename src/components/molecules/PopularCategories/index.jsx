@@ -24,6 +24,7 @@ const PopularCategories = async ({ popularCategories : {  categories : {  data =
                         id,
                         attributes: {
                             name,
+                            slug,
                             image: {
                                 data: {
                                     attributes: { url },
@@ -39,7 +40,7 @@ const PopularCategories = async ({ popularCategories : {  categories : {  data =
                         key={id}
                     
                     >
-                        <Link href={ `/clp/${name}`}  > 
+                        <Link href={ `/clp/${slug}`}  > 
                         <Image
                             className="h-[26rem] w-full rounded-lg object-cover object-top"
                             width={500}

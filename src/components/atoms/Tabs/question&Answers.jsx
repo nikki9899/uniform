@@ -16,7 +16,7 @@ const QuestionAndAnswers = ({ data }) => {
     <div>
       <div className="qAndA-container pt-8">
         <div className="description">
-          {/* Step 4: Modify the component to render the Q&A data dynamically */}
+        
           {qAndA.map((qa, index) => (
             <div key={index}>
               <h3>Question:</h3>
