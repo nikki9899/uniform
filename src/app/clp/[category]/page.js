@@ -37,7 +37,6 @@ const Clp = ({ params: { category } }) => {
     clpp(category);
   }, [category]);
 
-
   return (
     <div>
       <main className="flex min-h-screen flex-col items-center justify-between ">
