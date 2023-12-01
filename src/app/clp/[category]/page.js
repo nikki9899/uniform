@@ -6,12 +6,15 @@ import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
 import { getAPI, getSubCategories } from '@/utils/api'
 import { industrialCategoryMockData } from '@/mockData/category'
+// export const metadata = {
+//     title: 'Categories',
+// }
 
 
 const Clp = ({ params: { category } }) => {
   var [data, setData] = useState([]);
-  var [pageCount, setPageCount] = useState(0);
-  var [total, setTotal] = useState(0);
+  var [pageCount, setPageCount] = useState(0); 
+  var [total, setTotal] = useState(0); 
 
   useEffect(() => {
     async function clpp(category) {
@@ -27,8 +30,8 @@ const Clp = ({ params: { category } }) => {
           setData(industrialCategoryMockData);
         } else {
           setData(newData);
-          setPageCount(pageCount);
-          setTotal(total);
+          setPageCount(pageCount); 
+          setTotal(total); 
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -50,8 +53,6 @@ const Clp = ({ params: { category } }) => {
     </div>
   );
 };
-Clp.metadata = {
-  title: 'Categories',
-};
 
 export default Clp;
+// page.js
