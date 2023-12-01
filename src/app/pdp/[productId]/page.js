@@ -1,27 +1,38 @@
+// components/Pdp.js
 "use client"
-import { getProductDetailsById } from '@/utils/api'
-import Line from '@/components/atoms/horizontal-line'
-import ProductDetails from '@/components/molecules/productDetails'
-import Tabs from '@/components/atoms/Tabs/tabs'
-import React, { useState, useEffect } from 'react'
-import { getAPI } from '@/utils/api'
-import Popular from '@/components/molecules/popular'  
+import React from 'react';
+import { fetchPopularSearches } from '@/utils/api';
+import Line from '@/components/atoms/horizontal-line';
+import ProductDetails from '@/components/molecules/productDetails';
+import Tabs from '@/components/atoms/Tabs/tabs';
+import Popular from '@/components/molecules/popular';
 
-const Pdp = async({ params: { productId } }) => {
-    const { data: { attributes : { popularSearches } } } = await getAPI("home-page");
-    
-    // console.log(productId, "pdp");
-    const heading = 'related products';
+const Pdp = ({ params: { productId } }) => {
+  const heading = 'related products';
 
-    return (
-        <div>
-            <ProductDetails  />
-            <Line />
-            <Tabs />
-            <Line />
-            <Popular popularSearches={popularSearches} />
-        </div>
-    )
-}
+  // Use React hooks to manage state
+  const [popularSearches, setPopularSearches] = React.useState([]);
 
-export default Pdp
+  React.useEffect(() => {
+    // Fetch data when the component mounts
+    fetchPopularSearches()
+      .then((data) => setPopularSearches(data))
+      .catch((error) => {
+        // Handle errors here
+        console.error('Error in Pdp component:', error);
+      });
+  }, []); // Empty dependency array means this effect runs once on mount
+
+  return (
+    <div>
+      <ProductDetails />
+      <Line />
+      <Tabs />
+      <Line />
+      <Popular popularSearches={popularSearches} />
+    </div>
+  );
+};
+
+export default Pdp;
+

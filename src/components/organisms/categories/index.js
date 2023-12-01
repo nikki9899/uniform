@@ -9,7 +9,7 @@ import { getAPI } from '@/utils/api'
 const Categories =  ({data}) => {
     const { linkText } = categoriesLabels
 
-
+     
     const categories = data.map((entry) => {
         return {
             id: entry.id,

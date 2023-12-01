@@ -12,16 +12,20 @@ import Line from '@/components/atoms/horizontal-line';
 import { getAPI } from '@/utils/api';
 import Tabs from '@/components/atoms/Tabs/tabs';
 
- const Home =  async () => {  
-   const { data: { attributes : {
-     hero,
-     popularCategories,
-     popularProducts,
-     shopByCategory,
-     popularSearches,
-     aboutUs,
-     popularSubCategories
-   } } } = await getAPI("home-page");
+const Home = async () => {
+    const {
+      data: {
+        attributes: {
+          hero,
+          popularCategories,
+          popularProducts, 
+          shopByCategory,
+          popularSearches,
+          aboutUs,
+          popularSubCategories,
+        },
+      },
+    } = await getAPI('home-page');
 
 
     return (
@@ -33,7 +37,7 @@ import Tabs from '@/components/atoms/Tabs/tabs';
                <Line />
                 <PopularSubCatogires popularSubCategories={popularSubCategories} />
                 <Line />
-               <PopularProducts popularProducts={popularProducts}/>
+                <PopularProducts popularProducts={popularProducts} />
                <Line />
                 <ShopByIndustries shopByCategory={shopByCategory} />
                 <Line />
