@@ -46,6 +46,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
+            console.log("hii")
             console.log(result)
             return result
         } else {
@@ -57,38 +58,10 @@ export const getProducts = async (SubCategoryName) => {
 }
 
 
-// export const getProductDetailsById = async (productId) => {
-    
-//     productId=10
-//     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
-    
-//     try {
-//         const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
-
-//         if (response.ok) {
-//             const data = await response.json();
-//             const imageMagnifierData = data.data[0].attributes.images.data.map((image, index) => ({
-//                 id: index + 10,
-//                 smallImageSrc: image.attributes.url,
-//                 largeImageSrc: image.attributes.url,
-//                 alt: "Product Image",
-//             }));
-    
-//             console.log("Fetched image data:", imageMagnifierData);
-          
-//         //    console.log(data.data[0].attributes.QnA)
-//             return data;
-//         } else {
-//             return response;
-//         }
-//     } catch (error) {
-//         throw error;
-//     }
-// }
 
 
 export const getProductDetailsById = async (productId) => {
-    productId = 15;
+    // productId = 17;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -107,30 +80,13 @@ export const getProductDetailsById = async (productId) => {
     }
 };
 
-// export const getProductDetailsBySlug = async (productSlug) => {
-//     try {
-//         const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][slug][$eq]=${productSlug}`;
-//         const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
 
-//         if (response.ok) {
-//             const data = await response.json();
-//             console.log(data);
-//             return data;
-//         } else {
-//             throw new Error(`Failed to fetch product details. Status: ${response.status}, ${response.statusText}`);
-//         }
-//     } catch (error) {
-//         throw error;
-//     }
-// };
-
-// apiUtils.js
 
 
 
 
 export const getProductDetailsByImage = async (productId) => {
-    productId = 15;
+    // productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
