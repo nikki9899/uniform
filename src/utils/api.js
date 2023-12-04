@@ -23,7 +23,7 @@ export const getSubCategories = async (category) => {
     let SubCategoryUrl = baseUrl+"/"+`sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
     try {
         const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
-
+          console.log(loadData)
         if (loadData.ok) {
             let result = await loadData.json()
             return result
@@ -46,8 +46,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
-            console.log("hii")
-            console.log(result)
+           
             return result
         } else {
             return loadData
@@ -133,7 +132,7 @@ export const fetchPopularSearches = async () => {
     const response = await getAPI('home-page');
     return response.data.attributes.popularSearches;
   } catch (error) {
-    // Handle errors here
+ 
     console.error('Error fetching popular searches:', error);
     throw error;
   }

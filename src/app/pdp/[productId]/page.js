@@ -21,7 +21,7 @@ const Pdp = ({ params: { productId } }) => {
 
     return (
         <div>
-            <ProductDetails productId={productId}/>
+            <ProductDetails productId={productId} />
             <Line />
             <Tabs />
             <Line />

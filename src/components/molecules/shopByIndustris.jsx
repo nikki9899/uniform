@@ -2,7 +2,7 @@ import Button from '../atoms/button'
 import React from 'react'
 import headerData from '@/mockData/asideLinks'
 import ImageCard from '../atoms/ImageCard'
-
+import Link from 'next/link'
 
 async function shopByIndustries(  { shopByCategory }) {
     const products = shopByCategory.sub_categories.data.map((entry) => {
@@ -10,6 +10,7 @@ async function shopByIndustries(  { shopByCategory }) {
             id: entry.id,
             title: entry.attributes?.name || '',
             ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
+            
         }
     })
     const header = headerData[0]
@@ -38,34 +39,32 @@ async function shopByIndustries(  { shopByCategory }) {
                     </nav>
                 </div>
                 {products.map((product) => (
-                    <div  key={product.id} >
-                        <div
-                           
-                            className="col-span-1 "
-                        >
-                            <ImageCard
-                                iconDisplay="hidden"
-                                classnames="rounded  h-[34rem] rounded h-[650px] bg-cover bg-top bg-no-repeat "
-                                productImage={product.ImgSrc}
-                            />
+    <Link key={product.id} href={`/plp/${product.title}`}>
+        <div className="col-span-1">
+            <ImageCard
+                iconDisplay="hidden"
+                classnames="rounded h-[34rem] rounded h-[650px] bg-cover bg-top bg-no-repeat"
+                productImage={product.ImgSrc}
+            />
 
-                            <div className="flex justify-between mt-3 ">
-                                <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
-                                    {product.title}
-                                </h3>
-                                <p className=" font-manrope text-sm font-semibold  text-gray-900 ">
-                                    INR 5000
-                                </p>
-                            </div>
-                            <p className="text-gray-400 font-manrope text-xs my-1 font-medium leading-6">
-                            full body resistance
-                            </p>
-                            <Button variant="primary" rounded="full">
-                                <p>enquire now</p>
-                            </Button>
-                        </div>
-                    </div>
-                ))}
+            <div className="flex justify-between mt-3">
+                <h3 className="text-gray-900 font-manrope text-sm font-bold leading-6">
+                    {product.title}
+                </h3>
+                {/* <p className="font-manrope text-sm font-semibold text-gray-900">
+                    INR 5000
+                </p> */}
+            </div>
+            <p className="text-gray-400 font-manrope text-xs my-1 font-medium leading-6">
+                full body resistance
+            </p>
+            <Button variant="primary" rounded="full">
+                <p>enquire now</p>
+            </Button>
+        </div>
+    </Link>
+))}
+            
             </div>
           </div>
   );
