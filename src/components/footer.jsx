@@ -36,11 +36,11 @@ const Footer = (props) => {
     Shop: {
       title: "Shop",
       listItems: [
-        { id: 1, item: "Commercial Uniform" , link :"https://www.google.com/"},
-        { id: 2, item: "Industrial Clothing" , link :"https://www.google.com/"},
-        { id: 3, item: "Hospital Uniforms", link :"https://www.google.com/" },
-        { id: 4, item: "Corporate Uniform" , link :"https://www.google.com/" },
-        { id: 5, item: "Hotel Uniforms"  , link :"https://www.google.com/" },
+        { id: 1, item: "Commercial Uniform" , link :"/Commercial Uniform"},
+        { id: 2, item: "Industrial Clothing" , link :"http://localhost:3000/clp/industrial-clothing"},
+        { id: 3, item: "Hospital Uniforms", link :"/Hospital Uniforms" },
+        { id: 4, item: "Corporate Uniform" , link :"http://localhost:3000/clp/corporate-uniforms" },
+        { id: 5, item: "Hotel Uniforms"  , link :"http://localhost:3000/clp/hotel-uniforms" },
       ],
     },
   };

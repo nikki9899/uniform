@@ -131,6 +131,7 @@ export const fetchPopularSearches = async () => {
   try {
     const response = await getAPI('home-page');
     return response.data.attributes.popularSearches;
+    console.log(response.data.attributes.popularSearches)
   } catch (error) {
  
     console.error('Error fetching popular searches:', error);
