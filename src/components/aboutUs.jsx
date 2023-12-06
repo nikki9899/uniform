@@ -1,6 +1,9 @@
+
+import Link from 'next/link'
+import Button from './atoms/button'
+import { getAPI } from '@/utils/api'
+
 import React from 'react';
-import Link from 'next/link';
-import Button from './atoms/button';
 
 const AboutUs = ({ aboutUs }) => {
   const { title, description, button } = aboutUs;
