@@ -110,22 +110,6 @@ export const getProductDetailsByImage = async (productId) => {
 };
 
 
-// data.data[0].attributes.images.data.map(image => image.attributes.url)
-
-
-// {Title}=response.data[0].attributes.product.data.attributes;
-    
-    // const productData = productDescriptionSubcategoryMockData.data[0].attributes;
-    // const {price,rating}=data.data[0].attributes
-
-// https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=10
-
-
-//  get Product
-// https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
-
-// utils/api.js
-
 
 export const fetchPopularSearches = async () => {
   try {
@@ -138,4 +122,5 @@ export const fetchPopularSearches = async () => {
     throw error;
   }
 };
+
 

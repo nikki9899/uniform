@@ -1,4 +1,9 @@
+
+import Link from 'next/link'
 import Button from './atoms/button'
+import { getAPI } from '@/utils/api'
+
+import React from 'react';
 
 const AboutUs = ({ aboutUs }) => {
     return (
