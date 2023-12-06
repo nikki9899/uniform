@@ -34,13 +34,13 @@ const description = ({ productData }) => {
           <span className="font-bold">{text1}:</span> {productData.availability}
         </p>
         <p>
-          <span className="font-bold">{text2}:</span> {data2}
+          <span className="font-bold">{text2}:</span> {productData.MPN}
         </p>
         <p>
-          <span className="font-bold">{text3}:</span> {data3}
+          <span className="font-bold">{text3}:</span> {productData.GrossWeight}
         </p>
         <p>
-          <span className="font-bold">{text4}:</span> {data4}
+          <span className="font-bold">{text4}:</span> {productData.DeliveryTime}
         </p>
         <p>
           <span className="font-bold">{text5}:</span>  {productData.PlaceOfMfg}
