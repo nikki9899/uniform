@@ -25,11 +25,7 @@ const Navbar = () => {
                         <Search />
                     </a>
                 </div>
-                <div className='cursor-pointer'>
-                    {/* <a href = {WishLink}>
-                        <Wish />
-                    </a> */}
-                </div>
+                
             </div>
         </div>
     )
