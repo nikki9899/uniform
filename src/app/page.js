@@ -1,4 +1,5 @@
 
+
 import Popular from '@/components/molecules/popular'
 import ImageCard from '../components/atoms/ImageCard'
 import ShopByIndustries from '@/components/molecules/shopByIndustris'
@@ -11,6 +12,7 @@ import CommercialUniformSection from '@/components/uniform';
 import Line from '@/components/atoms/horizontal-line';
 import { getAPI } from '@/utils/api';
 import Tabs from '@/components/atoms/Tabs/tabs';
+import Page from './aboutUs/[aboutUs]/page';
 
  const Home =  async () => {  
    const { data: { attributes : {
@@ -41,6 +43,7 @@ import Tabs from '@/components/atoms/Tabs/tabs';
                 <Line />
                 <Popular popularSearches={popularSearches} />
                 <AboutUs aboutUs={aboutUs} />
+                {/* <Page/> */}
                
             </main>
         </div>

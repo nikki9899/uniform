@@ -132,3 +132,16 @@ export const getProductDetailsByImage = async (productId) => {
 
 //  get Product
 // https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
+
+
+export const fetchAboutUsSection = async () => {
+    try {
+      const response = await getAPI('home-page');
+      return response.data.attributes.aboutUs;
+      console.log(response.data.attributes.aboutUs)
+    } catch (error) {
+   
+      console.error('Error fetching popular searches:', error);
+      throw error;
+    }
+  };

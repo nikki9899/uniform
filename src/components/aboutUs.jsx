@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import Button from './atoms/button'
+import { getAPI } from '@/utils/api'
 
 const AboutUs = ({ aboutUs }) => {
     return (
@@ -10,8 +12,16 @@ const AboutUs = ({ aboutUs }) => {
             </h4>
             <div className="py-3">
                 <Button rounded="semi" variant="primary">
+                    <Link href="aboutUs">
                     <h5 className="text-2xl font-light">learn more</h5>
+                    </Link>
                 </Button>
+
+
+                <div>
+                    {/* <LearnMore/> */}
+                </div>
+            
             </div>
         </div>
     )
