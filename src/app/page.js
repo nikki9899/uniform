@@ -40,6 +40,8 @@ const Home = async () => {
                 <Line />
                 <PopularProducts popularProducts={popularProducts} />
                 <Line />
+                <PopularProducts popularProducts={popularProducts} />
+                <Line />
                 <ShopByIndustries shopByCategory={shopByCategory} />
                 <Line />
                 <CommercialUniformSection />

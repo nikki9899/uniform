@@ -17,6 +17,7 @@ export const getAPI = async (path) => {
         throw error
     }
   
+  
 }
 
 export const getSubCategories = async (category) => {
@@ -33,6 +34,7 @@ export const getSubCategories = async (category) => {
     } catch (error) {
         throw error
     }
+
    
 }
 
@@ -46,6 +48,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
+           
            
             return result
         } else {
@@ -61,6 +64,7 @@ export const getProducts = async (SubCategoryName) => {
 
 export const getProductDetailsById = async (productId) => {
     // productId = 17;
+    // productId = 17;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -68,6 +72,7 @@ export const getProductDetailsById = async (productId) => {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
             console.log(data)
            
             return data 
@@ -84,7 +89,13 @@ export const getProductDetailsById = async (productId) => {
 
 
 
+
+
+
+
+
 export const getProductDetailsByImage = async (productId) => {
+    // productId = 15;
     // productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
@@ -110,7 +121,18 @@ export const getProductDetailsByImage = async (productId) => {
 };
 
 
-// data.data[0].attributes.images.data.map(image => image.attributes.url)
+
+export const fetchPopularSearches = async () => {
+  try {
+    const response = await getAPI('home-page');
+    return response.data.attributes.popularSearches;
+    console.log(response.data.attributes.popularSearches)
+  } catch (error) {
+ 
+    console.error('Error fetching popular searches:', error);
+    throw error;
+  }
+};
 
 
 // {Title}=response.data[0].attributes.product.data.attributes;
@@ -127,28 +149,3 @@ export const getProductDetailsByImage = async (productId) => {
 // utils/api.js
 
 
-export const fetchPopularSearches = async () => {
-  try {
-    const response = await getAPI('home-page');
-    return response.data.attributes.popularSearches;
-    console.log(response.data.attributes.popularSearches)
-  } catch (error) {
- 
-    console.error('Error fetching popular searches:', error);
-    throw error;
-  }
-};
-
-
-
-export const fetchAboutUsSection = async () => {
-    try {
-      const response = await getAPI('home-page');
-      return response.data.attributes.aboutUs;
-      console.log(response.data.attributes.aboutUs)
-    } catch (error) {
-   
-      console.error('Error fetching popular searches:', error);
-      throw error;
-    }
-  };
