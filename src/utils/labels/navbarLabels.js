@@ -14,7 +14,7 @@ export const NavbarLabels = {
         {
             id : "003",
             TabTitle : "About",
-            src : "https://www.google.com/"
+            src : "/aboutUs/page.js"
         },
         {
             id : "004",

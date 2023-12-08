@@ -5,8 +5,8 @@ export const getAPI = async (path) => {
     let url = `${baseUrl}/${path}?populate=deep`
 
     try {
-        const loadData = await fetch(url, { cache: 'force-cache' })
-
+        const loadData = await fetch(url, { cache: 'no-cache' })
+        console.log(loadData)
         if (loadData.ok) {
             let result = await loadData.json()
             return result
@@ -16,11 +16,24 @@ export const getAPI = async (path) => {
     } catch (error) {
         throw error
     }
+  
 }
 
 export const getSubCategories = async (category) => {
-    let SubCategoryUrl = `sub-categories?polulate=*&filters[category][name][$eq]=${category}`
-    return await getAPI(SubCategoryUrl)
+    let SubCategoryUrl = baseUrl+"/"+`sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
+    try {
+        const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
+          console.log(loadData)
+        if (loadData.ok) {
+            let result = await loadData.json()
+            return result
+        } else {
+            return loadData
+        }
+    } catch (error) {
+        throw error
+    }
+   
 }
 
 export const getProducts = async (SubCategoryName) => {
@@ -33,7 +46,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
-            console.log(result)
+           
             return result
         } else {
             return loadData
@@ -44,38 +57,10 @@ export const getProducts = async (SubCategoryName) => {
 }
 
 
-// export const getProductDetailsById = async (productId) => {
-    
-//     productId=10
-//     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
-    
-//     try {
-//         const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
-
-//         if (response.ok) {
-//             const data = await response.json();
-//             const imageMagnifierData = data.data[0].attributes.images.data.map((image, index) => ({
-//                 id: index + 10,
-//                 smallImageSrc: image.attributes.url,
-//                 largeImageSrc: image.attributes.url,
-//                 alt: "Product Image",
-//             }));
-    
-//             console.log("Fetched image data:", imageMagnifierData);
-          
-//         //    console.log(data.data[0].attributes.QnA)
-//             return data;
-//         } else {
-//             return response;
-//         }
-//     } catch (error) {
-//         throw error;
-//     }
-// }
 
 
 export const getProductDetailsById = async (productId) => {
-    productId = 10;
+    // productId = 17;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -83,6 +68,7 @@ export const getProductDetailsById = async (productId) => {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
            
             return data 
         } else {
@@ -93,8 +79,13 @@ export const getProductDetailsById = async (productId) => {
     }
 };
 
+
+
+
+
+
 export const getProductDetailsByImage = async (productId) => {
-    productId = 10;
+    // productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
@@ -132,6 +123,22 @@ export const getProductDetailsByImage = async (productId) => {
 
 //  get Product
 // https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
+
+// utils/api.js
+
+
+export const fetchPopularSearches = async () => {
+  try {
+    const response = await getAPI('home-page');
+    return response.data.attributes.popularSearches;
+    console.log(response.data.attributes.popularSearches)
+  } catch (error) {
+ 
+    console.error('Error fetching popular searches:', error);
+    throw error;
+  }
+};
+
 
 
 export const fetchAboutUsSection = async () => {
