@@ -1,8 +1,8 @@
 import React from 'react'
-import { aboutUsLables } from '@/utils/labels/aboutUsLables'
+import { aboutUsLables, members } from '@/utils/labels/aboutUsLables'
 
 const TeamMembers = ({ aboutUs }) => {
-    let { membersHead, member1, member2, member3, member4, member5, member6 } =
+    let { membersHead} =
         aboutUsLables
 
     return (
@@ -10,12 +10,9 @@ const TeamMembers = ({ aboutUs }) => {
             <div className="font-medium text-center px-16 py-10">
                 <div className="text-2xl pb-10">{membersHead}</div>
                 <div className="text-base flex justify-between">
-                    <div>{member1}</div>
-                    <div>{member2}</div>
-                    <div>{member3}</div>
-                    <div>{member4}</div>
-                    <div>{member5}</div>
-                    <div>{member6}</div>
+                    {members.map((item) => (
+                        <div key={item.id}>{item.member}</div>
+                    ))}
                 </div>
             </div>
         </div>

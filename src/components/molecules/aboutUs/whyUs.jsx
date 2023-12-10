@@ -1,5 +1,6 @@
 import React from 'react'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
+import { whyUs } from '@/utils/labels/aboutUsLables'
 
 const WhyUs = ({ aboutUs }) => {
     let {

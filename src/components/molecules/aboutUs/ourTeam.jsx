@@ -6,7 +6,7 @@ const OurTeam = ({ aboutUs }) => {
     let { teamHead, teamText1, teamText2 } = aboutUsLables
     return (
         <div>
-            <div className="">
+            <div className="relative">
                 <div>
                     <Image
                         src="/images/aboutUs3.png"
@@ -15,7 +15,7 @@ const OurTeam = ({ aboutUs }) => {
                         width={1448}
                     />
                 </div>
-                <div className="text-center">
+                <div className="text-center text-white w-2/3 m-auto relative bottom-96">
                     <h1 className="font-medium text-6xl pb-8">{teamHead}</h1>
                     <p className="font-normal text-base tracking-tighter">
                         {teamText1}

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Page from '@/app/aboutUs/[aboutUs]/page'
 import Search from '@/components/atoms/Icons/Search'
@@ -9,17 +9,17 @@ import { useState } from 'react'
 import Dropdown from './Dropdown'
 
 const Navbar = () => {
-    let { Logo, Tabs, SearchLink, WishLink } = NavbarLabels
+    let { Logo, Tabs, SearchLink, uniformbyProfessionSrc, uniformbyProfessionTitle, WishLink } = NavbarLabels
 
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false)
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+    const handleMouseEnter = () => {
+        setIsHovered(true)
+    }
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+    const handleMouseLeave = () => {
+        setIsHovered(false)
+    }
 
     return (
         <div className=" px-14 h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background flex w-full py-7">
@@ -29,13 +29,21 @@ const Navbar = () => {
                 </h1>
             </Link>
             <div className="inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800">
+                <div className="relative">
+                    <Link
+                        href={uniformbyProfessionSrc}
+                        className="cursor-pointer"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        {uniformbyProfessionTitle}
+                    </Link>
+                </div>
                 {Tabs.map(({ id, TabTitle, src }) => (
                     <div key={id} className="cursor-pointer">
                         <Link
                             href={src}
                             className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"
-                            // onMouseEnter={handleMouseEnter}
-                            // onMouseLeave={handleMouseLeave}
                         >
                             {' '}
                             {TabTitle}
@@ -49,13 +57,13 @@ const Navbar = () => {
                         <Search />
                     </a>
                 </div>
-                <div className='cursor-pointer'>
+                <div className="cursor-pointer">
                     {/* <a href = {WishLink}>
                         <Wish />
                     </a> */}
                 </div>
             </div>
-            {isHovered && <Dropdown/>}
+            {isHovered && <Dropdown />}
         </div>
     )
 }

@@ -10,7 +10,7 @@ import SchoolUniforms from './schoolUniforms'
 
 const Dropdown = () => {
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between absolute top-28 bg-white z-10 w-full p-2.5'>
       <div>
         <div><IndustrialClothing/></div>
         <div><SecurityGuardUniform/></div>
