@@ -1,9 +1,8 @@
 import React from 'react'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
-import { paymentMode } from '@/utils/labels/aboutUsLables'
 
 const PaymentMode = ({ aboutUs }) => {
-    let { paymentHead, shipmentMode } = aboutUsLables
+    let { paymentHead, shipmentMode, PaymentMode } = aboutUsLables
 
     return (
         <div>
@@ -12,7 +11,7 @@ const PaymentMode = ({ aboutUs }) => {
                     {paymentHead}
                 </div>
                 <div className=''>
-                    {paymentMode.map((item) => (
+                    {PaymentMode.map((item) => (
                         <p key={item.id}>{item.paymentMode1}</p>
                     ))}
                 </div>
