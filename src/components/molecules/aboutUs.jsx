@@ -35,7 +35,7 @@ const AboutUs = ({ aboutUs }) => {
             </Button>
 
             <div className="py-6">
-                <Link href="/aboutUs">
+                <Link href="/aboutUs/page.js">
                     <Button rounded="semi" variant="primary">
                         <h5 className="text-2xl font-light">{button.label}</h5>
                     </Button>
@@ -45,3 +45,11 @@ const AboutUs = ({ aboutUs }) => {
     )
 }
 export default AboutUs
+
+
+// element.style {
+//     color: blue;
+//     top: 7161px;
+//     left: 1110px;
+//     position: absolute;
+// }

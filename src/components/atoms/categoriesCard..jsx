@@ -14,7 +14,7 @@ const CategoriesCard = ({ item: { Id, ImgSrc, Name } }) => {
       <Button
         rounded="full"
         variant="primary"
-        addStyle='text-white border-1 border-white  bg-gray-200 absolute top-7 left-7'
+        addStyle='text-white border-1 border-white bg-slate-900 absolute top-7 left-7'
         
       >
         <p className='text-base'>{Name}</p>

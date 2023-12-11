@@ -51,7 +51,7 @@ const PopularCategories = async ({ popularCategories : {  categories : {  data =
                         <Button
                             rounded={'full'}
                             addStyle={
-                                'absolute top-4 left-6 border border-white px-6 py-2 text-white'
+                                'absolute top-4 left-6 border border-white px-6 py-2 text-white bg-slate-900'
                             }
                         >
                             {name}

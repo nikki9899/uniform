@@ -16,7 +16,7 @@ const Banner = ({ aboutUs }) => {
                         width={1442}
                     />
                 </div>
-                <div className="text-center">
+                <div className="text-center text-white absolute top-56 left-96">
                     <p className="font-medium text-8xl">{topImgHead}</p>
                     <p className="font-normal text-4xl">{topImgText}</p>
                 </div>

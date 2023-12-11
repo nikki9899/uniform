@@ -4,11 +4,7 @@ import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 const StatutoryProfile = ({ aboutUs }) => {
     let {
         profileHead,
-        profileTeaxt1,
-        profileTeaxt2,
-        profileTeaxt3,
-        profileTeaxt4,
-        profileTeaxt5,
+        Profiles
     } = aboutUsLables
 
     return (
@@ -18,12 +14,10 @@ const StatutoryProfile = ({ aboutUs }) => {
                     {profileHead}
                 </div>
                 <div className="companyUps-description text-base font-normal leading-5">
-                    <p>{profileTeaxt1}</p>
-                    <p>{profileTeaxt2}</p>
-                    <p>{profileTeaxt3}</p>
-                    <p>{profileTeaxt4}</p>
-                    <p>{profileTeaxt5}</p>
-                </div>
+                    {Profiles.map((item) => (
+                        <p key={item.id}>{item.profile}</p>
+                    ))}
+                    </div>
             </div>
         </div>
     )

@@ -17,6 +17,7 @@ export const getAPI = async (path) => {
         throw error
     }
   
+  
 }
 
 export const getSubCategories = async (category) => {
@@ -33,6 +34,7 @@ export const getSubCategories = async (category) => {
     } catch (error) {
         throw error
     }
+
    
 }
 
@@ -46,6 +48,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
+           
            
             return result
         } else {
@@ -86,7 +89,13 @@ export const getProductDetailsById = async (productId) => {
 
 
 
+
+
+
+
+
 export const getProductDetailsByImage = async (productId) => {
+    // productId = 15;
     // productId = 15;
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
@@ -124,5 +133,19 @@ export const fetchPopularSearches = async () => {
     throw error;
   }
 };
+
+
+// {Title}=response.data[0].attributes.product.data.attributes;
+    
+    // const productData = productDescriptionSubcategoryMockData.data[0].attributes;
+    // const {price,rating}=data.data[0].attributes
+
+// https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=10
+
+
+//  get Product
+// https://uniformonweb.onrender.com/api/products?pagination[page]=1&pagination[pageSize]=10&filters[sub_category][name][$eq]=reflective%20clothing&populate=*
+
+// utils/api.js
 
 
