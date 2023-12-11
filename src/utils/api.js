@@ -24,7 +24,7 @@ export const getSubCategories = async (category) => {
     let SubCategoryUrl = baseUrl+"/"+`sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
     try {
         const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
-          console.log(loadData)
+          
         if (loadData.ok) {
             let result = await loadData.json()
             return result
@@ -63,17 +63,17 @@ export const getProducts = async (SubCategoryName) => {
 
 
 export const getProductDetailsById = async (productId) => {
-    // productId = 17;
-    // productId = 17;
-    const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
+    
+    const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate[QnA]=*&filters[product][id][$eq]=${productId}`;
     
     try {
-        const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+        const response = await fetch(productDetailsUrl, { cache: 'no-cache' });
+       
 
         if (response.ok) {
             const data = await response.json();
-            console.log(data)
-            console.log(data)
+           console.log(data)
+           
            
             return data 
         } else {
@@ -100,7 +100,7 @@ export const getProductDetailsByImage = async (productId) => {
     const productDetailsUrl = `https://uniformonweb.onrender.com/api/product-details?populate=*&filters[product][id][$eq]=${productId}`;
     
     try {
-        const response = await fetch(productDetailsUrl, { cache: 'force-cache' });
+        const response = await fetch(productDetailsUrl, { cache: 'no-cache' });
 
         if (response.ok) {
             const data = await response.json();

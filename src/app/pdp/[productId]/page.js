@@ -23,7 +23,7 @@ const Pdp = ({ params: { productId } }) => {
         <div>
             <ProductDetails productId={productId} />
             <Line />
-            <Tabs />
+            <Tabs productId={productId} />
             <Line />
             <Popular popularSearches={popularSearches} />
         </div>

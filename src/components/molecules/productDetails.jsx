@@ -16,23 +16,31 @@ function ProductDetails({ productId }) {
     const [imageMagnifierData, setImageMagnifierData] = useState([]);
 
     useEffect(() => {
-        
         Promise.all([getProductDetailsById(productId), getProductDetailsByImage(productId)])
-            .then(([productData, imageData]) => {
-                setProductData(productData.data[0].attributes);
-                setImageMagnifierData(imageData);
-            })
-            .catch((error) => {
-                console.error('Error fetching product details:', error);
-            });
-    }, [productId]);
-
-    if (!productData) {
+          .then(([productData, imageData]) => {
+            // Check if 'attributes' key is present in the response
+            const attributes = productData.data[0].attributes;
+    
+            if (attributes) {
+              setProductData(attributes);
+              setImageMagnifierData(imageData);
+            } else {
+              console.error('Error: Invalid response structure.');
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching product details:', error);
+          });
+      }, [productId]);
+    
+      if (!productData) {
         return <div>Loading...</div>;
-    }
+      }
     // const productData = productDescriptionSubcategoryMockData.data[0].attributes;
     // const name = productData.product.data.attributes.name
     const {name, rating, price } = productData
+   
+   
     return (
         <div>
             <div className="ml-40 mt-14 inline-flex h-[38.086px] p-[4.862px 21.879px] justify-center items-center gap-8.103px flex-shrink-0">

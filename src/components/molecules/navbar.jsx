@@ -41,19 +41,13 @@ const Navbar = () => {
                 </div>
                 {Tabs.map(({ id, TabTitle, src }) => (
                     <div key={id} className="cursor-pointer">
-                        <Link
-                            href={src}
-                            className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"
-                        >
-                            {' '}
-                            {TabTitle}
-                        </Link>
+                        <Link href={src}   className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"  > {TabTitle}</Link>
                     </div>
                 ))}
             </div>
             <div className="flex pl-[20%] gap-2.5  float-right">
-                <div className="cursor-pointer">
-                    <a href={SearchLink}>
+                <div className='cursor-pointer'>
+                    <a href = {SearchLink}>
                         <Search />
                     </a>
                 </div>
