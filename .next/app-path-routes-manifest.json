@@ -2,8 +2,8 @@
   "/_not-found": "/_not-found",
   "/page": "/",
   "/favicon.ico/route": "/favicon.ico",
-  "/clp/[category]/page": "/clp/[category]",
   "/aboutUs/[aboutUs]/page": "/aboutUs/[aboutUs]",
-  "/plp/[subCategory]/page": "/plp/[subCategory]",
-  "/pdp/[productId]/page": "/pdp/[productId]"
+  "/clp/[category]/page": "/clp/[category]",
+  "/pdp/[productId]/page": "/pdp/[productId]",
+  "/plp/[subCategory]/page": "/plp/[subCategory]"
 }
