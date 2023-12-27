@@ -3,7 +3,7 @@ const baseUrl = process.env.BASE_URL
 
 export const getAPI = async (path) => {
     // let url = `${baseUrl}/${path}?populate=deep`
-    let url = 'http://127.0.0.1:1337/api/home-page?populate=deep'
+    let url = baseUrl+'/home-page?populate=deep'
     console.log(baseUrl)
 
     console.log(url)
