@@ -23,6 +23,7 @@ const description = ({ productData }) => {
 
 
   const feature1Array = Array(3).fill(feature1);
+ 
 
   return (
     <div className="mt-20">
@@ -31,26 +32,23 @@ const description = ({ productData }) => {
           <span className="font-bold">{text}:</span>{productData.brand}
         </h1>
         <p>
-          <span className="font-bold">{text1}:</span> {productData.availability}
+          <span className="font-bold">{text1}:</span> {productData.availability.toString()}
         </p>
         <p>
-          <span className="font-bold">{text2}:</span> {data2}
+          <span className="font-bold">{text2}:</span> {productData.MPN}
         </p>
         <p>
-          <span className="font-bold">{text3}:</span> {data3}
+          <span className="font-bold">{text3}:</span> {productData.GrossWeight}
         </p>
         <p>
-          <span className="font-bold">{text4}:</span> {data4}
+          <span className="font-bold">{text4}:</span> {productData.DelevieryTime}
         </p>
         <p>
           <span className="font-bold">{text5}:</span>  {productData.PlaceOfMfg}
         </p>
       
-        <p>
-        <span className="font-bold">{heading}:</span> <span className="ml-3">{feature1}</span>
-        </p>
-        <p className="ml-24">{feature2}</p>
-        <p className="ml-24">{feature3}</p>
+   
+
       </div>
     </div>
   );

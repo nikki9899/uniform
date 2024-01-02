@@ -7,7 +7,7 @@ const SocialMediaIcons = (props) => {
     <a
       href={link}
       target="_blank"
-      className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+      className="text-gray-400 hover:text-gray-900 "
     >
       <svg
         className="w-6 h-6"

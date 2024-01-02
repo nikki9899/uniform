@@ -5,10 +5,10 @@ const FooterList = (props) => {
     let { title, listItems  } =  props.contents;
     return (
       <div>
-        <h2 className="mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+        <h2 className="mb-4 text-sm font-semibold text-gray-900 ">
           {title}
         </h2>
-        <ul className="text-gray-700 dark:text-gray-400  font-normal">
+        <ul className="text-gray-700  font-normal">
           {listItems.map(({ item, id , link = "" }) => (
             <li key={id} className="mb-2">
                <Link href={link}> {item}</Link>

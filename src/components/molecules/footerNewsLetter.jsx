@@ -12,10 +12,10 @@ const FooterNewsLetter = (props) => {
   }
   return (
     <div>
-      <h2 className="mb-4 text-2xl font-medium text-gray-900  dark:text-white">
+      <h2 className="mb-4 text-2xl font-medium text-gray-900  ">
         {title}
       </h2>
-      <ul className="text-gray-900 dark:text-gray-400 font-normal">
+      <ul className="text-gray-900 font-normal">
         <li className="mb-4">{subTitle}</li>
         <li className="mb-4">
           <div className="grid grid-cols-3 gap-2">

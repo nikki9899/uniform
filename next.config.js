@@ -22,6 +22,10 @@ const nextConfig = {
         })
         return config
     },
+    env: {
+         BASE_URL:"http://127.0.0.1:1337/api"
+        
+      },
     staticPageGenerationTimeout:3000
 }
 

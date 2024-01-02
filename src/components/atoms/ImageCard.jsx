@@ -10,13 +10,13 @@ const ImageCard = ({ iconDisplay, classnames, productImage }) => {
             }}
         >
     </div>
-    <Wish
+    {/* <Wish
         width="24"
         height="24"
         stroke="#1E1E1E"
         viewBox="0 0 24 24"
         classnames={`${iconDisplay} cursor-pointer absolute right-2 top-2`}
-      />
+      /> */}
     </div>
   );
 };
