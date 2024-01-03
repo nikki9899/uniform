@@ -10,18 +10,21 @@ import SchoolUniforms from './schoolUniforms'
 
 const Dropdown = () => {
   return (
-    <div className='flex justify-between absolute top-28 bg-white z-10 w-full p-2.5'>
+    <div className='flex justify-between absolute top-24 left-0 bg-white z-10 w-full p-2.5'>
       <div>
         <div><IndustrialClothing/></div>
+        <br/>
         <div><SecurityGuardUniform/></div>
       </div>
       <div><CommercialUniforms/></div>
       <div>
         <div><CorporateUniform/></div>
+        <br/>
         <div><HospitalUniforms/></div>
       </div>
       <div>
         <div><HotelUniforms/></div>
+        <br/>
         <div><SchoolUniforms/></div>
       </div>
       

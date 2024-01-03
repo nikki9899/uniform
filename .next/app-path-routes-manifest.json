@@ -1,9 +1,0 @@
-{
-  "/_not-found": "/_not-found",
-  "/page": "/",
-  "/favicon.ico/route": "/favicon.ico",
-  "/aboutUs/[aboutUs]/page": "/aboutUs/[aboutUs]",
-  "/clp/[category]/page": "/clp/[category]",
-  "/pdp/[productId]/page": "/pdp/[productId]",
-  "/plp/[subCategory]/page": "/plp/[subCategory]"
-}
