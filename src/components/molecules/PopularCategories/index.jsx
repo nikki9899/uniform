@@ -58,7 +58,7 @@ const PopularCategories = async ({
                                         rounded="full"
                                         variant="primary"
                                         addStyle={
-                                            ' text-white text-base border-1 border-white bg-slate-800 bg-opacity-10 absolute top-7 left-7'
+                                            ' text-white text-base border-1 border-white bg-slate-800 bg-opacity-30 absolute top-7 left-7'
                                         }
                                     >
                                         <p className="text-base ">{name}</p>
