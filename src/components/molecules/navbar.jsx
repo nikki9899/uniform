@@ -13,12 +13,12 @@ const Navbar = () => {
 
     const [isHovered, setIsHovered] = useState(false)
 
-    const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovered(false)
+    const handleOnClick = () => {
+        if(isHovered){
+            setIsHovered(false)
+        }else{
+            setIsHovered(true)
+        }
     }
 
     return (
@@ -31,10 +31,10 @@ const Navbar = () => {
             <div className="inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800">
                 <div className="relative">
                     <Link
-                        href={uniformbyProfessionSrc}
+                        href=""
                         className="cursor-pointer"
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
+                        onClick={handleOnClick}
+                        // onMouseLeave={handleMouseLeave}
                     >
                         {uniformbyProfessionTitle}
                     </Link>

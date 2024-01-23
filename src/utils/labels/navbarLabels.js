@@ -1,7 +1,7 @@
 export const NavbarLabels = {
     Logo : "Uniform On Web",
     uniformbyProfessionTitle : "UniformbyProfession",
-    uniformbyProfessionSrc : "/clp/industrial Clothing",
+    // uniformbyProfessionSrc : "/clp/industrial Clothing",
     Tabs : [
         {
             id : "001",
