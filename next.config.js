@@ -23,8 +23,7 @@ const nextConfig = {
         return config
     },
     env: {
-         BASE_URL:"http://13.233.4.219:1337/api"
-        
+         BASE_URL:"http://3.110.30.53:1337/api"   
       },
     staticPageGenerationTimeout:3000
 }
