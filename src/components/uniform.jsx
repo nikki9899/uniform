@@ -8,13 +8,13 @@ import Button from "./atoms/button";
     commercialLabels;
   return (
     <div className=" relative py-9">
-      <div className=" h-[2px] text-black text-5xl font-semibold leading-normal tracking-[-2px] font-manrope">
+      <div className=" h-[2px] text-black text-xl md:text-5xl font-semibold leading-normal tracking-[-1px] md:tracking-[-2px] font-manrope">
         <h2>
           {heading} <br /> {heading1}
         </h2>
       </div>
 
-      <div className=" pt-10 text-black text-right text-base font-normal leading-normal tracking-[-0.64px] font-manrope ">
+      <div className=" pt-1 text-black text-right text-[10px] md:text-base font-normal leading-normal tracking-[-0.64px] font-manrope ">
         <p>
           {text}
           <br /> {text1}
@@ -22,8 +22,8 @@ import Button from "./atoms/button";
         </p>
       </div>
 
-      <div className="justify-center  w-[95.8%] text-center  pt-60  flex text-black text-7xl  font-bold leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
-        <div className=" w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
+      <div className="justify-center w-[95.8%] text-center  pt-56 md:pt-60  flex text-black text-4xl md:text-7xl  font-bold tracking-wide md:tracking-normal leading-0 md:leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
+        <div className=" w-[180px] md:w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
         <img src="/Images/Mask group.png" />
         </div>
         <p>
@@ -31,7 +31,7 @@ import Button from "./atoms/button";
           <br /> {caption1}
         </p>
       </div>
-      <div className="text-center mt-16  ">
+      <div className="text-center mt-5 md:mt-16  ">
         <Button variant="primary" rounded="full" >
           <p>shop now</p>
         </Button>

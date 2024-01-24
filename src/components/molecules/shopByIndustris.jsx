@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Header = ({ heading, quicklinks, linkData, industrialSectors }) => {
     return (
         <div>
-            <ul className="text-lg list-none text-gray-800 font-manrope font-medium leading-2 capitalize mt-6">
+            <ul className="text-xs md:text-lg list-none text-gray-800 font-manrope font-medium leading-6 md:leading-2 capitalize mt-6">
                 {industrialSectors.map((sector) => (
                     <li key={sector.id}>
                     <Link href={`/plp/${sector.attributes?.name}`}>
@@ -16,7 +16,7 @@ const Header = ({ heading, quicklinks, linkData, industrialSectors }) => {
                     </li>
                 ))}
             </ul>
-            <div className="text-black font-manrope font-medium text-2xl leading-10">
+            <div className="text-black font-manrope font-medium text-lg md:text-2xl leading-10">
                 See All
             </div>
         </div>
@@ -36,9 +36,9 @@ const shopByIndustries = ({ shopByCategory }) => {
 
     return (
         <div className="container mx-auto pt-9 pb-5">
-            <div className="grid  grid-cols-3 gap-x-5 gap-y-9 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-9 ">
                 <div className="col-span-1 rounded-lg">
-                <h2 className="text-black font-manrope font-normal text-5xl tracking-tight leading-normal">
+                <h2 className="text-black font-manrope font-normal text-3xl md:text-5xl tracking-tight leading-normal">
                        Shop by <br/> IndustrialSectors
                     </h2>
                     <Header

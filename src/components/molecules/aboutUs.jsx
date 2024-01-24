@@ -18,7 +18,7 @@ const AboutUs = ({ aboutUs }) => {
 
     return (
         <div className="py-20 mx-auto max-w-screen-md text-center">
-            <h3 className="text-7xl font-medium mb-2 py-10">{title}</h3>
+            <h3 className="text-4xl md:text-7xl font-medium mb-2 py-1 md:py-10">{title}</h3>
             <h4
                 style={isOpen ? null : descriptionStyle}
                 className="text-1xl leading-relaxed "

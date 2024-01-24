@@ -43,7 +43,7 @@ function ProductDetails({ productId }) {
    
     return (
         <div>
-            <div className="ml-40 mt-14 inline-flex h-[38.086px] p-[4.862px 21.879px] justify-center items-center gap-8.103px flex-shrink-0">
+            <div className="ml-20 md:ml-40 mt-14 inline-flex h-[38.086px] p-[4.862px 21.879px] justify-center items-center gap-8.103px flex-shrink-0 hidden md:block">
                 <div
                     className="flex px-2
                  text-gray-900 font-manrope font-medium text-xs lowercase"
@@ -56,14 +56,14 @@ function ProductDetails({ productId }) {
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid md:grid-cols-3 gap-3">
                 <div className="grid  grid-cols-2 gap-3">
-                    <div className=" w-[600px]  h-[882px] border">
+                    <div className=" w-[390px]  h-[611px] md:w-[600px]  md:h-[882px] border">
                     <ImageGallery data={imageMagnifierData} />
                         {/* Your content for the second sub-column */}
                     </div>
                 </div>
-                <div className="ml-52 w-[600px] px-8">
+                <div className="md:ml-52 w-[390px] md:w-[600px] md:px-8">
                     <div>
                         <h1 className="text-gray-800 font-manrope text-4xl font-semibold">
                             {name}
@@ -72,7 +72,7 @@ function ProductDetails({ productId }) {
                             <Rating productRating={rating} />
                         </div>
 
-                        <div className="mt-14 flex">
+                        <div className="mt-8 md:mt-14 flex">
                             <Rs className="w-9 h-9 py-1 " />
                             <p className="text-gray-900 ml-[-5px] font-Manrope text-2xl font-semibold">
                                 {price} / piece
@@ -95,9 +95,9 @@ function ProductDetails({ productId }) {
                             </Button>
                         </div>
                     </div>
-                    <div className="mt-24">
+                    {/* <div className="mt-10 md:mt-24">
                         <Line />
-                    </div>
+                    </div> */}
                     <AboutProduct productData={productData} />
                 </div>
             </div>
