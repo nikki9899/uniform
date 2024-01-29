@@ -40,7 +40,7 @@ const Tabs = ({ productId }) => {
 
     return (
         <div>
-            <div className="tab w-1/2">
+            <div className="tab md:w-1/2">
                 <ul className="flex justify-between">
                     <li
                         className="line cursor-pointer pb-5 text-lg font-semibold"

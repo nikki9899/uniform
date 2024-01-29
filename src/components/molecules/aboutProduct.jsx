@@ -26,8 +26,8 @@ const description = ({ productData }) => {
  
 
   return (
-    <div className="mt-20">
-      <div className="text-gray-900 font-manrope text-lg">
+    <div className="mt-4 md:mt-20">
+      <div className="text-gray-900 font-manrope text-lg leading-10 md:leading-none">
         <h1>
           <span className="font-bold">{text}:</span>{productData.brand}
         </h1>

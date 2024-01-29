@@ -12,11 +12,13 @@ const ImageGallery = ({ data }) => {
 
   return (
     <div className={"flex"}>
+      <div className="hidden md:block">
       <ImageSelector
         data={data}
         onImageClick={onImageClickHandler}
         selectedImage={selectedImage}
       />
+      </div>
 
       <ImageMagnifier
         smallImageSrc={data[selectedImage].smallImageSrc}

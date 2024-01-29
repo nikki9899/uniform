@@ -8,11 +8,11 @@ const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] }
      
    
     const items = data.map(({ id , attributes : {  Title  ,description , image } }) =>  (
-        <div className="me-7 w-full mb-12" key={id}>
+        <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
         <Link key={id} href={`/pdp/${id}`}>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back"
+                classnames="w-[14rem] h-[18rem] md:w-[19rem] md:h-[26rem] rounded-2xl shrink-0 back"
                 productImage={image.data.attributes.url}
             />
             </Link>

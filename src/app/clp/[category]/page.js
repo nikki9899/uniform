@@ -39,7 +39,7 @@ const Clp = ({ params: { category } }) => {
         <div>
             <main className="flex min-h-screen flex-col items-center justify-between ">
                 <IndustrialUniform heading={category} />
-                <div className="h-px w-full mt-40 bg-black border-0 "></div>
+                <div className="h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Categories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
