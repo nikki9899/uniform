@@ -1,11 +1,7 @@
 import Pagination from '@/components/atoms/Pagination'
 import IndustrialUniform from '@/components/industrialUniform'
-import Filter from '@/components/molecules/Filter'
-import { industrialCategoryMockData } from '@/mockData/category'
-import { getSubCategories } from '@/utils/api'
 import Image from 'next/image'
 import Subcategories from '@/components/organisms/subcategory'
-import { reflectiveClothingSubCategoryMockData } from '@/mockData/SubCategory'
 import Popular from '@/components/molecules/popular'
 import { getProducts } from '@/utils/api'
 

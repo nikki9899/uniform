@@ -2,8 +2,11 @@ import React from 'react'
 import { dropdownLabels, hotelUniform } from '@/utils/labels/dropdownLables'
 import Link from 'next/link'
 
-const HotelUniforms = () => {
+const HotelUniforms = ({data}) => {
   let {hotelUniformHead} = dropdownLabels
+  if (!data) {
+    return <div>Loading...</div>; // or any other loading indicator
+}
   return (
     <div>
       <Link href="">
@@ -11,13 +14,15 @@ const HotelUniforms = () => {
             {hotelUniformHead}
             </h3>
             </Link>
-            {hotelUniform.map((item) => (
-              <Link href="">
-              <li className="list-none font-medium text-xs leading-4" key={item.id}>
-              {item.name}
-              </li>
-              </Link>
-            ))}
+            <ul>
+        {data.map((item) => (
+          <li className="list-none font-medium text-xs leading-4" key={item.id}>
+          <Link href={`/plp/${item.attributes.name}`}>
+              {item.attributes.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
             
             
     </div>
