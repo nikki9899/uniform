@@ -113,16 +113,17 @@ const Navbar = () => {
                     </Link>
                     {isHovered && <Dropdown corporateUniformData={corporateUniformData} 
                     schoolUniformData={schoolUniformData} 
-                    hotelUniformData={hotelUniformData}  />}
-                    <Link href="/sale" className="block p-3 border-b border-gray-300">
+                    hotelUniformData={hotelUniformData} 
+                    handleOnClick={handleOnClick} />}
+                    {/* <Link href="" className="block p-3 border-b border-gray-300">
                         Sale
-                    </Link>
+                    </Link> */}
                     <Link href="/aboutus" className="block p-3 border-b border-gray-300">
                         About Us
                     </Link>
-                    <Link href="/contactus" className="block p-3">
+                    {/* <Link href="" className="block p-3">
                         Contact Us
-                    </Link>
+                    </Link> */}
                 </div>
             </>
         )}
@@ -140,7 +141,7 @@ const Navbar = () => {
                         // onMouseEnter={handleMouseEnter}
                         // onMouseLeave={handleMouseLeave}
                     >
-                        <span className="whitespace-nowrap inline-block font-made-outer-sans text-15 font-bold leading-15 tracking-[-0.04em] text-left">
+                        <span className="whitespace-nowrap inline-block font-made-outer-sans text-base font-normal leading-4 tracking-[-0.04em] text-left">
                             {uniformbyProfessionTitle}
                         </span>
                     </Link>
@@ -170,7 +171,8 @@ const Navbar = () => {
             {isHovered && <Dropdown
                     corporateUniformData={corporateUniformData} 
                     schoolUniformData={schoolUniformData} 
-                    hotelUniformData={hotelUniformData} />}
+                    hotelUniformData={hotelUniformData}
+                    handleOnClick={handleOnClick}  />}
         </div>
     );
 };
