@@ -1,20 +1,28 @@
 'use client'
-import { useState ,useEffect} from 'react';
-import Link from 'next/link';
-import Search from '@/components/atoms/Icons/Search';
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Search from '@/components/atoms/Icons/Search'
 import { NavbarLabels } from '@/utils/labels/navbarLabels'
-import Wish from '@/components/atoms/Icons/Wish';
-import Dropdown from './Dropdown';
+import Wish from '@/components/atoms/Icons/Wish'
+import Dropdown from './Dropdown'
 import { getAPI } from '@/utils/api'
 
 const Navbar = () => {
-    let { Logo, Tabs, SearchLink, uniformbyProfessionSrc, uniformbyProfessionTitle, WishLink } = NavbarLabels
-    const [isHovered, setIsHovered] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    let {
+        Logo,
+        Tabs,
+        SearchLink,
+        uniformbyProfessionSrc,
+        uniformbyProfessionTitle,
+        WishLink,
+    } = NavbarLabels
+    const [isHovered, setIsHovered] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [categories, setCategories] = useState([])
     const [corporateUniformData, setCorporateUniformData] = useState([])
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
+    // const[isdesktopmobile]
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -38,7 +46,6 @@ const Navbar = () => {
 
                 if (corporateUniform) {
                     setCorporateUniformData(
-                       
                         corporateUniform.attributes.sub_categories.data
                     )
                 }
@@ -60,23 +67,31 @@ const Navbar = () => {
         fetchCategories()
     }, [])
 
-
     const handleMobileMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+        setIsMobileMenuOpen(!isMobileMenuOpen)
+    }
 
     const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
+        setIsHovered(true)
+    }
 
     const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
+        setIsHovered(false)
+    }
 
     const handleOnClick = () => {
-        if(isHovered){
+        if (isHovered) {
             setIsHovered(false)
-        }else{
+        } else {
+            setIsHovered(true)
+        }
+    }
+
+    const handleOnMobileClick = () => {
+        if (isHovered) {
+            setIsHovered(false)
+            setIsMobileMenuOpen(false)
+        } else {
             setIsHovered(true)
         }
     }
@@ -89,45 +104,44 @@ const Navbar = () => {
                 </h1>
             </Link>
             <div className={`sm:hidden flex pl-[20%] gap-2.5 float-right`}>
-                {/* <div className="cursor-pointer">
-                    <a href={SearchLink}>
-                        <Search />
-                    </a>
-                </div>
-                <div className="cursor-pointer">
-                    <a href={WishLink}>
-                        <Wish />
-                    </a>
-                </div> */}
-                <div className="cursor-pointer" onClick={handleMobileMenuToggle}>
+                <div
+                    className="cursor-pointer"
+                    onClick={handleMobileMenuToggle}
+                >
                     <div className="bg-black h-1 w-6 mb-1"></div>
                     <div className="bg-black h-1 w-6 mb-1"></div>
                     <div className="bg-black h-1 w-6"></div>
                 </div>
             </div>
             {isMobileMenuOpen && (
-            <>
-                <div className="sm:hidden absolute top-24 left-0 right-0 bg-white z-50">
-                    <Link href={uniformbyProfessionSrc} className="block p-3 border-b border-gray-300  " onClick={handleOnClick} >
-                    <span>{uniformbyProfessionTitle}</span>
-                    </Link>
-                    {isHovered && <Dropdown corporateUniformData={corporateUniformData} 
-                    schoolUniformData={schoolUniformData} 
-                    hotelUniformData={hotelUniformData} 
-                    handleOnClick={handleOnClick} />}
-                    {/* <Link href="" className="block p-3 border-b border-gray-300">
-                        Sale
-                    </Link> */}
-                    <Link href="/aboutus" className="block p-3 border-b border-gray-300">
-                        About Us
-                    </Link>
-                    {/* <Link href="" className="block p-3">
-                        Contact Us
-                    </Link> */}
-                </div>
-            </>
-        )}
-            {/* Mobile Menu */}
+                <>
+                    <div className="sm:hidden absolute top-24 left-0 right-0 bg-white z-50">
+                        <Link
+                            href={uniformbyProfessionSrc}
+                            className="block p-3 border-b border-gray-300  "
+                            onClick={handleOnClick}
+                        >
+                            <span>{uniformbyProfessionTitle}</span>
+                        </Link>
+                        {isHovered && (
+                            <Dropdown
+                                corporateUniformData={corporateUniformData}
+                                schoolUniformData={schoolUniformData}
+                                hotelUniformData={hotelUniformData}
+                                handleOnClick={handleOnMobileClick}
+                            />
+                        )}
+
+                        <Link
+                            href="/aboutus"
+                            className="block p-3 border-b border-gray-300"
+                        >
+                            About Us
+                        </Link>
+                    </div>
+                </>
+            )}
+
             <div
                 className={`hidden sm:inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800 ${
                     isMobileMenuOpen ? 'block' : 'hidden sm:block'
@@ -136,26 +150,28 @@ const Navbar = () => {
                 <div className="relative">
                     <Link
                         href={uniformbyProfessionSrc}
-                        className={`cursor-pointer ${isHovered ? 'text-black' : 'text-gray-800'}`}
+                        className={`cursor-pointer ${
+                            isHovered ? 'text-black' : 'text-gray-800'
+                        }`}
                         onClick={handleOnClick}
-                        // onMouseEnter={handleMouseEnter}
-                        // onMouseLeave={handleMouseLeave}
                     >
                         <span className="whitespace-nowrap inline-block font-made-outer-sans text-base font-normal leading-4 tracking-[-0.04em] text-left">
                             {uniformbyProfessionTitle}
                         </span>
                     </Link>
-                    {/* {isHovered && <Dropdown />} */}
                 </div>
                 {Tabs.map(({ id, TabTitle, src }) => (
                     <div key={id} className="cursor-pointer">
-                        <Link href={src} className="text-base not-italic font-normal leading-4 tracking-[-0.64px]">
+                        <Link
+                            href={src}
+                            className="text-base not-italic font-normal leading-4 tracking-[-0.64px]"
+                        >
                             {TabTitle}
                         </Link>
                     </div>
                 ))}
             </div>
-            {/* Search and Wish Icons (Desktop) */}
+            {/* Search and Wish Icons (Desktop)
             <div className={`hidden sm:flex pl-[20%] gap-2.5 float-right`}>
                 <div className="cursor-pointer">
                     <a href={SearchLink}>
@@ -167,17 +183,17 @@ const Navbar = () => {
                         <Wish />
                     </a>
                 </div> */}
-            </div>
-            {isHovered && <Dropdown
-                    corporateUniformData={corporateUniformData} 
-                    schoolUniformData={schoolUniformData} 
+            {/* </div> */}
+            {isHovered && !isMobileMenuOpen && (
+                <Dropdown
+                    corporateUniformData={corporateUniformData}
+                    schoolUniformData={schoolUniformData}
                     hotelUniformData={hotelUniformData}
-                    handleOnClick={handleOnClick}  />}
+                    handleOnClick={handleOnClick}
+                />
+            )}
         </div>
-    );
-};
+    )
+}
 
-export default Navbar;
-
-
-
+export default Navbar

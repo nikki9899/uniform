@@ -20,7 +20,7 @@ const Dropdown = ({
     console.log('school', schoolUniformData)
     console.log('hotel', hotelUniformData)
     return (
-        <div className="flex justify-between absolute shadow-md top-24 left-0 bg-white z-10 w-full p-2.5">
+        <div className="flex md:flex-row flex-col justify-between absolute md:top-24 top-12 left-0 bg-white z-10 w-full p-2.5">
             <div className="mt-4">
                
                 <CorporateUniform data={corporateUniformData}  handleOnClick={handleOnClick}/>
