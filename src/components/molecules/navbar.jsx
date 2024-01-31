@@ -97,7 +97,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="px-4 sm:px-14 h-24 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background  w-[390px] md:w-full py-7 flex justify-between sm:items-center ">
+        <div className="px-4 sm:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background md:w-full py-7 flex justify-between sm:items-center ">
             <Link href="/">
                 <h1 className="text-black md:text-3xl not-italic font-black md:leading-7 tracking-[-1.066px] md:font-bold text-sm  md:mt-5 flex">
                     {Logo}
@@ -115,7 +115,7 @@ const Navbar = () => {
             </div>
             {isMobileMenuOpen && (
                 <>
-                    <div className="sm:hidden absolute top-24 left-0 right-0 bg-white z-50">
+                    <div className="sm:hidden absolute top-[75px] left-0 right-0 bg-white z-50">
                         <Link
                             href={uniformbyProfessionSrc}
                             className="block p-3 border-b border-gray-300  "
