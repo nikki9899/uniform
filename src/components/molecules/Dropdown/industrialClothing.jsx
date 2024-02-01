@@ -16,8 +16,8 @@ const IndustrialClothing = () => {
             </h3>
             </Link>
             {industrialClothing.map((item) => (
-                <Link href="">
-                <li className="list-none font-medium text-xs leading-4" key={item.id}>
+                <Link key={item.id} href="">
+                <li className="list-none font-medium text-xs leading-4">
                 {item.name}
                 </li>
                 </Link>
