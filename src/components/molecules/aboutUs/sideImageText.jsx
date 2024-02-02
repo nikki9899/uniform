@@ -7,8 +7,8 @@ const SideImageText = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="overview flex md:flex-row flex-col justify-between md:px-20 pt-4 px-2 md:pb-20">
-                <div className="text text-sm leading-5  w-screen md:w-1/2">
+            <div className="overview flex md:flex-row flex-col justify-between md:px-20 md:mt-4 mt-16 px-2 md:pb-20">
+                <div className="text md:text-sm text-xs leading-5  w-full md:w-1/2 order-2 md:order-1">
                     <p>
                         {sideImgText1}
                         <br />
@@ -19,7 +19,7 @@ const SideImageText = ({ aboutUs }) => {
                         {sideImgText3}
                     </p>
                 </div>
-                <div className="image md:mt-0 mt-6 md:w-1/2 ">
+                <div className="image md:mt-0 mb-6 md:w-1/2 order-1 md:order-2">
                     <Image
                         src="/images/aboutUs2.png"
                         alt="Overview Image"

@@ -6,13 +6,13 @@ const WhyUs = ({ aboutUs }) => {
     let { whyUsHead, whyUsText, WhyUs1, WhyUs2, WhyUs3 } = aboutUsLables
 
     return (
-        <div>
+        <div className='md:mt-0 mt-8'>
             <div className="text-center  px-2 md:px-12 md:py-10">
-                <div className="whyUsHeading font-semibold md:text-6xl text-4xl pb-8">
+                <div className="whyUsHeading font-semibold md:text-6xl text-2xl md:pb-8 pb-4">
                     {whyUsHead}
                 </div>
-                <div className="whyUsDescription px-2 md:px-28">{whyUsText}</div>
-                <div className="text-center pt-10">
+                <div className="whyUsDescription md:text-base text-xs px-2 md:px-28">{whyUsText}</div>
+                <div className="text-center md:pt-10 pt-6 md:text-base text-sm">
                     <div className="flex justify-center md:flex-row flex-col">
                         {WhyUs1.map((item) => (
                             <div

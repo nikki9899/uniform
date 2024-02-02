@@ -6,12 +6,12 @@ const HsnDescription = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="hsnDescription border-y border-current pb-6  px-2 md:px-12 md:py-10">
+            <div className="hsnDescription pb-6  px-2 md:px-12 md:py-10">
                 <div className="md:w-1/2">
-                    <div className="hsnDescriptionHeading font-semibold text-xl pb-6">
+                    <div className="hsnDescriptionHeading font-semibold md:text-2xl text-xl md:pb-6 pb-2">
                         {hsnHead}
                     </div>
-                    <div className="hsnDescription-description text-sm font-normal ">
+                    <div className="hsnDescription-description md:text-sm text-xs font-normal ">
                         <p>
                             <span className="font-semibold">{hsnNo1}</span>{' '}
                             {hsnText1}

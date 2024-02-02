@@ -12,6 +12,7 @@ import TeamMembers from '@/components/molecules/aboutUs/teamMembers'
 import PaymentMode from '@/components/molecules/aboutUs/packingDetails'
 import WhyUs from '@/components/molecules/aboutUs/whyUs'
 import OurTeam from '@/components/molecules/aboutUs/ourTeam'
+import Line from '@/components/atoms/horizontal-line'
 
 const Page = () => {
     return (
@@ -20,12 +21,17 @@ const Page = () => {
             <Overview />
             <SideImageText />
             <Description />
+            <Line/>
             <Factsheet />
+            <Line/>
             <UspHead />
+            <Line/>
             <StatutoryProfile />
+            <Line/>
             <HsnDescription />
             <OurTeam />
             <TeamMembers />
+            <Line/>
             <PaymentMode />
             <WhyUs />
         </div>

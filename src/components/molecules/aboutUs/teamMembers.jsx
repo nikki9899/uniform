@@ -8,8 +8,8 @@ const TeamMembers = ({ aboutUs }) => {
     return (
         <div>
             <div className="font-medium md:text-center px-2 pb-6  md:px-16 md:py-10">
-                <div className="md:text-2xl text-lg pb-10">{membersHead}</div>
-                <div className="md:text-base text-sm  md:px-0 flex flex-col md:flex-row justify-between">
+                <div className="md:text-3xl text-lg md:pb-10 pb-4">{membersHead}</div>
+                <div className=" leading-5 md:text-base text-xs  md:px-0 flex flex-col md:flex-row justify-between">
                     {Members.map((item) => (
                         <div key={item.id}>{item.member}</div>
                     ))}
