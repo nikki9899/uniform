@@ -6,8 +6,8 @@ const PaymentMode = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="atatutoryProfile border-y border-current px-12 py-10">
-                <div className="factsheet heading font-normal text-3xl leading-9 pb-6">
+            <div className="atatutoryProfile border-y border-current pb-6  px-2 md:px-12 md:py-10">
+                <div className="factsheet heading font-normal md:text-3xl text-2xl leading-9 pb-6">
                     {paymentHead}
                 </div>
                 <div className=''>

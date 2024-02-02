@@ -1,6 +1,6 @@
 export const NavbarLabels = {
     Logo : "Uniform On Web",
-    uniformbyProfessionTitle : "UniformbyProfession",
+    uniformbyProfessionTitle : "Uniform by Profession",
     uniformbyProfessionSrc : "",
     Tabs : [
        

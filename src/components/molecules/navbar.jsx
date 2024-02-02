@@ -95,7 +95,10 @@ const Navbar = () => {
             setIsHovered(true)
         }
     }
-
+    
+    const handleAboutUs = () => {
+        setIsMobileMenuOpen(false );
+    }
     return (
         <div className="px-4 sm:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background md:w-full py-7 flex justify-between sm:items-center ">
             <Link href="/">
@@ -133,8 +136,10 @@ const Navbar = () => {
                         )}
 
                         <Link
-                            href="/aboutus"
+                            href="/aboutUs/page.js"
                             className="block p-3 border-b border-gray-300"
+                            onClick={handleAboutUs}
+                            
                         >
                             About Us
                         </Link>

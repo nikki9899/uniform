@@ -7,13 +7,13 @@ const WhyUs = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="text-center px-12 py-10">
-                <div className="whyUsHeading font-semibold text-6xl pb-8">
+            <div className="text-center  px-2 md:px-12 md:py-10">
+                <div className="whyUsHeading font-semibold md:text-6xl text-4xl pb-8">
                     {whyUsHead}
                 </div>
-                <div className="whyUsDescription px-28">{whyUsText}</div>
+                <div className="whyUsDescription px-2 md:px-28">{whyUsText}</div>
                 <div className="text-center pt-10">
-                    <div className="flex justify-center">
+                    <div className="flex justify-center md:flex-row flex-col">
                         {WhyUs1.map((item) => (
                             <div
                                 key={item.id}
@@ -23,7 +23,7 @@ const WhyUs = ({ aboutUs }) => {
                             </div>
                         ))}
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center md:flex-row flex-col">
                         {WhyUs2.map((item) => (
                             <div
                                 key={item.id}
@@ -33,7 +33,7 @@ const WhyUs = ({ aboutUs }) => {
                             </div>
                         ))}
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center md:pb-0 pb-11 md:flex-row flex-col">
                         {WhyUs3.map((item) => (
                             <div
                                 key={item.id}

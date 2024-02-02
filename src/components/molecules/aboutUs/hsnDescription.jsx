@@ -6,8 +6,8 @@ const HsnDescription = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="hsnDescription border-y border-current px-12 py-10">
-                <div className="w-1/2">
+            <div className="hsnDescription border-y border-current pb-6  px-2 md:px-12 md:py-10">
+                <div className="md:w-1/2">
                     <div className="hsnDescriptionHeading font-semibold text-xl pb-6">
                         {hsnHead}
                     </div>

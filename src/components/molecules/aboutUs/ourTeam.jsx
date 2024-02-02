@@ -13,11 +13,12 @@ const OurTeam = ({ aboutUs }) => {
                         alt="Overview Image"
                         height={539}
                         width={1448}
+                        className='md:h-[539px] h-60 w-[1448px]'
                     />
                 </div>
-                <div className="text-center text-white w-2/3 m-auto relative bottom-96">
-                    <h1 className="font-medium text-6xl pb-8">{teamHead}</h1>
-                    <p className="font-normal text-base tracking-tighter">
+                <div className="text-center text-white md:w-2/3 m-auto relative bottom-56  md:bottom-96">
+                    <h1 className="font-medium md:text-6xl text-base pb-1 md:pb-8">{teamHead}</h1>
+                    <p className="font-normal md:text-base text-xs tracking-tighter">
                         {teamText1}
                         <br />
                         <br />
