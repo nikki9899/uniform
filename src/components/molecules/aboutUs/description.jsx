@@ -13,23 +13,20 @@ const Description = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="overview text-center px-20 pb-14">
-                <p className="font-normal text-base leading-5">
+            <div className="overview text-center md:mt-4 mt-16 md:px-20 px-2 pb-8 md:pb-14">
+                <p className="font-normal md:text-base md:text-sm text-xs leading-5">
                     {descriptionText1}
                 </p>
-                <br />
-                <p className="font-normal text-base leading-5">
+                <p className="md:pt-8 pt-4 font-normal md:text-base md:text-sm text-xs leading-5">
                     {descriptionText2Light}
-                    <span className="font-medium text-base leading-5">
+                    <span className="font-medium md:text-base md:text-sm text-xs leading-5">
                         {descriptionText2Dark}
                     </span>
                 </p>
-                <br />
-                <br />
-                <p className="font-medium text-base leading-5">
+                <p className="md:pt-8 pt-4 font-medium md:text-base  md:text-sm text-xs leading-5">
                     {descriptionText3}
                 </p>
-                <div className="pt-10">
+                <div className="md:pt-8 pt-4">
                     <button className=" border rounded-xl border-current py-2 px-5 ">
                         {descriptionBtn}
                     </button>

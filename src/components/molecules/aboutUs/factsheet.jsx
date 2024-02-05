@@ -22,36 +22,36 @@ const Factsheet = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="factsheet border-y border-current px-12 py-10">
-                <div className="factsheet heading font-medium text-3xl leading-9 pb-6">
+            <div className="factsheet  pb-6  px-2 md:px-12 md:py-10">
+                <div className="factsheet heading font-medium md:text-3xl text-xl leading-9 md:pb-6 pb-2">
                     {factsheetHead}
                 </div>
                 <div className="factsheet-description">
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{businessHead}</span>{' '}
                         {business}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base  text-xs font-normal leading-5">
                         <span className=" font-semibold">{ceoHead} -</span>{' '}
                         {ceoName}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{locationHead}</span>{' '}
                         {locationAdd}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{employeeHead}</span>{' '}
                         {employeeNo}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{yearHead}</span>{' '}
                         {yearOfEstablishment}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{statusHead}</span>{' '}
                         {status}
                     </p>
-                    <p className="text-base font-normal leading-5">
+                    <p className="md:text-base text-xs font-normal leading-5">
                         <span className=" font-semibold">{turnoverHead}</span>{' '}
                         {turnover}
                     </p>
