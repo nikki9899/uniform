@@ -1,23 +1,29 @@
-"use client"
-import { getProductDetailsById } from '@/utils/api'
+'use client'
+import React from 'react'
+import { fetchPopularSearches } from '@/utils/api'
 import Line from '@/components/atoms/horizontal-line'
 import ProductDetails from '@/components/molecules/productDetails'
 import Tabs from '@/components/atoms/Tabs/tabs'
-import React, { useState, useEffect } from 'react'
-import { getAPI } from '@/utils/api'
-import Popular from '@/components/molecules/popular'  
+import Popular from '@/components/molecules/popular'
 
-const Pdp = async({ params: { productId } }) => {
-    const { data: { attributes : { popularSearches } } } = await getAPI("home-page");
-    
-    // console.log(productId, "pdp");
-    const heading = 'related products';
+const Pdp = ({ params: { productId } }) => {
+    const heading = 'related products'
+
+    const [popularSearches, setPopularSearches] = React.useState([])
+
+    React.useEffect(() => {
+        fetchPopularSearches()
+            .then((data) => setPopularSearches(data))
+            .catch((error) => {
+                console.error('Error in Pdp component:', error)
+            })
+    }, [])
 
     return (
         <div>
-            <ProductDetails  />
+            <ProductDetails productId={productId} />
             <Line />
-            <Tabs />
+            <Tabs productId={productId} />
             <Line />
             <Popular popularSearches={popularSearches} />
         </div>

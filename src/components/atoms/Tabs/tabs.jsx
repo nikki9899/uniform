@@ -1,27 +1,46 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import Description from './description'
 import Specifications from './specifications'
 import VendorReviews from './vendorReviews'
 import QuestionAndAnswers from './question&Answers'
+import { getProductDetailsById } from '@/utils/api'
 
-const Tabs = ({data}) => {
-  
 
-    const [toggle, setToggle] = useState(1)
-    const [underline, setUnderline] = useState(1)
+const Tabs = ({ productId }) => {
+    const [toggle, setToggle] = useState(1);
+    const [underline, setUnderline] = useState(1);
+    const [tabProductData, setTabProductData] = useState(null);
 
-    function updateToggle(id) {
-        setToggle(id)
+    useEffect(() => {
+        getProductDetailsById(productId)
+            .then((data) => {
+                if (data && data.data && data.data[0]) {
+                    setTabProductData(data.data[0].attributes);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching product details:', error);
+            });
+    }, [productId]);
+
+    if (!tabProductData) {
+        return <div>Loading...</div>;
     }
+    console.log(tabProductData)
 
-    function updateUnderline(id) {
-        setUnderline(id)
-    }
+    const updateToggle = (id) => {
+        setToggle(id);
+      };
+    
+      const updateUnderline = (id) => {
+        setUnderline(id);
+      };
+
 
     return (
         <div>
-            <div className="tab w-1/2">
+            <div className="tab md:w-1/2">
                 <ul className="flex justify-between">
                     <li
                         className="line cursor-pointer pb-5 text-lg font-semibold"
@@ -47,7 +66,7 @@ const Tabs = ({data}) => {
                             Specifications
                         </span>
                     </li>
-                    <li
+                    {/* <li
                         className="line cursor-pointer pb-5 text-lg font-semibold"
                         onClick={() => {
                             updateToggle(3), updateUnderline(3)
@@ -58,7 +77,7 @@ const Tabs = ({data}) => {
                         >
                             Vendor Reviews
                         </span>
-                    </li>
+                    </li> */}
                     <li
                         className="line cursor-pointer pb-5 text-lg font-semibold"
                         onClick={() => {
@@ -73,16 +92,16 @@ const Tabs = ({data}) => {
                     </li>
                 </ul>
                 <div className={toggle === 1 ? 'block' : 'hidden'}>
-                    <Description />
+                    <Description data ={tabProductData}/>
                 </div>
                 <div className={toggle === 2 ? 'block' : 'hidden'}>
-                    <Specifications />
+                    <Specifications  data={tabProductData}/>
                 </div>
                 <div className={toggle === 3 ? 'block' : 'hidden'}>
                     <VendorReviews />
                 </div>
                 <div className={toggle === 4 ? 'block' : 'hidden'}>
-                <QuestionAndAnswers data={data} />
+                <QuestionAndAnswers data={tabProductData} />
                 </div>
             </div>
         </div>

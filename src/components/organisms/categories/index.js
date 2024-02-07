@@ -9,7 +9,7 @@ import { getAPI } from '@/utils/api'
 const Categories =  ({data}) => {
     const { linkText } = categoriesLabels
 
-
+     
     const categories = data.map((entry) => {
         return {
             id: entry.id,
@@ -20,7 +20,7 @@ const Categories =  ({data}) => {
 
     return (
         <div className="container w-full my-10 ">
-            <Grid cardsPerRow={4}>
+            <Grid cardsPerRow={2} cardsPerRowMd={4}>
                 {categories.map(({ name, image, id }) => (
                     <Link  key={id}  href={`/plp/${name}` }> 
                     <div className='px-1 mt-9'>

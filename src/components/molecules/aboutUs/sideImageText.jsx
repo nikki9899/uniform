@@ -1,0 +1,35 @@
+import React from 'react'
+import Image from 'next/image'
+import { aboutUsLables } from '@/utils/labels/aboutUsLables'
+
+const SideImageText = ({ aboutUs }) => {
+    let { sideImgText1, sideImgText2, sideImgText3 } = aboutUsLables
+
+    return (
+        <div>
+            <div className="overview flex md:flex-row flex-col justify-between md:px-20 md:mt-4 mt-16 px-2 md:pb-20">
+                <div className="text md:text-sm text-xs leading-5  w-full md:w-1/2 order-2 md:order-1">
+                    <p>
+                        {sideImgText1}
+                        <br />
+                        <br />
+                        {sideImgText2}
+                        <br />
+                        <br />
+                        {sideImgText3}
+                    </p>
+                </div>
+                <div className="image md:mt-0 mb-6 md:w-1/2 order-1 md:order-2">
+                    <Image
+                        src="/images/aboutUs2.png"
+                        alt="Overview Image"
+                        height={541}
+                        width={546}
+                    />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default SideImageText

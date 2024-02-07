@@ -2,22 +2,27 @@ import React from 'react'
 import Button from '@/components/atoms/button'
 import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
+import Link from 'next/link'
 
 const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] } }  =   {  data : [] }  } ) => {
+     
    
     const items = data.map(({ id , attributes : {  Title  ,description , image } }) =>  (
-        <div className="me-7 w-full mb-12" key={id}>
+        <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
+        <Link key={id} href={`/pdp/${id}`}>
             <ImageCard
                 iconDisplay="flex"
-                classnames="w-[19rem] h-[26rem] rounded-2xl shrink-0 back"
+                classnames="w-[14rem] h-[18rem] md:w-[19rem] md:h-[26rem] rounded-2xl shrink-0 back"
                 productImage={image.data.attributes.url}
             />
+            </Link>
             <div>
+            
                 <div className="flex justify-between my-1 ml-2">
                     <h3 className="text-sm font-semibold leading-7">{Title}</h3>
-                    <h4 className="text-sm font-semibold leading-7">
+                    {/* <h4 className="text-sm font-semibold leading-7">
                         INR 5000
-                    </h4>
+                    </h4> */}
                 </div>
                 <p className="text-xs font-medium ml-2 text-start text-gray-500 leading-7">
                     {description}
