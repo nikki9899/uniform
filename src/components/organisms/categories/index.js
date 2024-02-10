@@ -23,10 +23,10 @@ const Categories =  ({data}) => {
             <Grid cardsPerRow={2} cardsPerRowMd={4}>
                 {categories.map(({ name, image, id }) => (
                     <Link  key={id}  href={`/plp/${name}` }> 
-                    <div className='px-1 mt-9'>
+                    <div className='md:px-1 px-0 mt-9'>
                         <ImageCard
                             iconDisplay="hidden"
-                            classnames={`w-full h-96 rounded-2xl shrink-0 back `}
+                            classnames={`md:w-full  md:h-96 h-80 rounded-2xl shrink-0 back  `}
                             productImage={image}
                         />
                         <h5 className="mt-2 mb-2 font-semibold text-lg">{name}</h5>

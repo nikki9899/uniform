@@ -34,7 +34,8 @@ const CommercialUniformSection = () => {
                 </p>
             </div>
             <div className="text-center mt-5 md:mt-16  ">
-                <Button variant="primary" rounded="full">
+                <Button variant="primary" rounded="full"
+                addStyle={`bg-slate-300  text-gray-400 border-gray-900 opacity-50`}>
                     <p>shop now</p>
                 </Button>
             </div>

@@ -1,21 +1,42 @@
+'use client'
+import React, { useEffect, useState } from 'react'
 import Pagination from '@/components/atoms/Pagination'
 import IndustrialUniform from '@/components/industrialUniform'
 import Image from 'next/image'
 import Subcategories from '@/components/organisms/subcategory'
 import Popular from '@/components/molecules/popular'
-import { getProducts } from '@/utils/api'
+import { getProducts, fetchPopularSearches } from '@/utils/api'
 
-const Plp = async ({ params: { subCategory } }) => {
-    let {
-        data = [],
-        meta: {
-            pagination: { page, pageSize, pageCount, total },
-        },
-    } = await getProducts(subCategory)
-    console.log(subCategory)
+const Plp = ({ params: { subCategory } }) => {
+    const [data, setData] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [total, setTotal] = useState(0);
+    const [popularSearches, setPopularSearches] = useState([]);
 
-    let filterData = [],
-        finalData = []
+    useEffect(() => {
+        async function fetchData(category) {
+            try {
+                const { data, meta: { pagination: { page, pageSize, pageCount, total } } } = await getProducts(category);
+                setData(data);
+                setPageCount(pageCount);
+                setTotal(total);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+
+        async function fetchPopular(category) {
+            try {
+                const data = await fetchPopularSearches(category);
+                setPopularSearches(data);
+            } catch (error) {
+                console.error('Error fetching popular searches:', error);
+            }
+        }
+
+        fetchData(subCategory);
+        fetchPopular(subCategory);
+    }, [subCategory]);
 
     return (
         <div>
@@ -25,7 +46,7 @@ const Plp = async ({ params: { subCategory } }) => {
                 <Subcategories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
-                <Popular />
+                <Popular popularSearches={popularSearches} />
             </main>
         </div>
     )

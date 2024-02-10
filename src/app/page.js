@@ -39,14 +39,14 @@ const Home = async () => {
                 />
                 <Line />
                 <PopularProducts popularProducts={popularProducts} />
-                
+
                 <Line />
                 <ShopByIndustries shopByCategory={shopByCategory} />
                 <Line />
                 <CommercialUniformSection />
                 <Line />
                 <Popular popularSearches={popularSearches} />
-                <Line />
+                {/* <Line /> */}
                 <AboutUs aboutUs={aboutUs} />
             </main>
         </div>

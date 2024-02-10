@@ -3,7 +3,7 @@ const ImageCard = ({ iconDisplay, classnames, productImage }) => {
     return (
       <div className={`${classnames} relative overflow-hidden`}>
         <div
-            className='w-full h-full hover:scale-110 transition-all duration-700'
+            className='w-full  h-full hover:scale-110 transition-all duration-700'
             style={{ 
               backgroundSize:"cover",
               backgroundImage: `url(${productImage})`, 

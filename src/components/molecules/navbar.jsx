@@ -22,7 +22,7 @@ const Navbar = () => {
     const [corporateUniformData, setCorporateUniformData] = useState([])
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
-    // const[isdesktopmobile]
+    
 
     useEffect(() => {
         const fetchCategories = async () => {

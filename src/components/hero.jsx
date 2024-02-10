@@ -18,8 +18,9 @@ function Hero({hero}) {
         <p>{description}</p>
       </div>
       <div className="text-center md:my-10 my-3 ">
-        <Button variant="primary" rounded="semi" >
-          <p className="p-1 text-sm font-normal" >enquire now</p>
+        <Button  variant="primary" rounded="semi" 
+        addStyle={`bg-slate-300 opacity-25 text-gray-400 border-gray-900 opacity-50`} >
+          <p className="p-1 text-sm font-normal " >enquire now</p>
         </Button>
           
       </div>

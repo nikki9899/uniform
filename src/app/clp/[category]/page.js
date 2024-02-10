@@ -5,16 +5,19 @@ import Pagination from '@/components/atoms/Pagination'
 import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
 import { getAPI, getSubCategories } from '@/utils/api'
+import { fetchPopularSearches } from '@/utils/api'
+  
 
 const Clp = ({ params: { category } }) => {
-    var [data, setData] = useState([])
-    var [pageCount, setPageCount] = useState(0)
-    var [total, setTotal] = useState(0)
+    const [data, setData] = useState([])
+    const [pageCount, setPageCount] = useState(0)
+    const [total, setTotal] = useState(0)
+    const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
-        async function clpp(category) {
+        async function fetchData(category) {
             try {
-                var {
+                const {
                     data: newData = [],
                     meta: {
                         pagination: { page, pageSize, pageCount, total },
@@ -32,7 +35,20 @@ const Clp = ({ params: { category } }) => {
                 console.error('Error fetching data:', error)
             }
         }
-        clpp(category)
+
+       
+
+        async function fetchPopular() {
+            try {
+                const data = await fetchPopularSearches();
+                setPopularSearches(data);
+            } catch (error) {
+                console.error('Error fetching popular searches:', error);
+            }
+        }
+
+        fetchData(category);
+        fetchPopular();
     }, [category])
 
     return (
@@ -43,11 +59,10 @@ const Clp = ({ params: { category } }) => {
                 <Categories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
-                <Popular />
+                <Popular popularSearches={popularSearches} />
             </main>
         </div>
     )
 }
 
 export default Clp
-// page.js

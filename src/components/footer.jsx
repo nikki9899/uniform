@@ -1,29 +1,68 @@
+'use client'
+import React, { useState, useEffect } from 'react'
 import FooterList from '@/components/molecules/footerList'
 import FooterNewsLetter from '@/components/molecules/footerNewsLetter'
 import SocialMediaIcons from '@/components/molecules/socialMediaIcons'
+import { TRACE_OUTPUT_VERSION } from 'next/dist/shared/lib/constants'
+import { getAPI } from '@/utils/api'
 
 const Footer = (props) => {
-    let { quickLink, company, customerService, Shop } = {
+    const [shopCategories, setShopCategories] = useState([])
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await getAPI('home-page')
+                const popularCategories =
+                    response?.data?.attributes?.popularCategories?.categories
+                        ?.data
+                setShopCategories(popularCategories)
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
+
+        fetchCategories()
+    }, [])
+
+    console.log('shop', shopCategories)
+    let { quickLink, company, customerService } = {
         quickLink: {
             title: 'Quick link',
             listItems: [
-                { id: 1, item: 'Home', link: '/' },
-                { id: 2, item: 'FAQs', link: '/faqs' },
-                { id: 3, item: 'Blog', link: '/blog' },
-                { id: 4, item: 'Trade Enquiries', link: '/trade' },
-                { id: 5, item: 'Career', link: '/career' },
-                { id: 6, item: 'Sitemap', link: '/sitemap' },
+                { id: 1, item: 'Home', link: '/', disabled: false },
+                { id: 2, item: 'FAQs', link: '/faqs', disabled: true },
+                { id: 3, item: 'Blog', link: '/blog', disabled: true },
+                {
+                    id: 4,
+                    item: 'Trade Enquiries',
+                    link: '/trade',
+                    disabled: true,
+                },
+                {
+                    id: 5,
+                    item: 'Career',
+                    link: '/career',
+                    disabled: TRACE_OUTPUT_VERSION,
+                },
+                { id: 6, item: 'Sitemap', link: '/sitemap', disabled: true },
             ],
         },
 
         company: {
             title: 'Company',
             listItems: [
-                { id: 1, item: 'About Us', link: 'https://www.google.com/' },
+                {
+                    id: 1,
+                    item: 'About Us',
+                    link: '/aboutUs/page.js',
+                    disabled: false,
+                },
                 {
                     id: 2,
                     item: 'Testimonials',
                     link: 'https://www.google.com/',
+                    disabled: true,
                 },
             ],
         },
@@ -41,28 +80,33 @@ const Footer = (props) => {
             listItems: [
                 {
                     id: 1,
-                    item: 'Commercial Uniform',
-                    link: '/Commercial Uniform',
+                    item: 'School Uniform',
+                    link: '/clp/school-uniform',
+                    disabled: false,
                 },
                 {
                     id: 2,
                     item: 'Industrial Clothing',
                     link: 'http://localhost:3000/clp/industrial-clothing',
+                    disabled: false,
                 },
                 {
                     id: 3,
                     item: 'Hospital Uniforms',
                     link: '/Hospital Uniforms',
+                    disabled: false,
                 },
                 {
                     id: 4,
                     item: 'Corporate Uniform',
                     link: 'http://localhost:3000/clp/corporate-uniforms',
+                    disabled: false,
                 },
                 {
                     id: 5,
                     item: 'Hotel Uniforms',
                     link: 'http://localhost:3000/clp/hotel-uniforms',
+                    disabled: false,
                 },
             ],
         },
@@ -110,17 +154,26 @@ const Footer = (props) => {
         <div className="mx-auto w-full px-4 md:px-12">
             <div className="md:hidden ">
                 <div className="flex">
-                    <div className="  mt-32">
+                    <div className="mt-32">
                         <FooterNewsLetter />
                     </div>
-                    <div className="flex-col  ">
+                    <div className="flex-col">
                         <div className="ml-11 text-xs font-normal">
                             <FooterList contents={quickLink} />
                         </div>
                         <div className="ml-11 text-xs font-normal">
-                            <FooterList contents={Shop} />
+                            <FooterList
+                                contents={{
+                                    title: 'Shop',
+                                    listItems: shopCategories.map(
+                                        (category) => ({
+                                            id: category.id,
+                                            item: category.attributes.name,
+                                        })
+                                    ),
+                                }}
+                            />
                         </div>
-
                         <div className="ml-11 text-xs font-normal">
                             <FooterList contents={company} />
                         </div>
@@ -129,9 +182,8 @@ const Footer = (props) => {
                         </div>
                     </div>
                 </div>
-
-                <div className="px-4 mt-16  h-7 py-6 bg-gray-100  dark:bg-gray-100 flex items-center justify-between gap-x-4">
-                    <span className=" leading-4 tracking-tighter text-xs text-gray-500 font-black dark:text-gray-600">
+                <div className="px-4 mt-16 py-6 bg-gray-100  dark:bg-gray-100 flex items-center justify-between gap-x-4">
+                    <span className="leading-4 tracking-tighter text-xs text-gray-500 font-black dark:text-gray-600">
                         Uniform on Web
                     </span>
                     <div className="flex mt-4 space-x-2.5 text-gray-600 ">
@@ -144,7 +196,6 @@ const Footer = (props) => {
                     </div>
                 </div>
             </div>
-
             <div className="hidden md:block">
                 <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 md:grid-cols-4">
                     <div>
@@ -157,7 +208,16 @@ const Footer = (props) => {
                         </div>
                     </div>
                     <div>
-                        <FooterList contents={Shop} />
+                        <FooterList
+                            contents={{
+                                title: 'Shop',
+                                listItems: shopCategories.map((category) => ({
+                                    id: category.id,
+                                    item: category.attributes.name,
+                                    slug: category.attributes.slug,
+                                })),
+                            }}
+                        />
                     </div>
                     <div>
                         <FooterNewsLetter />

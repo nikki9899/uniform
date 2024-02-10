@@ -18,7 +18,7 @@ function ProductDetails({ productId }) {
     useEffect(() => {
         Promise.all([getProductDetailsById(productId), getProductDetailsByImage(productId)])
           .then(([productData, imageData]) => {
-            // Check if 'attributes' key is present in the response
+           
             const attributes = productData.data[0].attributes;
     
             if (attributes) {
@@ -36,8 +36,7 @@ function ProductDetails({ productId }) {
       if (!productData) {
         return <div>Loading...</div>;
       }
-    // const productData = productDescriptionSubcategoryMockData.data[0].attributes;
-    // const name = productData.product.data.attributes.name
+ 
     const {name, rating, price } = productData
    
    
@@ -58,9 +57,9 @@ function ProductDetails({ productId }) {
 
             <div className="grid md:grid-cols-3 gap-3">
                 <div className="grid  grid-cols-2 gap-3">
-                    <div className=" w-[390px]  h-[611px] md:w-[600px]  md:h-[882px] border">
+                    <div className=" w-[350px]  h-[611px] md:w-[600px]  md:h-[750px] border">
                     <ImageGallery data={imageMagnifierData} />
-                        {/* Your content for the second sub-column */}
+                        
                     </div>
                 </div>
                 <div className="md:ml-52 w-[390px] md:w-[600px] md:px-8">
@@ -95,9 +94,9 @@ function ProductDetails({ productId }) {
                             </Button>
                         </div>
                     </div>
-                    {/* <div className="mt-10 md:mt-24">
+                    <div className="mt-10 md:mt-24">
                         <Line />
-                    </div> */}
+                    </div>
                     <AboutProduct productData={productData} />
                 </div>
             </div>

@@ -1,20 +1,40 @@
 import Link from 'next/link'
 import { memo } from 'react'
 
-const FooterList = (props) => {
-    let { title, listItems } = props.contents
+const FooterList = ({ contents }) => {
+    const { title, listItems } = contents
+    console.log('list', listItems)
     return (
         <div>
-            <h2 className="mb-4 md:text-sm  md:font-semibold text-gray-900 font-bold text-xs ">
-                {title}
-            </h2>
-            <ul className="text-gray-700  font-normal ">
-                {listItems.map(({ item, id, link = '' }) => (
-                    <li key={id} className="mb-2">
-                        <Link href={link}> {item}</Link>
-                        {/* <a href="#" className=" hover:underline"> 
-               
-              </a> */}
+            <h4 className="text-sm font-semibold mb-2">{title}</h4>
+            <ul>
+                {listItems.map((item) => (
+                    <li key={item.id} className="mb-2">
+                        {title === 'Shop' ? (
+                            <a
+                                href={`/clp/${item.slug}`}
+                                className={`text-gray-800 hover:text-blue-500`}
+                                onClick={(e) =>
+                                    item.disabled && e.preventDefault()
+                                }
+                            >
+                                {item.item}
+                            </a>
+                        ) : (
+                            <a
+                                href={item.link}
+                                className={`text-gray-800  ${
+                                    item.disabled
+                                        ? 'text-gray-400 opacity-50 '
+                                        : 'text-gray-500 hover:text-blue-500'
+                                }`}
+                                onClick={(e) =>
+                                    item.disabled && e.preventDefault()
+                                }
+                            >
+                                {item.item}
+                            </a>
+                        )}
                     </li>
                 ))}
             </ul>
@@ -22,4 +42,4 @@ const FooterList = (props) => {
     )
 }
 
-export default memo(FooterList)
+export default FooterList
