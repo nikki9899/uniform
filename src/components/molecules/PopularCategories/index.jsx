@@ -48,7 +48,7 @@ const PopularCategories = async ({
                             >
                                 <Link href={`/clp/${slug}`}>
                                     <Image
-                                        className="h-[26rem] w-full rounded-lg object-cover object-top"
+                                        className="h-[26rem]  w-full rounded-lg object-cover object-top"
                                         width={500}
                                         height={500}
                                         src={url}

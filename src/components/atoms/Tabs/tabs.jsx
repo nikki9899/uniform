@@ -43,7 +43,7 @@ const Tabs = ({ productId }) => {
             <div className="tab md:w-1/2">
                 <ul className="flex justify-between">
                     <li
-                        className="line cursor-pointer pb-5 text-lg font-semibold"
+                        className="line cursor-pointer pb-5 md:text-lg text-base font-semibold"
                         onClick={() => {
                             updateToggle(1), updateUnderline(1)
                         }}
@@ -55,7 +55,7 @@ const Tabs = ({ productId }) => {
                         </span>
                     </li>
                     <li
-                        className="line cursor-pointer pb-5 text-lg font-semibold"
+                        className="line cursor-pointer pb-5 md:text-lg text-base font-semibold"
                         onClick={() => {
                             updateToggle(2), updateUnderline(2)
                         }}
@@ -79,7 +79,7 @@ const Tabs = ({ productId }) => {
                         </span>
                     </li> */}
                     <li
-                        className="line cursor-pointer pb-5 text-lg font-semibold"
+                        className="line cursor-pointer pb-5 md:text-lg  text-base font-semibold"
                         onClick={() => {
                             updateToggle(4), updateUnderline(4)
                         }}

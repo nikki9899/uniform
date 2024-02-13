@@ -151,8 +151,8 @@ const Footer = (props) => {
     ]
 
     return (
-        <div className="mx-auto w-full px-4 md:px-12">
-            <div className="md:hidden ">
+        <div className="mx-auto w-full px-4 sm:px-12">
+            <div className="md:hidden sm:hidden">
                 <div className="flex">
                     <div className="mt-32">
                         <FooterNewsLetter />
@@ -196,8 +196,8 @@ const Footer = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block">
-                <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 md:grid-cols-4">
+            <div className="hidden md:block sm:block">
+                <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 sm:grid-cols-4">
                     <div>
                         <FooterList contents={quickLink} />
                     </div>
@@ -223,11 +223,11 @@ const Footer = (props) => {
                         <FooterNewsLetter />
                     </div>
                 </div>
-                <div className="px-4 mt-16 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+                <div className="px-4 mt-16 py-6 bg-gray-100 dark:bg-gray-700 sm:flex md:items-center sm:justify-between">
                     <span className="text-lg text-gray-500 font-black dark:text-white">
                         Uniform on Web
                     </span>
-                    <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         {socialMediaAccounts.map((accounts) => (
                             <SocialMediaIcons
                                 key={accounts.id}

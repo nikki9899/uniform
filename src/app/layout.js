@@ -5,7 +5,7 @@ import './globals.css'
 export default function RootLayout({ children }) {
   return (
     <html lang="en"> 
-      <body className='bg-background overflow-x-hidden'>
+      <body className=' w-full sm:w-min lg:w-full bg-background overflow-x-hidden'>
         <Navbar/> 
         <div className='px-4 md:px-12' >
       {children}

@@ -24,7 +24,7 @@ async function PopularSubCategories({
       <h2 className="text-gray-900 font-manrope font-medium text-sm md:text-4xl lowercase">
         popular sub-categories
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-7 pt-4 md:pt-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 pt-4 md:pt-10">
       
         {popSubCat.map((item, index) => (
           <Link key={item.Id} href={`/plp/${item.Name}`}>

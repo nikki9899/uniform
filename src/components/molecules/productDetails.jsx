@@ -57,7 +57,7 @@ function ProductDetails({ productId }) {
 
             <div className="grid md:grid-cols-3 gap-3">
                 <div className="grid  grid-cols-2 gap-3">
-                    <div className=" w-[350px]  h-[611px] md:w-[600px]  md:h-[750px] border">
+                    <div className=" w-[350px]  h-[611px] md:w-[600px] ml-2.5 md:ml-0 md:h-[750px] border">
                     <ImageGallery data={imageMagnifierData} />
                         
                     </div>
