@@ -29,10 +29,10 @@ const Home = async () => {
 
     return (
         <div>
-            <main className="min-h-screen flex-col items-center justify-between">
+            <main className="min-h-screen border-2 border-black flex-col items-center justify-between">
                 <Hero hero={hero} />
                 <Line />
-                <PopularCategories popularCategories={popularCategories} />
+                <PopularCategories popularCategories={popularCategories} /> 
                 <Line />
                 <PopularSubCatogires
                     popularSubCategories={popularSubCategories} />
@@ -43,9 +43,9 @@ const Home = async () => {
                 <Line />
                 <CommercialUniformSection />
                 <Line />
-                <Popular popularSearches={popularSearches} />
-                {/* <Line /> */}
-                <AboutUs aboutUs={aboutUs} />
+                <Popular popularSearches={popularSearches} /> 
+                <Line />
+                <AboutUs aboutUs={aboutUs} /> 
             </main>
         </div>
     )

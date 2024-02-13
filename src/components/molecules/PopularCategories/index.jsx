@@ -9,8 +9,8 @@ const PopularCategories = async ({
     },
 }) => {
     return (
-        <div className="w-full pb-8">
-            <p className="text-left py-1 mb-2 md:mb-6 text-popularTextColor text-sm md:text-3xl not-italic font-normal leading-[26.645px]">
+        <div className="w-full overflow:hidden">
+            <p className="text-left py-1 mb-2 md:mb-6 text-sm md:text-3xl font-medium leading-[26.645px]">
                 Popular Categories
             </p>
 
@@ -41,14 +41,15 @@ const PopularCategories = async ({
                             <div
                                 className={`${
                                     (index + 1) % 3 === 0
-                                        ? 'md:basis-[46%] basis-[50%]' 
-                                        : 'md:basis-[27%] basis-[50%]'
-                                } grow-0 shrink-0 relative rounded-lg`}
+                                        ? 'md:basis-[46%] xs:basis-[50%] basis-[90%]' 
+                                        : 'md:basis-[27%] xs:basis-[50%] basis-[100%]'
+                                } grow-0 shrink-0 relative rounded-lg 
+                        }`}
                                 key={id}
                             >
                                 <Link href={`/clp/${slug}`}>
                                     <Image
-                                        className="h-[26rem]  w-full rounded-lg object-cover object-top"
+                                        className="h-[26rem] w-full rounded-lg object-cover object-top"
                                         width={500}
                                         height={500}
                                         src={url}

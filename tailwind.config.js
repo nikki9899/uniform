@@ -8,6 +8,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens: {
+                'xs':'380px',
+
+            },
            
             boxShadow: {
                 uniform: '0 0 100px 1px black',

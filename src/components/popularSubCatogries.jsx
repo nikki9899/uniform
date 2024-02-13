@@ -21,7 +21,7 @@ async function PopularSubCategories({
 
   return (
     <div className="w-full pb-5">
-      <h2 className="text-gray-900 font-manrope font-medium text-sm md:text-4xl lowercase">
+      <h2 className="text-gray-900 leading-3 font-medium text-sm md:leading-6 md:text-4xl lowercase">
         popular sub-categories
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2 pt-4 md:pt-10">
