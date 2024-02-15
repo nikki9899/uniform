@@ -34,27 +34,6 @@ module.exports = {
         },
     },
     plugins: [
-        plugin(({ addBase, theme }) => {
-            addBase({
-                '.scrollbar': {
-                    overflowY: 'auto',
-                    scrollbarColor: `${theme('colors.black.600')} ${theme(
-                        'colors.black.200'
-                    )}`,
-                    scrollbarWidth: 'thin',
-                },
-                '.scrollbar::-webkit-scrollbar': {
-                    height: '10px',
-                    width: '2px',
-                },
-                '.scrollbar::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.black'),
-                    borderRadius: '50px',
-                },
-                '.scrollbar::-webkit-scrollbar-track-piece': {
-                    backgroundColor: theme('colors.gray.200'),
-                },
-            })
-        }),
+      
     ],
 }
