@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
         <div className='px-4 md:px-12' >
       {children}
       </div>
-      {/* <Footer/> */}
+      <Footer/>
 
       </body>
     </html>

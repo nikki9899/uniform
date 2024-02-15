@@ -152,16 +152,16 @@ const Footer = (props) => {
 
     return (
         <div className="mx-auto w-full px-4 sm:px-12">
-            <div className="md:hidden sm:hidden">
+            <div className="md:hidden ">
                 <div className="flex">
                     <div className="mt-32">
                         <FooterNewsLetter />
                     </div>
                     <div className="flex-col">
-                        <div className="ml-11 text-xs font-normal">
+                        <div className="ml-11 text-[9px] font-normal">
                             <FooterList contents={quickLink} />
                         </div>
-                        <div className="ml-11 text-xs font-normal">
+                        <div className="ml-11 text-[9px] font-normal">
                             <FooterList
                                 contents={{
                                     title: 'Shop',
@@ -174,10 +174,10 @@ const Footer = (props) => {
                                 }}
                             />
                         </div>
-                        <div className="ml-11 text-xs font-normal">
+                        <div className="ml-11 text-[9px] font-normal">
                             <FooterList contents={company} />
                         </div>
-                        <div className="ml-11 text-xs font-normal">
+                        <div className="ml-11 text-[9px] font-normal">
                             <FooterList contents={customerService} />
                         </div>
                     </div>
@@ -196,18 +196,18 @@ const Footer = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block sm:block">
+            <div className="hidden md:block ">
                 <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 sm:grid-cols-4">
-                    <div>
+                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
                         <FooterList contents={quickLink} />
                     </div>
-                    <div>
+                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6" >
                         <FooterList contents={company} />
                         <div className="mt-9">
                             <FooterList contents={customerService} />
                         </div>
                     </div>
-                    <div>
+                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
                         <FooterList
                             contents={{
                                 title: 'Shop',
@@ -223,7 +223,7 @@ const Footer = (props) => {
                         <FooterNewsLetter />
                     </div>
                 </div>
-                <div className="px-4 mt-16 py-6 bg-gray-100 dark:bg-gray-700 sm:flex md:items-center sm:justify-between">
+                <div className="px-4 mt-16 py-6 bg-gray-100 dark:bg-gray-700 sm:flex md:items-center justify-between">
                     <span className="text-lg text-gray-500 font-black dark:text-white">
                         Uniform on Web
                     </span>

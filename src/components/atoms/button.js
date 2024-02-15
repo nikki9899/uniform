@@ -28,3 +28,4 @@ function Button({ variant, rounded, onClick, children, addStyle }) {
 }
 
 export default Button
+// text-24 font-normal border py-1 px-2 md:py-2 md:px-4 border-gray-700 text-gray-900

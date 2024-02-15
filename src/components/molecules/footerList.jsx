@@ -6,7 +6,7 @@ const FooterList = ({ contents }) => {
     console.log('list', listItems)
     return (
         <div>
-            <h4 className="text-sm font-semibold mb-2">{title}</h4>
+            <h4 className="md:text-sm text-[10px] font-semibold mb-2">{title}</h4>
             <ul>
                 {listItems.map((item) => (
                     <li key={item.id} className="mb-2">
