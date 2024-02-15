@@ -3,41 +3,44 @@ import Button from '@/components/atoms/button'
 import ImageCard from '@/components/atoms/ImageCard'
 import { searchLabels } from '@/utils/labels/label'
 import Link from 'next/link'
-import "./style.css"
-const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] } }  =   {  data : [] }  } ) => {
-     
-   
-    const items = data.map(({ id , attributes : {  Title  ,description , image } }) =>  (
-        <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
-        <Link key={id} href={`/pdp/${id}`}>
-            <ImageCard
-                iconDisplay="flex"
-                classnames="w-[13rem] h-[18rem] md:w-64 md:h-[346px] lg:h-[418px] lg:w-[19rem] rounded-2xl shrink-0 back"
-                productImage={image.data.attributes.url}
-            />
-            </Link>
-            <div>
-            
-                <div className="flex justify-between my-1 ml-2">
-                    <h3 className="text-[9px] font-bold leading-4 sm:text-sm sm:leading-5 lg:text-sm lg:leading-6">{Title}</h3>
-                    <h4 className="text-[10px] sm:text-xs sm:leading-5 lg:text-sm lg:leading-5 font-bold leading-4">
+import './styles.css'
+const Popular = ({
+    popularSearches: { products: { data = [] } = { data: [] } } = { data: [] },
+}) => {
+    const items = data.map(
+        ({ id, attributes: { Title, description, image } }) => (
+            <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
+                <Link key={id} href={`/pdp/${id}`}>
+                    <ImageCard
+                        iconDisplay="flex"
+                        classnames="w-[14rem] h-[18rem] md:w-[19rem] md:h-[26rem] rounded-2xl shrink-0 back"
+                        productImage={image.data.attributes.url}
+                    />
+                </Link>
+                <div>
+                    <div className="flex justify-between my-1 ml-2">
+                        <h3 className="text-sm font-semibold leading-7">
+                            {Title}
+                        </h3>
+                        {/* <h4 className="text-sm font-semibold leading-7">
                         INR 5000
-                    </h4>
-                </div>
-                <p className="text-xs text-[8px] leading-4 sm:text-[10px] sm:leading-5 lg:text-xs lg:leading-7 font-medium ml-2 text-start text-gray-500 ">
-                   hii
-                </p>
-                <div className="text-left w-[74px] h-6 sm:w-24 sm:h-8 lg:w-28 lg:h-10 ml-2 my-2">
-                    <Button variant="primary" rounded="full">
-                        <h2 className="text-[8px] sm:text-[10px] sm:leading-3 lg:text-xs lg:leading-4 font-medium leading-[10px]">{searchLabels.buttontext}</h2>
-                    </Button>
+                    </h4> */}
+                    </div>
+                    <p className="text-xs font-medium ml-2 text-start text-gray-500 leading-7">
+                        {description}
+                    </p>
+                    <div className="text-left ml-2 my-2">
+                        <Button variant="primary" rounded="full">
+                            {searchLabels.buttontext}
+                        </Button>
+                    </div>
                 </div>
             </div>
-        </div>
-    ))
+        )
+    )
     return (
         <div className="py-4 max-w-full  max-w-screen-full text-center ">
-            <div className="sm:text-3xl lg:text-4xl text-lg font-medium leading-7  mb-2 text-left">
+            <div className="text-3xl font-normal mb-2 text-left">
                 {searchLabels.heading}
             </div>
 
@@ -47,4 +50,4 @@ const Popular =  ({ popularSearches : { products : { data = [] } = { data : [] }
         </div>
     )
 }
-export default Popular
+export default Popular
