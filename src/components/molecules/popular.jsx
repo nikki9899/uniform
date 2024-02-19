@@ -13,25 +13,25 @@ const Popular = ({
                 <Link key={id} href={`/pdp/${id}`}>
                     <ImageCard
                         iconDisplay="flex"
-                        classnames="w-[14rem] h-[18rem] md:w-[19rem] md:h-[26rem] rounded-2xl shrink-0 back"
+                        classnames="w-[14rem] h-72 sm:w-64 sm:h-[346px] lg:w-[308px] lg:h-[418px] rounded-2xl shrink-0 back"
                         productImage={image.data.attributes.url}
                     />
                 </Link>
                 <div>
                     <div className="flex justify-between my-1 ml-2">
-                        <h3 className="text-sm font-semibold leading-7">
+                        <h3 className="lg:text-sm  sm:text-xs text-[10px] font-bold leading-5  sm:leading-6 lg:leading-7">
                             {Title}
                         </h3>
                         {/* <h4 className="text-sm font-semibold leading-7">
                         INR 5000
                     </h4> */}
                     </div>
-                    <p className="text-xs font-medium ml-2 text-start text-gray-500 leading-7">
+                    <p className="sm:text-[10px] lg:text-xs lg:leading-6 sm:leading-5 text-[8px] leading-4 font-medium ml-2 text-start text-gray-500 ">
                         {description}
                     </p>
-                    <div className="text-left ml-2 my-2">
+                    <div className="lg:w-28 lg:h-9 w-[74px] h-[1.5rem] sm:w-[6rem] sm:h-[2rem] text-left ml-2 my-2">
                         <Button variant="primary" rounded="full">
-                            {searchLabels.buttontext}
+                           <h2 className="lg:text-xs  text-[8px] sm:text-[10px]leading-3 leading-[11px] font-medium lg:leading-4">{searchLabels.buttontext}</h2>
                         </Button>
                     </div>
                 </div>

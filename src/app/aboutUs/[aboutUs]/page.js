@@ -21,19 +21,20 @@ const Page = () => {
             <Overview />
             <SideImageText />
             <Description />
-            <Line/>
+            <Line />
             <Factsheet />
-            <Line/>
+            <Line />
             <UspHead />
-            <Line/>
+            <Line />
             <StatutoryProfile />
-            <Line/>
             <HsnDescription />
             <OurTeam />
             <TeamMembers />
-            <Line/>
+            <Line />
             <PaymentMode />
+            <Line />
             <WhyUs />
+            <Line />+
         </div>
     )
 }

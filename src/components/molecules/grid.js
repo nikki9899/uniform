@@ -1,9 +1,11 @@
-const Grid = ({cardsPerRow, cardsPerRowLg, children})=>{
+const Grid = ({ cardsPerRow, cardsPerRowMd, children }) => {
     return (
-        <div className={`w-full grid grid-cols-${cardsPerRow} md:grid-cols-${cardsPerRowLg} gap-${cardsPerRow}`}>
+        <div
+            className={`w-full grid grid-cols-${cardsPerRow} md:grid-cols-${cardsPerRowMd} gap-${cardsPerRow}`}
+        >
             {children}
         </div>
-    );
+    )
 }
 
-export default Grid;
+export default Grid

@@ -8,35 +8,40 @@ import Popular from '@/components/molecules/popular'
 import { getProducts, fetchPopularSearches } from '@/utils/api'
 
 const Plp = ({ params: { subCategory } }) => {
-    const [data, setData] = useState([]);
-    const [pageCount, setPageCount] = useState(0);
-    const [total, setTotal] = useState(0);
-    const [popularSearches, setPopularSearches] = useState([]);
+    const [data, setData] = useState([])
+    const [pageCount, setPageCount] = useState(0)
+    const [total, setTotal] = useState(0)
+    const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
         async function fetchData(category) {
             try {
-                const { data, meta: { pagination: { page, pageSize, pageCount, total } } } = await getProducts(category);
-                setData(data);
-                setPageCount(pageCount);
-                setTotal(total);
+                const {
+                    data,
+                    meta: {
+                        pagination: { page, pageSize, pageCount, total },
+                    },
+                } = await getProducts(category)
+                setData(data)
+                setPageCount(pageCount)
+                setTotal(total)
             } catch (error) {
-                console.error('Error fetching products:', error);
+                console.error('Error fetching products:', error)
             }
         }
 
         async function fetchPopular(category) {
             try {
-                const data = await fetchPopularSearches(category);
-                setPopularSearches(data);
+                const data = await fetchPopularSearches(category)
+                setPopularSearches(data)
             } catch (error) {
-                console.error('Error fetching popular searches:', error);
+                console.error('Error fetching popular searches:', error)
             }
         }
 
-        fetchData(subCategory);
-        fetchPopular(subCategory);
-    }, [subCategory]);
+        fetchData(subCategory)
+        fetchPopular(subCategory)
+    }, [subCategory])
 
     return (
         <div>
@@ -46,7 +51,7 @@ const Plp = ({ params: { subCategory } }) => {
                 <Subcategories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
-                <Popular popularSearches={popularSearches} />
+                {/* <Popular popularSearches={popularSearches} /> */}
             </main>
         </div>
     )

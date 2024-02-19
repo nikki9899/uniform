@@ -35,8 +35,8 @@ const PopularCategories = async ({
                             <div
                             className={`${
                                 (index + 1) % 3 === 0
-                                    ? 'md:basis-[46%] basis-[50%]'
-                                    : 'md:basis-[27%] basis-[50%]'
+                                    ? 'xs:basis-[50%] basis-[100%]'
+                                    : 'xs:basis-[50%] basis-[100%]'
                             } grow-0 shrink-0 relative rounded-lg mx-1`} // Add my-4 for margin
                             key={id}
                         >
