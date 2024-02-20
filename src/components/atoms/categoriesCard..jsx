@@ -1,9 +1,6 @@
 import Button from './button'
 
 const CategoriesCard = ({ item: { Id, ImgSrc, Name } }) => {
-    console.log('Rendering CategoriesCard for Id:', Id)
-    console.log(Name)
-
     return (
         <div className="relative">
             <img

@@ -25,7 +25,6 @@ const Footer = (props) => {
         fetchCategories()
     }, [])
 
-    console.log('shop', shopCategories)
     let { quickLink, company, customerService } = {
         quickLink: {
             title: 'Quick link',
@@ -201,7 +200,7 @@ const Footer = (props) => {
                     <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
                         <FooterList contents={quickLink} />
                     </div>
-                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6" >
+                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
                         <FooterList contents={company} />
                         <div className="mt-9">
                             <FooterList contents={customerService} />

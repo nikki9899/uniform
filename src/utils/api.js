@@ -3,7 +3,6 @@ const baseUrl = process.env.BASE_URL
 export const getAPI = async (path) => {
     let url = baseUrl + '/home-page?populate=deep'
 
-    console.log(url)
     try {
         const loadData = await fetch(url, { cache: 'no-cache' })
 
@@ -92,7 +91,7 @@ export const getProductDetailsByImage = async (productId) => {
                     alt: 'Product Image',
                 })
             )
-            console.log('Fetched image data:', imageMagnifierData)
+            
             return imageMagnifierData
         } else {
             return response

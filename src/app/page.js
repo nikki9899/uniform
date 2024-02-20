@@ -33,7 +33,9 @@ const Home = async () => {
                 <Hero hero={hero} />
                 <Line />
                 <PopularCategories popularCategories={popularCategories} />
-                <Line />
+                <div className="hidden md:block">
+                    <Line />
+                </div>
                 <PopularSubCatogires
                     popularSubCategories={popularSubCategories}
                 />
@@ -44,8 +46,14 @@ const Home = async () => {
                 <Line />
                 {/* <CommercialUniformSection /> */}
                 <Popular popularSearches={popularSearches} />
-                <Line />
+                <div className="hidden md:block">
+                    <Line />
+                </div>
+
                 <AboutUs aboutUs={aboutUs} />
+                <div className="md:hidden">
+                    <Line />
+                </div>
             </main>
         </div>
     )

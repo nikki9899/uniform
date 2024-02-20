@@ -33,38 +33,37 @@ const PopularCategories = async ({
                     ) => {
                         return (
                             <div
-                            className={`${
-                                (index + 1) % 3 === 0
-                                    ? 'xs:basis-[50%] basis-[100%]'
-                                    : 'xs:basis-[50%] basis-[100%]'
-                            } grow-0 shrink-0 relative rounded-lg mx-1`} // Add my-4 for margin
-                            key={id}
-                        >
-                            <Link href={`/clp/${slug}`}>
-                                <Image
-                                    className="mb-[20px] h-[26rem] w-full rounded-lg object-cover object-top"
-                                    width={500}
-                                    height={500}
-                                    src={url}
-                                    alt={name}
-                                />
-                                <Button
-                                    rounded="full"
-                                    variant="primary"
-                                    addStyle={
-                                        ' text-white text-base border-1 border-white bg-slate-800 bg-opacity-30 absolute top-2.5 md:top-7 left-2 md:left-7'
-                                    }
-                                >
-                                    <p className="text-[7.89px] md:text-base ">
-                                        {name}
-                                    </p>
-                                </Button>
+                                className={`${
+                                    (index + 1) % 3 === 0
+                                        ? 'xs:basis-[50%] basis-[100%]'
+                                        : 'xs:basis-[50%] basis-[100%]'
+                                } grow-0 shrink-0 relative rounded-lg mx-1`}
+                                key={id}
+                            >
+                                <Link href={`/clp/${slug}`}>
+                                    <Image
+                                        className="mb-[50px] h-[26rem] w-full rounded-lg object-cover object-top"
+                                        width={500}
+                                        height={500}
+                                        src={url}
+                                        alt={name}
+                                    />
+                                    <Button
+                                        rounded="full"
+                                        variant="primary"
+                                        addStyle={
+                                            ' text-white text-base border-1 border-white bg-slate-800 bg-opacity-30 absolute top-2.5 md:top-7 left-2 md:left-7'
+                                        }
+                                    >
+                                        <p className="text-[7.89px] md:text-base ">
+                                            {name}
+                                        </p>
+                                    </Button>
                                 </Link>
                             </div>
                         )
                     }
                 )}
-                {/* </div> */}
             </div>
             <div className="hidden md:block">
                 <Carousel
