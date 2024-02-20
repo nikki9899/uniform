@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useState, useEffect } from 'react'
 import ImageGallery from './ImageGallery'
 import Line from '../atoms/horizontal-line'
@@ -9,37 +9,38 @@ import Rating from './rating'
 import { RightArrow } from '../svgs'
 import { Rs } from '../svgs'
 import { productDescriptionSubcategoryMockData } from '@/mockData/productDescription'
-import { getProductDetailsById, getProductDetailsByImage } from '@/utils/api';
+import { getProductDetailsById, getProductDetailsByImage } from '@/utils/api'
 
 function ProductDetails({ productId }) {
-    const [productData, setProductData] = useState(null);
-    const [imageMagnifierData, setImageMagnifierData] = useState([]);
+    const [productData, setProductData] = useState(null)
+    const [imageMagnifierData, setImageMagnifierData] = useState([])
 
     useEffect(() => {
-        Promise.all([getProductDetailsById(productId), getProductDetailsByImage(productId)])
-          .then(([productData, imageData]) => {
-           
-            const attributes = productData.data[0].attributes;
-    
-            if (attributes) {
-              setProductData(attributes);
-              setImageMagnifierData(imageData);
-            } else {
-              console.error('Error: Invalid response structure.');
-            }
-          })
-          .catch((error) => {
-            console.error('Error fetching product details:', error);
-          });
-      }, [productId]);
-    
-      if (!productData) {
-        return <div>Loading...</div>;
-      }
- 
-    const {name, rating, price } = productData
-   
-   
+        Promise.all([
+            getProductDetailsById(productId),
+            getProductDetailsByImage(productId),
+        ])
+            .then(([productData, imageData]) => {
+                const attributes = productData.data[0].attributes
+
+                if (attributes) {
+                    setProductData(attributes)
+                    setImageMagnifierData(imageData)
+                } else {
+                    console.error('Error: Invalid response structure.')
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching product details:', error)
+            })
+    }, [productId])
+
+    if (!productData) {
+        return <div>Loading...</div>
+    }
+
+    const { name, rating, price } = productData
+
     return (
         <div>
             <div className="ml-20 md:ml-40 mt-14 inline-flex h-[38.086px] p-[4.862px 21.879px] justify-center items-center gap-8.103px flex-shrink-0 hidden md:block">
@@ -58,8 +59,7 @@ function ProductDetails({ productId }) {
             <div className="grid md:grid-cols-3 gap-3">
                 <div className="grid  grid-cols-2 gap-3">
                     <div className=" w-[350px]  h-[611px] md:w-[600px] ml-2.5 md:ml-0 md:h-[750px] border">
-                    <ImageGallery data={imageMagnifierData} />
-                        
+                        <ImageGallery data={imageMagnifierData} />
                     </div>
                 </div>
                 <div className="md:ml-52 w-[390px] md:w-[600px] md:px-8">

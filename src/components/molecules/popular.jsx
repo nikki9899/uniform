@@ -21,7 +21,7 @@ const Popular = ({
                         />
                     </Link>
                     <div>
-                        <div className="flex justify-between my-1 ">
+                        <div className="flex justify-between md:mr-6 ">
                             <h3 className="lg:text-sm sm:text-xs text-[10px] font-bold leading-5 sm:leading-6 lg:leading-7">
                                 {Title}
                             </h3>

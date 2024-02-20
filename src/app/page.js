@@ -44,7 +44,8 @@ const Home = async () => {
                 <Line />
                 <ShopByIndustries shopByCategory={shopByCategory} />
                 <Line />
-                {/* <CommercialUniformSection /> */}
+                <CommercialUniformSection />
+                <Line />
                 <Popular popularSearches={popularSearches} />
                 <div className="hidden md:block">
                     <Line />
