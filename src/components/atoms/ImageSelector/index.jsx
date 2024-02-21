@@ -14,9 +14,11 @@ const ImageSelector = ({ data , onImageClick, selectedImage }) => {
     else onImageClick(selectedImage + 1);
   };
 
+  //  max-w-screen-full lg overflow-x-auto custom-scrollbar flex flex-nowrap
+
   return (
-    <div className={"flex flex-col w-fit gap-y-12 items-center"}>
-      <div className="flex flex-col">
+    <div className={"flex flex-col w-fit gap-y-12 items-center mx-auto"}>
+      <div className="flex flex-row sm:flex-col mt-4 overflow-auto">
         {data.map(({ id, smallImageSrc, alt }, index) => (
           <ImageContainer
             key={id}
@@ -28,7 +30,7 @@ const ImageSelector = ({ data , onImageClick, selectedImage }) => {
         ))}
       </div>
 
-      <div className="flex flex-col gap-y-5 w-fit">
+      <div className="hidden sm:flex sm:flex-col sm:gap-y-5 sm:w-fit">
         <CircularButton
           onClick={upButtonHandler}
           backgroundColor={`${selectedImage === 0 ? "white" : "black"}`}

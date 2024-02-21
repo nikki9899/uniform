@@ -4,7 +4,7 @@ import Image from "next/image";
 const ImageContainer = ({ src, alt, selected, onImageClick }) => {
   return (
     <div
-      className={`w-28 h-28 box-content p-1 rounded-3xl border-2 ${
+      className={`w-28 h-28 shrink-0 box-content p-1 rounded-3xl border-2 ${
         selected ? "border-black" : "border-transparent"
       }`}
       onClick={onImageClick}

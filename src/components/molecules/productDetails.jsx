@@ -56,13 +56,11 @@ function ProductDetails({ productId }) {
                 </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-3">
-                <div className="grid  grid-cols-2 gap-3">
-                    <div className=" w-[350px]  h-[611px] md:w-[600px] ml-2.5 md:ml-0 md:h-[750px] border">
-                        <ImageGallery data={imageMagnifierData} />
-                    </div>
+            <div className="flex flex-col lg:flex-row gap-x-8">
+                <div className="sm:w-fit mx-auto pr-2 lg:mx-0">
+                    <ImageGallery data={imageMagnifierData} />
                 </div>
-                <div className="md:ml-52 w-[390px] md:w-[600px] md:px-8">
+                <div className="w-fit">
                     <div>
                         <h1 className="text-gray-800 font-manrope text-4xl font-semibold">
                             {name}

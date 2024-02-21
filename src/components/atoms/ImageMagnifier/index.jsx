@@ -15,7 +15,7 @@ const ImageMagnifier = ({
       <ReactImageMagnify
       isHintEnabled
       {...{
-        style: { marginLeft: "md:2rem" },
+        style: { margin:' auto' },
         smallImage: {
           alt: smallImageAlt,
           src: smallImageSrc,

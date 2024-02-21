@@ -25,11 +25,11 @@ const FooterNewsLetter = (props) => {
                             />
                         </div>
                         <button
-                            className="relative py-3 text-black "
+                            className="relative text-black w-fit shrink-0"
                             onClick={handelSubscribe}
                         >
                             {button}
-                            <span className="z-[-1] absolute my-2 inset-y-0  right-0  xs:right-1 md:right-3 md:h-8 md:w-8 w-5 h-5 bg-red-900"></span>
+                            <span className="z-[-1] absolute top-0 right-0 h-full w-[33%] bg-[#C46145]"></span>
                         </button>
                     </div>
                 </li>
