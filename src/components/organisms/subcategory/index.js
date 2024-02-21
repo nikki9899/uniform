@@ -23,11 +23,11 @@ const Subcategories = ({ data }) => {
                                         classnames={`w-full h-[18rem] sm:h-[346px] md:h-[355px] lg:h-[418px] h-96 rounded-2xl shrink-0 back `}
                                         productImage={image.data.attributes.url}
                                     />
-                                    <div className="flex relative mt-2">
+                                    <div className="flex justify-between relative mt-2">
                                         <span className=" text-center text-[8px] sm:text-xs  lg:text-sm lg:leading-6 leading-[14px] font-bold sm:leading-[22px]">
                                             {Title}
                                         </span>
-                                        <span className="absolute text-right text-[8px] sm:text-xs  lg:text-sm lg:leading-6 leading-[14px] font-bold sm:leading-[22px] ml-[6rem] xs:ml-[8rem] md:ml-[8rem] lg:ml-[17rem] sm:ml-[14rem] pr-4">
+                                        <span className="text-right text-[8px] sm:text-xs  lg:text-sm lg:leading-6 leading-[14px] font-bold sm:leading-[22px] ">
                                         {price} INR
                                         </span>
                                     </div>

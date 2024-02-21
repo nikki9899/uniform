@@ -6,7 +6,6 @@ import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
 import { getAPI, getSubCategories } from '@/utils/api'
 import { fetchPopularSearches } from '@/utils/api'
-  
 
 const Clp = ({ params: { category } }) => {
     const [data, setData] = useState([])
@@ -36,19 +35,17 @@ const Clp = ({ params: { category } }) => {
             }
         }
 
-       
-
         async function fetchPopular() {
             try {
-                const data = await fetchPopularSearches();
-                setPopularSearches(data);
+                const data = await fetchPopularSearches()
+                setPopularSearches(data)
             } catch (error) {
-                console.error('Error fetching popular searches:', error);
+                console.error('Error fetching popular searches:', error)
             }
         }
 
-        fetchData(category);
-        fetchPopular();
+        fetchData(category)
+        fetchPopular()
     }, [category])
 
     return (
@@ -60,6 +57,7 @@ const Clp = ({ params: { category } }) => {
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
                 <Popular popularSearches={popularSearches} />
+                <div className=" hidden md:block h-px w-full mb-[50px] bg-black border-0 "></div>
             </main>
         </div>
     )

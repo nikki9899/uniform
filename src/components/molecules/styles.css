@@ -14,12 +14,8 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: linear-gradient(
-        lightgray 0%,
-        lightgray 50%,
-        transparent 50%,
-        transparent 100%
-    );
+    background-color: black;
+    border: solid #efefef 3.5px;
 
     border-radius: 10px;
     height: 2px;
@@ -27,5 +23,5 @@
 }
 
 .custom-scrollbar {
-    overflow-y: auto;
+    overflow-y: auto;
 }

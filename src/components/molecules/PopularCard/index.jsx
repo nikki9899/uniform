@@ -10,7 +10,7 @@ const PopularCard = ({
     return (
         <div className="relative ">
             <ImageCard
-                classnames="h-56 w-full   sm:h-[346px] lg:h-[418px] rounded-2xl shrink-0 back "
+                classnames="h-56 w-full sm:h-[346px] lg:h-[418px] rounded-2xl shrink-0 back "
                 productImage={productImage}
             />
             <div className=" flex  justify-between relative mt-2">

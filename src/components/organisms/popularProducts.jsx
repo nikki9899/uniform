@@ -24,7 +24,11 @@ const PopularProducts = ({ popularProducts = {} }) => {
                                     attributes.image?.data?.attributes?.url ||
                                     ''
                                 }
-                                productPrice={attributes.products.data[0]?.attributes?.product_detail?.data?.attributes?.price}
+                                productPrice={
+                                    attributes.products.data[0]?.attributes
+                                        ?.product_detail?.data?.attributes
+                                        ?.price
+                                }
                             />
                         </div>
                     </Link>

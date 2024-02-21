@@ -104,7 +104,7 @@ const ShopByIndustries = ({ shopByCategory }) => {
                                 <h3 className="text-gray-900 font-manrope text-xs md:text-sm md:leading-6 font-bold leading-5">
                                     {product.title}
                                 </h3>
-                                <span className=" overflow-hidden text-center text-[7px] sm:text-xs sm:leading-6 leading-4 font-bold lg:text-sm lg:leading-[26.645px] ml-[5rem] xs:ml-[12rem] md:ml-[8rem] lg:ml-[12rem] pr-4">
+                                <span className=" overflow-hidden text-center text-[7px] sm:text-xs sm:leading-6 leading-4 font-bold lg:text-sm lg:leading-[26.645px] ">
                                     {product.price} INR
                                 </span>
                             </div>

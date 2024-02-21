@@ -10,7 +10,7 @@ const Popular = ({
 }) => {
     const items = data.map(
         ({ id, attributes: { Title, description, image, product_detail } }) => {
-            const price = product_detail?.data?.attributes?.price 
+            const price = product_detail?.data?.attributes?.price
             return (
                 <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
                     <Link key={id} href={`/pdp/${id}`}>
