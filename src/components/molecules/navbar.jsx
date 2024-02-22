@@ -1,6 +1,5 @@
 'use client'
-'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { NavbarLabels } from '@/utils/labels/navbarLabels'
 import Dropdown from './Dropdown'
@@ -17,10 +16,12 @@ const Navbar = () => {
     } = NavbarLabels
     const [isHovered, setIsHovered] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [categories, setCategories] = useState([])
     const [corporateUniformData, setCorporateUniformData] = useState([])
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
+    const dropdownRef = useRef(null)
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -65,8 +66,29 @@ const Navbar = () => {
         fetchCategories()
     }, [])
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target)
+            ) {
+                setIsHovered(false)
+                setIsMobileMenuOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [dropdownRef])
+
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen)
+        if (isHovered) {
+            setIsHovered(false)
+        }
     }
 
     const handleMouseEnter = () => {
@@ -116,7 +138,10 @@ const Navbar = () => {
             </div>
             {isMobileMenuOpen && (
                 <>
-                    <div className="md:hidden absolute top-[75px] left-0 right-0 bg-white z-50">
+                    <div
+                        ref={dropdownRef}
+                        className="md:hidden absolute top-[75px] left-0 right-0 bg-white z-50"
+                    >
                         <Link
                             href={uniformbyProfessionSrc}
                             className="block p-3 border-b border-gray-300  "
@@ -173,19 +198,7 @@ const Navbar = () => {
                     </div>
                 ))}
             </div>
-            {/* Search and Wish Icons (Desktop)
-            <div className={`hidden sm:flex pl-[20%] gap-2.5 float-right`}>
-                <div className="cursor-pointer">
-                    <a href={SearchLink}>
-                        <Search />
-                    </a>
-                </div>
-                {/* <div className="cursor-pointer">
-                    <a href={WishLink}>
-                        <Wish />
-                    </a>
-                </div> */}
-            {/* </div> */}
+
             {isHovered && !isMobileMenuOpen && (
                 <Dropdown
                     corporateUniformData={corporateUniformData}
