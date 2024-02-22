@@ -57,7 +57,7 @@ const Clp = ({ params: { category } }) => {
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
                 <Popular popularSearches={popularSearches} />
-                <div className=" hidden md:block h-px w-full mb-[50px] bg-black border-0 "></div>
+                <div className=" hidden md:block h-px w-full mb-[90px] bg-black border-0 "></div>
             </main>
         </div>
     )

@@ -24,7 +24,7 @@ const description = ({ productData }) => {
     const feature1Array = Array(3).fill(feature1)
 
     return (
-        <div className="mt-4 md:mt-20">
+        <div className="mt-4 md:mt-10 md:mb-10">
             <div className="text-gray-900 xs:text-xs text-[10px] lg:text-base lg:leading-6 leading-3 sm:text-sm sm:leading-5">
                 <h1>
                     <span className="font-bold ">{text} :</span>

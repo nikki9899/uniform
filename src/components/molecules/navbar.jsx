@@ -1,9 +1,8 @@
 'use client'
+'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Search from '@/components/atoms/Icons/Search'
 import { NavbarLabels } from '@/utils/labels/navbarLabels'
-import Wish from '@/components/atoms/Icons/Wish'
 import Dropdown from './Dropdown'
 import { getAPI } from '@/utils/api'
 
@@ -22,7 +21,6 @@ const Navbar = () => {
     const [corporateUniformData, setCorporateUniformData] = useState([])
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
-    
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -95,14 +93,14 @@ const Navbar = () => {
             setIsHovered(true)
         }
     }
-    
+
     const handleAboutUs = () => {
-        setIsMobileMenuOpen(false );
+        setIsMobileMenuOpen(false)
     }
     return (
         <div className="px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-7 flex justify-between md:items-center ">
             <Link href="/">
-                <h1 className="text-black md:text-3xl not-italic font-black md:leading-7 tracking-[-1.066px] md:font-bold text-sm  md:mt-5 flex">
+                <h1 className="text-black md:text-3xl  font-black md:leading-7 tracking-[-0.5px] md:font-bold text-sm  md:mt-5 flex">
                     {Logo}
                 </h1>
             </Link>
@@ -139,7 +137,6 @@ const Navbar = () => {
                             href="/aboutUs/page.js"
                             className="block p-3 border-b border-gray-300"
                             onClick={handleAboutUs}
-                            
                         >
                             About Us
                         </Link>

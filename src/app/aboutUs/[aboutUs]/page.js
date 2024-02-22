@@ -3,7 +3,6 @@ import Banner from '@/components/molecules/aboutUs/banner'
 import Overview from '@/components/molecules/aboutUs/overview'
 import SideImageText from '@/components/molecules/aboutUs/sideImageText'
 import Description from '@/components/molecules/aboutUs/description'
-import { getAPI } from '@/utils/api'
 import Factsheet from '@/components/molecules/aboutUs/factsheet'
 import UspHead from '@/components/molecules/aboutUs/companyUsp'
 import StatutoryProfile from '@/components/molecules/aboutUs/statutory'
@@ -34,7 +33,7 @@ const Page = () => {
             <PaymentMode />
             <Line />
             <WhyUs />
-            <Line />+
+            <Line />
         </div>
     )
 }
