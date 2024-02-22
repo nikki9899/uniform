@@ -19,7 +19,7 @@ const CommercialUniformSection = () => {
 
             <div className="w-full h-fit">
                 <div
-                    className="w-40 h-40 mx-auto sm:w-60 sm:h-60 lg:w-[360px] lg:h-[360px]"
+                    className='w-40 h-40 mx-auto sm:w-60 sm:h-60 lg:w-[360px] lg:h-[360px]'
                     style={{
                         background: 'url("/Images/Mask group.png")',
                         backgroundSize: 'contain',

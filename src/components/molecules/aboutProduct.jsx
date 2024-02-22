@@ -25,31 +25,31 @@ const description = ({ productData }) => {
 
     return (
         <div className="mt-4 md:mt-20">
-            <div className="relative text-gray-900 font-manrope text-lg leading-10 md:leading-none">
+            <div className="text-gray-900 xs:text-xs text-[10px] lg:text-base lg:leading-6 leading-3 sm:text-sm sm:leading-5">
                 <h1>
-                    <span className="font-bold ">{text}:</span>
+                    <span className="font-bold ">{text} :</span>
                     <span className="ml-3">{productData.brand}</span>
                 </h1>
-                <p className="md:mt-4 ">
-                    <span className="font-bold">{text1}:</span>
+                <p className=" mt-2 sm:mt-4 ">
+                    <span className="font-bold">{text1} :</span>
                     <span className="ml-3">
                         {productData.availability.toString()}
                     </span>
                 </p>
-                <p className="md:mt-4">
-                    <span className="font-bold">{text2}:</span>
+                <p className=" mt-2 sm:mt-4">
+                    <span className="font-bold">{text2} :</span>
                     <span className="ml-3">{productData.MPN}</span>
                 </p>
-                <p className="md:mt-4">
-                    <span className="font-bold">{text3}:</span>
-                    <span className ="ml-3">{productData.GrossWeight}</span>
+                <p className=" mt-2 sm:mt-4">
+                    <span className="font-bold">{text3} :</span>
+                    <span className="ml-3">{productData.GrossWeight}</span>
                 </p>
-                <p className="md:mt-4">
-                    <span className="font-bold">{text4}:</span>
+                <p className=" mt-2 sm:mt-4">
+                    <span className="font-bold">{text4} :</span>
                     <span className="ml-3">{productData.DelevieryTime}</span>
                 </p>
-                <p className="md:mt-4">
-                    <span className="font-bold">{text5}:</span>
+                <p className=" mt-2 sm:mt-4">
+                    <span className="font-bold">{text5} :</span>
                     <span className="ml-3">{productData.PlaceOfMfg}</span>
                 </p>
             </div>
