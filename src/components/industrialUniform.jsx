@@ -1,9 +1,7 @@
 import React from 'react'
 
 const IndustrialUniform = ({ heading, description }) => {
-    console.log('head', heading)
     let HeadingString = decodeURIComponent(heading)
-    console.log('heading', HeadingString)
 
     return (
         <div className="mt-16 md:mt-32">

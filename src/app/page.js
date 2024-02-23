@@ -29,7 +29,7 @@ const Home = async () => {
 
     return (
         <div>
-            <main className="min-h-screen  flex-col items-center justify-between">
+            <main className="min-h-screen flex-col items-center justify-between">
                 <Hero hero={hero} />
                 <Line />
                 <PopularCategories popularCategories={popularCategories} />

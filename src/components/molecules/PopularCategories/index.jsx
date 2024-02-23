@@ -42,7 +42,7 @@ const PopularCategories = async ({
                             >
                                 <Link href={`/clp/${slug}`}>
                                     <Image
-                                        className="mb-[50px] h-[26rem] w-full rounded-lg object-cover object-top"
+                                        className="mb-[50px] h-[20rem] w-full rounded-lg object-cover object-top"
                                         width={500}
                                         height={500}
                                         src={url}
@@ -93,8 +93,8 @@ const PopularCategories = async ({
                                 <div
                                     className={`${
                                         (index + 1) % 3 === 0
-                                            ? 'md:basis-[46%] basis-[50%]'
-                                            : 'md:basis-[27%] basis-[50%]'
+                                            ? ' lg:basis-[34%] md:basis-[43%] basis-[50%]'
+                                            : ' lg:basis-[34%] md:basis-[43%] basis-[50%]'
                                     } grow-0 shrink-0 relative rounded-lg`}
                                     key={id}
                                 >

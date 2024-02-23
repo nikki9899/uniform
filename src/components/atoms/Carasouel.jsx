@@ -32,7 +32,7 @@ function CarouselWithTimer({ images, interval }) {
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className={` ${
+                        className={`${
                             isHovered
                                 ? 'hover:scale-105 transition-transform duration-300'
                                 : ''

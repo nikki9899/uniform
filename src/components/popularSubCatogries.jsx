@@ -50,8 +50,8 @@ async function PopularSubCategories({
                                 <div
                                     className={`${
                                         (index + 1) % 5 === 0
-                                            ? 'sm:basis-[60%] basis-[70%] '
-                                            : 'sm:basis-[60%] basis-[70%] '
+                                            ? 'sm:basis-[50%]  xx:basis-[63%] basis-[73%] '
+                                            : 'sm:basis-[50%] xx:basis-[63%] basis-[73%] '
                                     } grow-0 shrink-0 relative rounded-lg md:hidden mt-5 relative
                   }`}
                                     key={id}

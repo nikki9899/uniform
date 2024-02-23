@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const Description = ({ data }) => {
     return (
         <div>
             <div className="description-container pt-8">
-                <div className=" features flex list-none pt-3.5">
+                <div className="features flex list-none pt-3.5">
                     <div className="heading md:w-1/6 lg:text-lg lg:leading-6 sm:text-sm text-xs leading-3 sm:leading-5 font-bold">
                         <h3>Features:</h3>
                     </div>
@@ -13,16 +13,19 @@ const Description = ({ data }) => {
                             .replace(/@/g, '\n')
                             .split('\n')
                             .filter((feature) => feature.trim() !== '')
-                            .map((feature, index) => (
-                                <p key={index} className="mb-2">{`${
-                                    index + 1
-                                }. ${feature.trim()}`}</p>
-                            ))}
+                            .map((feature, index) => {
+                                
+                                const uniqueId = `${index}_${feature.trim()}`;
+                                return (
+                                    <p key={uniqueId} className="mb-2">{`${index + 1}. ${feature.trim()}`}</p>
+                                );
+                            })}
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Description
+export default Description;
+

@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 const QuestionAndAnswers = ({ data }) => {
-    const [qAndA, setQAndA] = useState([])
+    const [qAndA, setQAndA] = useState([]);
 
     useEffect(() => {
         if (data && data.QnA) {
-            setQAndA(data.QnA)
+            setQAndA(data.QnA);
         }
-    }, [data])
+    }, [data]);
 
     return (
         <div>
-            <div className="qAndA-container  flex pt-8">
+            <div className="qAndA-container flex pt-8">
                 <div className="description">
-                    {qAndA.map((qa, index) => (
-                        <div key={index}>
+                    {qAndA.map((qa) => (
+                        <div key={qa.id}>
                             <p>
                                 <span className="lg:text-lg lg:leading-6 sm:text-sm xs:text-xs text-[10px] leading-3 sm:leading-5 font-semibold">
                                     Question:
@@ -33,7 +33,7 @@ const QuestionAndAnswers = ({ data }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default QuestionAndAnswers
+export default QuestionAndAnswers;

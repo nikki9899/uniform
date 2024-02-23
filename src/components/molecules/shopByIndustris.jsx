@@ -96,7 +96,7 @@ const ShopByIndustries = ({ shopByCategory }) => {
                         <div className="col-span-1 mt-4">
                             <ImageCard
                                 iconDisplay="hidden"
-                                classnames="rounded h-[30rem] rounded md:h-[500px] "
+                                classnames="rounded h-[30rem] rounded md:h-[400px] lg:h-[500px] "
                                 productImage={product.ImgSrc}
                             />
 

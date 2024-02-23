@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import Description from './description'
 import Specifications from './specifications'
-import VendorReviews from './vendorReviews'
 import QuestionAndAnswers from './question&Answers'
 import { getProductDetailsById } from '@/utils/api'
 
@@ -15,6 +14,8 @@ const Tabs = ({ productId }) => {
         getProductDetailsById(productId)
             .then((data) => {
                 if (data && data.data && data.data[0]) {
+                    const productData = data.data[0].attributes;
+                    delete productData.fdprocessedid;
                     setTabProductData(data.data[0].attributes)
                 }
             })
@@ -23,10 +24,12 @@ const Tabs = ({ productId }) => {
             })
     }, [productId])
 
+  
+
     if (!tabProductData) {
         return <div>Loading...</div>
     }
-    console.log(tabProductData)
+    
 
     const updateToggle = (id) => {
         setToggle(id)
@@ -107,9 +110,7 @@ const Tabs = ({ productId }) => {
                 <div className={toggle === 2 ? 'block' : 'hidden'}>
                     <Specifications data={tabProductData} />
                 </div>
-                <div className={toggle === 3 ? 'block' : 'hidden'}>
-                    <VendorReviews />
-                </div>
+               
                 <div className={toggle === 4 ? 'block' : 'hidden'}>
                     <QuestionAndAnswers data={tabProductData} />
                 </div>
