@@ -14,7 +14,8 @@ const PopularProducts = ({ popularProducts = {} }) => {
                 {sub_categories?.data?.map(({ id, attributes }) => (
                     <Link
                         key={id}
-                        href={`/pdp/${attributes.products.data[0].id}`}
+                        href={`/pdp/${attributes.products.data[0]?.id}`}
+
                     >
                         <div key={id}>
                             <PopularCard

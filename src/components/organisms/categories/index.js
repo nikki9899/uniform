@@ -17,8 +17,8 @@ const Categories = ({ data }) => {
     })
 
     return (
-        <div className="container w-full my-10 ">
-            <Grid cardsPerRow={2} cardsPerRowMd={4}>
+        <div className="container w-full my-10  ">
+            <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
                 {categories.map(({ name, image, id }) => (
                     <Link key={id} href={`/plp/${name}`}>
                         <div className="px-1 mt-9">
@@ -41,7 +41,7 @@ const Categories = ({ data }) => {
                         </div>
                     </Link>
                 ))}
-            </Grid>
+            </div>
         </div>
     )
 }

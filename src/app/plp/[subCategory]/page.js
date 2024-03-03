@@ -11,6 +11,7 @@ const Plp = ({ params: { subCategory } }) => {
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
     const [total, setTotal] = useState(0)
+    const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
         async function fetchData(category) {
@@ -29,7 +30,17 @@ const Plp = ({ params: { subCategory } }) => {
             }
         }
 
+        async function fetchPopular() {
+            try {
+                const data = await fetchPopularSearches()
+                setPopularSearches(data)
+            } catch (error) {
+                console.error('Error fetching popular searches:', error)
+            }
+        }
+
         fetchData(subCategory)
+        fetchPopular()
     }, [subCategory])
 
     return (
@@ -40,6 +51,9 @@ const Plp = ({ params: { subCategory } }) => {
                 <Subcategories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
+
+                <Popular popularSearches={popularSearches} />
+                <div className=" hidden md:block h-px w-full mb-[90px] bg-black border-0 "></div>
             </main>
         </div>
     )

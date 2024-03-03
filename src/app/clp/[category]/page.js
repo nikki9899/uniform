@@ -10,7 +10,7 @@ import { fetchPopularSearches } from '@/utils/api'
 const Clp = ({ params: { category } }) => {
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
-    const [total, setTotal] = useState(0)
+    const [page, setPage] = useState(0)
     const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Clp = ({ params: { category } }) => {
                 } else {
                     setData(newData)
                     setPageCount(pageCount)
-                    setTotal(total)
+                    setPage(page)
                 }
             } catch (error) {
                 console.error('Error fetching data:', error)
@@ -48,13 +48,30 @@ const Clp = ({ params: { category } }) => {
         fetchPopular()
     }, [category])
 
+    const nextPageHandler = () => {
+        if (pageCount > page) {
+            setPage(page + 1);
+        }
+    };
+
+    const prevPageHandler = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    };
+
     return (
         <div>
             <main className="flex min-h-screen flex-col items-center justify-between ">
                 <IndustrialUniform heading={category} />
                 <div className="h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Categories data={data} />
-                <Pagination totalPage={total} currPage={pageCount} />
+                <Pagination
+                    totalPage={pageCount}
+                    currPage={page}
+                    nextPageHandler={nextPageHandler}
+                    prevPageHandler={prevPageHandler}
+                />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
                 <Popular popularSearches={popularSearches} />
                 <div className=" hidden md:block h-px w-full mb-[90px] bg-black border-0 "></div>
@@ -64,3 +81,5 @@ const Clp = ({ params: { category } }) => {
 }
 
 export default Clp
+
+

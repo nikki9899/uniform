@@ -7,12 +7,14 @@ import Button from '@/components/atoms/button'
 const Subcategories = ({ data }) => {
     return (
         <div className="container w-full my-10">
-            <Grid cardsPerRow={2} cardsPerRowMd={4}>
+            <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
                 {data.map((entry) => {
                     const { id, attributes } = entry
                     const { Title, description, image, name } = attributes
-                    const subCategoryDescription = attributes?.sub_category?.data?.attributes?.description ;
-                    const price = attributes?.product_detail?.data?.attributes?.price ;
+                    const subCategoryDescription =
+                        attributes?.sub_category?.data?.attributes?.description
+                    const price =
+                        attributes?.product_detail?.data?.attributes?.price
 
                     return (
                         <Link key={id} href={`/pdp/${id}`}>
@@ -28,11 +30,11 @@ const Subcategories = ({ data }) => {
                                             {Title}
                                         </span>
                                         <span className="text-right text-[8px] sm:text-xs  lg:text-sm lg:leading-6 leading-[14px] font-bold sm:leading-[22px] ">
-                                        {price} INR
+                                            {price} INR
                                         </span>
                                     </div>
                                     <div className="w-full mb-2 text-[6px] sm:text-[10px] sm:leading-5 lg:text-xs lg:leading-6 font-medium leading-[14px] float-left mt-0 pt-0 text-slate-400">
-                                    {subCategoryDescription}
+                                        {subCategoryDescription}
                                     </div>
                                     <div className="h-6 w-[60px] sm:w-[92px] sm:h-9 lg:h-12 lg:w-28">
                                         <Button
@@ -49,7 +51,7 @@ const Subcategories = ({ data }) => {
                         </Link>
                     )
                 })}
-            </Grid>
+            </div>
         </div>
     )
 }
