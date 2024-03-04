@@ -11,10 +11,11 @@ const PopularCategories = async ({
 }) => {
     return (
         <div className="w-full pb-8">
-            <p className="text-left py-1 mb-2 md:mb-6 text-popularTextColor text-sm md:text-3xl not-italic font-normal leading-[26.645px]">
-                Popular Categories
+            {/* <p className="text-left py-1 mb-2 md:mb-6 text-popularTextColor text-sm md:text-3xl not-italic font-normal leading-[26.645px]"> */}
+            <p className="text-left text-popularTextColor text-sm md:text-[34px] not-italic font-medium leading-[26.645px] mb-2 md:mb-8">
+                popular categories
             </p>
-            <div className="md:hidden mt-[20px] my-9 max-w-screen-full lg overflow-x-auto custom-scrollbar flex flex-nowrap">
+            <div className="md:hidden max-w-screen-full lg overflow-x-auto custom-scrollbar flex flex-nowrap">
                 {data.map(
                     (
                         {
