@@ -26,10 +26,6 @@ const Pdp = ({ params: { productId } }) => {
             <Tabs productId={productId} />
             <Line />
             <Popular popularSearches={popularSearches} />
-
-            <div className="hidden md:block">
-                <Line />
-            </div>
         </div>
     )
 }
