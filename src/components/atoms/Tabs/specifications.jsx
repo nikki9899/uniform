@@ -13,14 +13,17 @@ const Specifications = ({ data }) => {
             { key: 'SKU', value: data.SKU },
             { key: 'Department', value: data.Department },
           ].map(({ key, value }) => (
-            <tr key={key}>
-              <td className="pr-4 font-semibold">{key}</td>
-              <td>
-                {typeof value === 'object'
-                  ? JSON.stringify(value)
-                  : String(value)}
-              </td>
-            </tr>
+            // Check if value is not null or undefined
+            value !== null && value !== undefined && (
+              <tr key={key}>
+                <td className="pr-4 font-semibold">{key}</td>
+                <td>
+                  {typeof value === 'object'
+                    ? JSON.stringify(value)
+                    : String(value)}
+                </td>
+              </tr>
+            )
           ))}
         </tbody>
       </table>
@@ -29,9 +32,6 @@ const Specifications = ({ data }) => {
 };
 
 export default Specifications;
-
-
-
 
 
 

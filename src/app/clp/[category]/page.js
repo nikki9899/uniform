@@ -5,16 +5,18 @@ import Pagination from '@/components/atoms/Pagination'
 import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
 import { getAPI, getSubCategories } from '@/utils/api'
+import { fetchPopularSearches } from '@/utils/api'
 
 const Clp = ({ params: { category } }) => {
-    var [data, setData] = useState([])
-    var [pageCount, setPageCount] = useState(0)
-    var [total, setTotal] = useState(0)
+    const [data, setData] = useState([])
+    const [pageCount, setPageCount] = useState(0)
+    const [page, setPage] = useState(0)
+    const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
-        async function clpp(category) {
+        async function fetchData(category) {
             try {
-                var {
+                const {
                     data: newData = [],
                     meta: {
                         pagination: { page, pageSize, pageCount, total },
@@ -26,14 +28,37 @@ const Clp = ({ params: { category } }) => {
                 } else {
                     setData(newData)
                     setPageCount(pageCount)
-                    setTotal(total)
+                    setPage(page)
                 }
             } catch (error) {
                 console.error('Error fetching data:', error)
             }
         }
-        clpp(category)
+
+        async function fetchPopular() {
+            try {
+                const data = await fetchPopularSearches()
+                setPopularSearches(data)
+            } catch (error) {
+                console.error('Error fetching popular searches:', error)
+            }
+        }
+
+        fetchData(category)
+        fetchPopular()
     }, [category])
+
+    const nextPageHandler = () => {
+        if (pageCount > page) {
+            setPage(page + 1);
+        }
+    };
+
+    const prevPageHandler = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    };
 
     return (
         <div>
@@ -41,13 +66,20 @@ const Clp = ({ params: { category } }) => {
                 <IndustrialUniform heading={category} />
                 <div className="h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Categories data={data} />
-                <Pagination totalPage={total} currPage={pageCount} />
+                <Pagination
+                    totalPage={pageCount}
+                    currPage={page}
+                    nextPageHandler={nextPageHandler}
+                    prevPageHandler={prevPageHandler}
+                />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
-                <Popular />
+                <Popular popularSearches={popularSearches} />
+                <div className=" hidden md:block h-px w-full mb-[90px] bg-black border-0 "></div>
             </main>
         </div>
     )
 }
 
 export default Clp
-// page.js
+
+

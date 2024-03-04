@@ -7,8 +7,8 @@ const SideImageText = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="overview flex md:flex-row flex-col justify-between md:px-20 md:mt-4 mt-16 px-2 md:pb-20">
-                <div className="text md:text-sm text-xs leading-5  w-full md:w-1/2 order-2 md:order-1">
+            <div className="overview flex md:flex-row flex-col justify-between lg:px-20 md:mt-4 mt-16 px-2 md:pb-20">
+                <div className=" font-normal text md:text-sm lg:text-base text-xs leading-5  w-full md:w-[42%] order-2 md:order-1">
                     <p>
                         {sideImgText1}
                         <br />
@@ -24,7 +24,7 @@ const SideImageText = ({ aboutUs }) => {
                         src="/images/aboutUs2.png"
                         alt="Overview Image"
                         height={541}
-                        width={546}
+                        width={526}
                     />
                 </div>
             </div>

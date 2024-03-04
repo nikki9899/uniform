@@ -1,9 +1,7 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Search from '@/components/atoms/Icons/Search'
 import { NavbarLabels } from '@/utils/labels/navbarLabels'
-import Wish from '@/components/atoms/Icons/Wish'
 import Dropdown from './Dropdown'
 import { getAPI } from '@/utils/api'
 
@@ -18,11 +16,12 @@ const Navbar = () => {
     } = NavbarLabels
     const [isHovered, setIsHovered] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [categories, setCategories] = useState([])
     const [corporateUniformData, setCorporateUniformData] = useState([])
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
-    // const[isdesktopmobile]
+    const dropdownRef = useRef(null)
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -67,8 +66,29 @@ const Navbar = () => {
         fetchCategories()
     }, [])
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target)
+            ) {
+                setIsHovered(false)
+                setIsMobileMenuOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [dropdownRef])
+
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen)
+        if (isHovered) {
+            setIsHovered(false)
+        }
     }
 
     const handleMouseEnter = () => {
@@ -95,18 +115,18 @@ const Navbar = () => {
             setIsHovered(true)
         }
     }
-    
+
     const handleAboutUs = () => {
-        setIsMobileMenuOpen(false );
+        setIsMobileMenuOpen(false)
     }
     return (
-        <div className="px-4 sm:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background md:w-full py-7 flex justify-between sm:items-center ">
+        <div className="px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-7 flex justify-between md:items-center ">
             <Link href="/">
-                <h1 className="text-black md:text-3xl not-italic font-black md:leading-7 tracking-[-1.066px] md:font-bold text-sm  md:mt-5 flex">
+                <h1 className="text-black md:text-3xl  font-black md:leading-7 tracking-[-0.5px] md:font-bold text-sm  md:mt-5 flex">
                     {Logo}
                 </h1>
             </Link>
-            <div className={`sm:hidden flex pl-[20%] gap-2.5 float-right`}>
+            <div className={`md:hidden flex pl-[20%] gap-2.5 float-right`}>
                 <div
                     className="cursor-pointer"
                     onClick={handleMobileMenuToggle}
@@ -118,7 +138,10 @@ const Navbar = () => {
             </div>
             {isMobileMenuOpen && (
                 <>
-                    <div className="sm:hidden absolute top-[75px] left-0 right-0 bg-white z-50">
+                    <div
+                        ref={dropdownRef}
+                        className="md:hidden absolute top-[75px] left-0 right-0 bg-white z-50"
+                    >
                         <Link
                             href={uniformbyProfessionSrc}
                             className="block p-3 border-b border-gray-300  "
@@ -139,7 +162,6 @@ const Navbar = () => {
                             href="/aboutUs/page.js"
                             className="block p-3 border-b border-gray-300"
                             onClick={handleAboutUs}
-                            
                         >
                             About Us
                         </Link>
@@ -148,11 +170,11 @@ const Navbar = () => {
             )}
 
             <div
-                className={`hidden sm:inline-flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800 ${
-                    isMobileMenuOpen ? 'block' : 'hidden sm:block'
+                className={`hidden md:flex pl-[20%] h-4 items-start gap-14 shrink-0 text-gray-800 ${
+                    isMobileMenuOpen ? 'block' : 'hidden md:block'
                 }`}
             >
-                <div className="relative">
+                <div className=" hidden md:inline-flex relative">
                     <Link
                         href={uniformbyProfessionSrc}
                         className={`cursor-pointer ${
@@ -160,7 +182,7 @@ const Navbar = () => {
                         }`}
                         onClick={handleOnClick}
                     >
-                        <span className="whitespace-nowrap inline-block font-made-outer-sans text-base font-normal leading-4 tracking-[-0.04em] text-left">
+                        <span className="whitespace-nowrap inline-block font-made-outer-sans lg:text-base sm:text-sm font-normal sm:leading-3 lg:leading-4 tracking-[-0.04em] text-left">
                             {uniformbyProfessionTitle}
                         </span>
                     </Link>
@@ -176,19 +198,7 @@ const Navbar = () => {
                     </div>
                 ))}
             </div>
-            {/* Search and Wish Icons (Desktop)
-            <div className={`hidden sm:flex pl-[20%] gap-2.5 float-right`}>
-                <div className="cursor-pointer">
-                    <a href={SearchLink}>
-                        <Search />
-                    </a>
-                </div>
-                {/* <div className="cursor-pointer">
-                    <a href={WishLink}>
-                        <Wish />
-                    </a>
-                </div> */}
-            {/* </div> */}
+
             {isHovered && !isMobileMenuOpen && (
                 <Dropdown
                     corporateUniformData={corporateUniformData}

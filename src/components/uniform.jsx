@@ -1,40 +1,42 @@
 import React from 'react'
 import { commercialLabels } from '@/utils/labels/commercialLabels'
-
 import Button from './atoms/button'
 
 const CommercialUniformSection = () => {
     let { heading, heading1, text, text1, text2, caption, caption1 } =
         commercialLabels
     return (
-        <div className=" relative py-9">
-            <div className='flex justify-between'>
-                <div className="xs:w-[90%] sm:w-[70%] md:w-1/2 text-black text-xl md:text-5xl font-semibold leading-normal tracking-[-1px] md:tracking-[-2px] font-manrope">
-                    <h2>
-                        {heading} <br /> {heading1}
-                    </h2>
+        <div>
+            <div className="flex justify-between gap-x-8 mb-6">
+                <div className="text-black font-medium text-[14px] leading-tight w-fit shrink-0 sm:text-[32px] sm:leading-8">
+                    {heading} <br /> {heading1}
                 </div>
 
-                <div className="xs:w-[93%] sm:w-[100%] md:w-1/3 pt-1 text-black text-right text-[10px] md:text-base font-normal leading-normal md:tracking-[-0.64px] tracking-[-0.74px] font-manrope ">
-                    <p>
-                        {text}
-                        {/* <br /> {text1}
-          <br /> {text2} */}
-                    </p>
+                <div className="pt-1 text-[8px] sm:text-[16px] sm:w-[438px] sm:font-normal sm:leading-[21px] sm:tracking-tight tracking-tighter w-[164px] text-right">
+                    {text}
                 </div>
             </div>
 
-            <div className="justify-center w-[95.8%] text-center  pt-56 md:pt-60  flex text-black text-4xl md:text-7xl  font-bold tracking-wide md:tracking-normal leading-0 md:leading-123 tracking-[-2.123px] font-[MADE Outer Sans]">
-                <div className=" w-[180px] md:w-[260px] -z-10 absolute my-[-160px]  ml-[-8px]  ">
-                    <img src="/Images/Mask group.png" />
+            <div className="w-full h-fit">
+                <div
+                    className='w-40 h-40 mx-auto sm:w-60 sm:h-60 lg:w-[360px] lg:h-[360px]'
+                    style={{
+                        background: 'url("/Images/Mask group.png")',
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'top',
+                    }}
+                />
+                <div className="text-[36px] mx-auto lg:text-[68px] lg:leading-none sm:w-full font-extrabold leading-9 tracking-tighter text-center w-[300px] -mt-10 lg:-mt-16">
+                    Enhance Your Business's Image with Professional Uniforms
                 </div>
-                <p>
-                    {caption}
-                    <br /> {caption1}
-                </p>
             </div>
-            <div className="text-center mt-5 md:mt-16  ">
-                <Button variant="primary" rounded="full">
+            <div className="text-center mt-12">
+                <Button
+                    variant="primary"
+                    rounded="full"
+                    addStyle={`bg-slate-300  text-gray-400 border-gray-900 opacity-50`}
+                >
                     <p>shop now</p>
                 </Button>
             </div>

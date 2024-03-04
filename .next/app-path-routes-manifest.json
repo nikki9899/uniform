@@ -1,0 +1,10 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/_not-found": "/_not-found",
+  "/contactUs/[contactUs]/page": "/contactUs/[contactUs]",
+  "/clp/[category]/page": "/clp/[category]",
+  "/pdp/[productId]/page": "/pdp/[productId]",
+  "/aboutUs/[aboutUs]/page": "/aboutUs/[aboutUs]",
+  "/plp/[subCategory]/page": "/plp/[subCategory]"
+}
