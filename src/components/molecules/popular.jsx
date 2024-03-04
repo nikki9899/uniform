@@ -47,11 +47,11 @@ const Popular = ({
 
     return (
         <div className="py-4 max-w-full max-w-screen-full text-center">
-            <div className="text-3xl font-normal mb-2 text-left">
+            <div className="text-[18px] leading-[26px] md:text-[34px] font-medium mb-2 text-left">
                 {searchLabels.heading}
             </div>
 
-            <div className="my-9 max-w-screen-full lg overflow-x-auto custom-scrollbar flex flex-nowrap">
+            <div className="md:my-9  my-5 max-w-screen-full lg overflow-x-auto custom-scrollbar flex flex-nowrap">
                 {items}
             </div>
         </div>
