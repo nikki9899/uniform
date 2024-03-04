@@ -168,6 +168,7 @@ const Footer = (props) => {
                                         (category) => ({
                                             id: category.id,
                                             item: category.attributes.name,
+                                            slug: category.attributes.slug,
                                         })
                                     ),
                                 }}
