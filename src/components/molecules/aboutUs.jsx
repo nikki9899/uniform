@@ -17,7 +17,7 @@ const AboutUs = ({ aboutUs }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="py-20 mx-auto max-w-screen-md text-center">
+        <div className="py-16 mx-auto max-w-screen-md text-center">
             <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:py-10">
                 {title}
             </h3>
@@ -38,8 +38,8 @@ const AboutUs = ({ aboutUs }) => {
             <div className="flex justify-center item-center sm:hidden lg:flex ">
                 <div className="py-6 w-[73px] lg:w-[166px] lg:h-14 h-[25px] flex justify-center item-center">
                     <Link href="/aboutUs/page.js">
-                        <Button rounded="semi" variant="primary">
-                            <h5 className="text-[10px] font-normal lg:text-2xl lg:leading-6 ">
+                        <Button rounded="semi" variant="primary" >
+                            <h5 className="text-[10px] font-normal lg:text-2xl lg:leading-6 md:p-2 ">
                                 {button.label}
                             </h5>
                         </Button>

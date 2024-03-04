@@ -6,7 +6,7 @@ const FooterList = ({ contents }) => {
 
     return (
         <div>
-            <h4 className="md:text-sm text-[10px] font-semibold mb-2">
+            <h4 className="md:text-lg text-[10px] font-semibold mb-2">
                 {title}
             </h4>
             <ul>

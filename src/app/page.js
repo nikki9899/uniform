@@ -47,10 +47,6 @@ const Home = async () => {
                 <CommercialUniformSection />
                 <Line />
                 <Popular popularSearches={popularSearches} />
-                <div className="hidden md:block">
-                    <Line />
-                </div>
-
                 <AboutUs aboutUs={aboutUs} />
                 <div className="md:hidden">
                     <Line />

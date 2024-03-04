@@ -17,14 +17,14 @@ const QuestionAndAnswers = ({ data }) => {
                         <div key={qa.id}>
                             <p>
                                 <span className="lg:text-lg lg:leading-6 sm:text-sm xs:text-xs text-[10px] leading-3 sm:leading-5 font-semibold">
-                                    Question:
-                                </span>
+                                    Question :
+                                </span>{' '}
                                 {qa.Question}
                             </p>
 
                             <p>
                                 <span className="lg:text-lg lg:leading-6 sm:text-sm xs:text-xs text-[10px] leading-3 sm:leading-5 font-semibold">
-                                    Answer:
+                                    Answer :
                                 </span>{' '}
                                 {qa.Answer}
                             </p>

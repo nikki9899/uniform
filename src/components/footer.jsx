@@ -198,16 +198,16 @@ const Footer = (props) => {
             </div>
             <div className="hidden md:block ">
                 <div className="grid grid-cols-2 gap-8 py-6 lg:py-8 sm:grid-cols-4">
-                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
+                    <div className="text-sm font-normal leading-6 lg:text-[18px] lg:leading-6">
                         <FooterList contents={quickLink} />
                     </div>
-                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
+                    <div className="text-sm font-normal leading-6 lg:text-[18px] lg:leading-6">
                         <FooterList contents={company} />
                         <div className="mt-9">
                             <FooterList contents={customerService} />
                         </div>
                     </div>
-                    <div className="text-sm font-normal leading-6 lg:text-lg lg:leading-6">
+                    <div className="text-sm font-normal leading-6 lg:text-[18px] lg:leading-6">
                         <FooterList
                             contents={{
                                 title: 'Shop',
