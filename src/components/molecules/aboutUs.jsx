@@ -18,7 +18,9 @@ const AboutUs = ({ aboutUs }) => {
 
     return (
         <div className="py-20 mx-auto max-w-screen-md text-center">
-            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:py-10">{title}</h3>
+            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:py-10">
+                {title}
+            </h3>
             <h4
                 style={isOpen ? null : descriptionStyle}
                 className="text-sm sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-[51px] font-normal  leading-5 "
@@ -29,28 +31,22 @@ const AboutUs = ({ aboutUs }) => {
             <Button
                 class="text-sky-800 py-2 px-4"
                 onClick={() => setIsOpen(!isOpen)}
-                addStyle='text-blue-500'
+                addStyle="text-blue-500"
             >
                 {isOpen ? 'Read Less...' : 'Read More...'}
             </Button>
-              <div className="flex justify-center item-center sm:hidden lg:flex ">
-            <div className="py-6 w-[73px] lg:w-[166px] lg:h-14 h-[25px] flex justify-center item-center">
-                <Link href="/aboutUs/page.js">
-                    <Button rounded="semi" variant="primary">
-                        <h5 className="text-[10px] font-normal lg:text-2xl lg:leading-6 ">{button.label}</h5>
-                    </Button>
-                </Link>
-            </div>
+            <div className="flex justify-center item-center sm:hidden lg:flex ">
+                <div className="py-6 w-[73px] lg:w-[166px] lg:h-14 h-[25px] flex justify-center item-center">
+                    <Link href="/aboutUs/page.js">
+                        <Button rounded="semi" variant="primary">
+                            <h5 className="text-[10px] font-normal lg:text-2xl lg:leading-6 ">
+                                {button.label}
+                            </h5>
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     )
 }
 export default AboutUs
-
-
-// element.style {
-//     color: blue;
-//     top: 7161px;
-//     left: 1110px;
-//     position: absolute;
-// }

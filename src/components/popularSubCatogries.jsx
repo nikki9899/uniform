@@ -22,7 +22,7 @@ async function PopularSubCategories({
             <h2 className="text-gray-900 leading-3 font-medium text-sm md:leading-6 md:text-4xl lowercase">
                 popular sub-categories
             </h2>
-            <div className="  md:hidden">
+            <div className="md:hidden">
                 <Carousel
                     options={{
                         dragFree: true,

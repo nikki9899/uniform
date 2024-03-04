@@ -14,7 +14,7 @@ const Header = ({
 }) => {
     return (
         <div>
-            <ul className="text-sm sm:text-lg sm:font-semibold lg:text-xl lg:leading-2 sm:leading-9 text-gray-800  font-normal leading-5  capitalize mt-6">
+            <ul className="text-[10px] sm:text-lg  lg:leading-10 sm:leading-9 text-gray-800  font-normal leading-5  capitalize mt-6">
                 {industrialSectors
                     .slice(0, showAllHeadings ? industrialSectors.length : 3)
                     .map((sector) => (
@@ -26,7 +26,7 @@ const Header = ({
                     ))}
             </ul>
             <div
-                className="text-black font-manrope font-medium text-lg sm:text-2xl lg:text-2xl leading-10 cursor-pointer"
+                className="text-black font-manrope font-bold md:font-medium text-xs sm:text-2xl lg:text-2xl leading-10 cursor-pointer"
                 onClick={toggleSeeAll}
             >
                 {showAllHeadings ? 'See Less' : 'See All'}

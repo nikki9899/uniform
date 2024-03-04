@@ -15,7 +15,6 @@ const PopularProducts = ({ popularProducts = {} }) => {
                     <Link
                         key={id}
                         href={`/pdp/${attributes.products.data[0]?.id}`}
-
                     >
                         <div key={id}>
                             <PopularCard

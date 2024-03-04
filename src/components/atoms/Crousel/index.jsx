@@ -23,14 +23,14 @@ const Carousel = ({ options, children, navigationButtons }) => {
             {navigationButtons && (
                 <div className="Naivgation-buttons">
                     <CrouselButton
-                        className="absolute  -translate-y-1/2 top-1/2 -left-5 shadow-uniform rounded-full p-6 backdrop-blur-[3px]  "
+                        className="absolute  -translate-y-1/2 top-1/2 -left-5 shadow-uniform rounded-full p-[1rem] md:p-6 backdrop-blur-[3px]  "
                         onClick={onPrevButtonClick}
                         disabled={prevBtnDisabled}
                     >
                         <Image
                             className="rotate-180 text-3xl md:w-6 md:h-6"
-                            width={8}
-                            height={8}
+                            width={12}
+                            height={12}
                             src="/svgs/RightArrow.svg"
                             alt="RightArrow"
                         />
@@ -38,14 +38,14 @@ const Carousel = ({ options, children, navigationButtons }) => {
                     </CrouselButton>
 
                     <CrouselButton
-                        className="absolute -translate-y-1/2 top-1/2 -right-5 shadow-uniform rounded-full p-6 backdrop-blur-[3px]"
+                        className="absolute -translate-y-1/2 top-1/2 -right-5 shadow-uniform rounded-full p-[1rem] md:p-6 backdrop-blur-[3px]"
                         onClick={onNextButtonClick}
                         disabled={nextBtnDisabled}
                     >
                         <Image
                             className="text-3xl md:w-6 md:h-6"
-                            width={8}
-                            height={8}
+                            width={12}
+                            height={12}
                             src="/svgs/RightArrow.svg"
                             alt="RightArrow"
                         />

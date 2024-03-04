@@ -27,7 +27,7 @@ const PopularCard = ({
             </div>
             <div className="w-[61px] h-5 sm:w-24 sm:h-8 md:w-28 md:h-[39px] mb-9">
                 <Button variant="primary" rounded="full">
-                    <p className="  text-[6px] md:text-xs sm:text-[10px] sm:leading-3 font-medium md:leading-4 lowercase">
+                    <p className="  text-[7px] md:text-xs sm:text-[10px] sm:leading-3 font-medium md:leading-4 lowercase">
                         enquire now
                     </p>
                 </Button>

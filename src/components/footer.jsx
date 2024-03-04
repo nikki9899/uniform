@@ -69,8 +69,8 @@ const Footer = (props) => {
         customerService: {
             title: 'Customer Service',
             listItems: [
-                { id: 1, item: 'Hoabcdef@gmail.comme' },
-                { id: 2, item: '+91-12345-67891' },
+                { id: 1, item: 'AJOY1969@gmail.com' },
+                { id: 2, item: '+91-9891194126' },
             ],
         },
 
