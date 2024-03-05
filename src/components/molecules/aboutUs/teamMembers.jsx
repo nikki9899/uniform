@@ -1,8 +1,8 @@
 import React from 'react'
 import { aboutUsLables, members } from '@/utils/labels/aboutUsLables'
 
-const TeamMembers = ({ aboutUs }) => {
-    let { membersHead, Members } = aboutUsLables
+const TeamMembers = ({ teamNames }) => {
+    let { membersHead } = aboutUsLables
 
     return (
         <div>
@@ -11,8 +11,8 @@ const TeamMembers = ({ aboutUs }) => {
                     {membersHead}
                 </div>
                 <div className=" leading-6 lg:text-lg text-xs  md:px-0 flex flex-col md:flex-row justify-between">
-                    {Members.map((item) => (
-                        <div key={item.id}>{item.member}</div>
+                    {teamNames.map((teamMember) => (
+                        <div key={teamMember.id}>{teamMember.lables}</div>
                     ))}
                 </div>
             </div>

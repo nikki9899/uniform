@@ -1,8 +1,8 @@
 import React from 'react'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const PaymentMode = ({ aboutUs }) => {
-    let { paymentHead, shipmentMode, PaymentMode } = aboutUsLables
+const PaymentMode = ({ data }) => {
+    let { paymentHead, shipmentMode} = aboutUsLables
 
     return (
         <div>
@@ -11,8 +11,8 @@ const PaymentMode = ({ aboutUs }) => {
                     {paymentHead}
                 </div>
                 <div className="lg:text-lg sm:text-base text-xs lg:leading-7 font-medium">
-                    {PaymentMode.map((item) => (
-                        <p key={item.id}>{item.paymentMode1}</p>
+                {data.PNPList.map((item) => (
+                        <p key={item.id}>{item.lables}</p>
                     ))}
                 </div>
                 <div className="font-bold pt-6 md:text-base text-xs">

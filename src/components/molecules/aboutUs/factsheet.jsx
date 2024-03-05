@@ -1,23 +1,25 @@
 import React from 'react'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const Factsheet = ({ aboutUs }) => {
+const Factsheet = ({ factSheet }) => {
+    const {
+        NatureOfBusiness,
+        CompanyCEO,
+        CompanyLocation,
+        NumberOfEmployees,
+        YearOfEst,
+        LegalStatus,
+        TurnOver,
+    } = factSheet
     let {
         factsheetHead,
         businessHead,
-        business,
         ceoHead,
-        ceoName,
         locationHead,
-        locationAdd,
         employeeHead,
-        employeeNo,
         yearHead,
-        yearOfEstablishment,
         statusHead,
-        status,
         turnoverHead,
-        turnover,
     } = aboutUsLables
 
     return (
@@ -29,31 +31,31 @@ const Factsheet = ({ aboutUs }) => {
                 <div className="factsheet-description">
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className="font-semibold">{businessHead}</span>{' '}
-                        {business}
+                        {NatureOfBusiness}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{ceoHead}</span>{' '}
-                        {ceoName}
+                        {CompanyCEO}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{locationHead}</span>{' '}
-                        {locationAdd}
+                        {CompanyLocation}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{employeeHead}</span>{' '}
-                        {employeeNo}
+                        {NumberOfEmployees}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{yearHead}</span>{' '}
-                        {yearOfEstablishment}
+                        {YearOfEst}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{statusHead}</span>{' '}
-                        {status}
+                        {LegalStatus}
                     </p>
                     <p className="lg:text-base sm:text-sm text-xs font-normal leading-5">
                         <span className=" font-semibold">{turnoverHead}</span>{' '}
-                        {turnover}
+                        {TurnOver}
                     </p>
                 </div>
             </div>

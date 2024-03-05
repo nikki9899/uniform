@@ -80,19 +80,19 @@ export const aboutUsLables = {
             profile: 'Banker',
         },
         {
-            id: '001',
+            id: '002',
             profile: 'ABC-------------------',
         },
         {
-            id: '001',
+            id: '003',
             profile: 'ABC-------------',
         },
         {
-            id: '001',
+            id: '004',
             profile: 'GST No.------- ABCDEFGH',
         },
         {
-            id: '001',
+            id: '005',
             profile: 'HSN Code',
         },
     ],

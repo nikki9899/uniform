@@ -19,6 +19,10 @@ const Pdp = ({ params: { productId } }) => {
             })
     }, [])
 
+    const popularSearchesLength = popularSearches && popularSearches.products && popularSearches.products.data
+    ? popularSearches.products.data.length
+    : 0;
+
     return (
         <div>
             <ProductDetails productId={productId} />
@@ -26,6 +30,9 @@ const Pdp = ({ params: { productId } }) => {
             <Tabs productId={productId} />
             <Line />
             <Popular popularSearches={popularSearches} />
+            {popularSearchesLength < 5 && (
+                    <div className="hidden ml:block h-px w-full mb-[60px] bg-black border-0"></div>
+                )}
         </div>
     )
 }

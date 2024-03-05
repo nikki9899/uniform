@@ -10,7 +10,7 @@ const PopularCategories = async ({
     },
 }) => {
     return (
-        <div className="w-full pb-8">
+        <div className="w-full pb-8 mt-[40px]">
             {/* <p className="text-left py-1 mb-2 md:mb-6 text-popularTextColor text-sm md:text-3xl not-italic font-normal leading-[26.645px]"> */}
             <p className="text-left text-popularTextColor text-sm md:text-[34px] not-italic font-medium leading-[26.645px] mb-2 md:mb-8">
                 popular categories

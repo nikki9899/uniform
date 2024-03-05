@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const Overview = ({ aboutUs }) => {
+const Overview = ({ data }) => {
     let { overviewHead, overviewSubTitle, overviewText } = aboutUsLables
 
     return (

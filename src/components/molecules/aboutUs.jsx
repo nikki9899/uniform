@@ -17,13 +17,13 @@ const AboutUs = ({ aboutUs }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="py-16 mx-auto max-w-screen-md text-center">
-            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:py-10">
+        <div className="py-16 mx-auto max-w-screen text-center md:px-52 xs:px-10 px-5">
+            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:pt-10">
                 {title}
             </h3>
             <h4
                 style={isOpen ? null : descriptionStyle}
-                className="text-sm sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-[51px] font-normal  leading-5 "
+                className="text-sm sm:text-3xl mt-[30px] sm:leading-10 lg:text-[28px] lg:leading-[45px] font-normal leading-5 "
             >
                 {description}
             </h4>

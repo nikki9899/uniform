@@ -12,7 +12,7 @@ const Popular = ({
         ({ id, attributes: { Title, description, image, product_detail } }) => {
             const price = product_detail?.data?.attributes?.price
             return (
-                <div className="me-7 w-3/4 md:w-full mb-12" key={id}>
+                <div className="me-7 w-3/4 md:w-full mb-8 pb-8 " key={id}>
                     <Link key={id} href={`/pdp/${id}`}>
                         <ImageCard
                             iconDisplay="flex"
@@ -46,7 +46,7 @@ const Popular = ({
     )
 
     return (
-        <div className="py-4 max-w-full max-w-screen-full text-center">
+        <div className="pt-4 max-w-full max-w-screen-full text-center">
             <div className="text-[18px] leading-[26px] md:text-[34px] font-medium mb-2 text-left">
                 {searchLabels.heading}
             </div>

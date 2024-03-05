@@ -18,6 +18,44 @@ export const getAPI = async (path) => {
     }
 }
 
+export const getAboutUsData = async () => {
+    const url =  baseUrl+'/about-us?populate=deep';
+
+    try {
+        const loadData = await fetch(url, { cache: 'no-cache' });
+
+        if (loadData.ok) {
+            let result = await loadData.json();
+            return result;
+        } else {
+            return loadData;
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
+
+// export const getSubCategories = async (category) => {
+//     let page =1;
+//     let pageSize=25;
+//     const SubCategoryUrl = `${baseUrl}/sub-categories?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[category][slug][$eq]=${category}&populate=deep`
+
+//     try {
+//         const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
+
+//         if (loadData.ok) {
+//             let result = await loadData.json()
+//             return result
+//         } else {
+//             return loadData
+//         }
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
+
 export const getSubCategories = async (category) => {
     const SubCategoryUrl = `${baseUrl}/sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
 
@@ -38,25 +76,6 @@ export const getSubCategories = async (category) => {
 }
 
 
-// export const getSubCategories = async (category, perpage) => {
-//     const SubCategoryUrl = `${baseUrl}/sub-categories?filters[category][slug][$eq]=${category}&populate=deep&limit=${perpage}`
-
-//     try {
-//         const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
-
-//         if (loadData.ok) {
-//             let result = await loadData.json()
-//             console.log("result", result)
-
-//             return result
-//         } else {
-//             return loadData
-//         }
-//     } catch (error) {
-//         throw error
-//     }
-// }
-
 export const getProducts = async (SubCategoryName) => {
     let page = 1
     let pageSize = 10
@@ -68,6 +87,7 @@ export const getProducts = async (SubCategoryName) => {
 
         if (loadData.ok) {
             let result = await loadData.json()
+            
 
             return result
         } else {
@@ -112,7 +132,7 @@ export const getProductDetailsByImage = async (productId) => {
                     alt: 'Product Image',
                 })
             )
-            
+
             return imageMagnifierData
         } else {
             return response

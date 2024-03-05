@@ -6,8 +6,8 @@ import Button from '@/components/atoms/button'
 
 const Subcategories = ({ data }) => {
     return (
-        <div className="container w-full my-10">
-            <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
+        <div className=" w-full my-10">
+            <div className=" w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
                 {data.map((entry) => {
                     const { id, attributes } = entry
                     const { Title, description, image, name } = attributes

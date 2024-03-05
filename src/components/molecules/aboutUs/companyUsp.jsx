@@ -1,7 +1,8 @@
 import React from 'react'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const UspHead = ({}) => {
+const UspHead = ({data}) => {
+    const { companyUspList } = data;
     let { uspHead, UspText } = aboutUsLables
 
     return (
@@ -11,8 +12,8 @@ const UspHead = ({}) => {
                     {uspHead}
                 </div>
                 <div className=" lg:text-base sm:text-sm text-xs font-medium leading-5">
-                    {UspText.map((item) => (
-                        <p key={item.id}>{item.uspTeaxt1}</p>
+                {companyUspList.map((item) => (
+                        <p key={item.id}>{item.lables}</p>
                     ))}
                 </div>
             </div>
