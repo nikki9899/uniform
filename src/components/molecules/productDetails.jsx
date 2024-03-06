@@ -92,8 +92,8 @@ function ProductDetails({ productId }) {
                             </p>
                         </Button>
                         <div className="mx-2">
-                            <Button variant="primary" rounded="semi">
-                                <p className="lg:text-2xl lg:leading-6 text-xs leading-3 px-1 py-2">
+                            <Button variant="primary" rounded="semi" addStyle="bg-slate-300 text-gray-400 border-gray-900 opacity-25">
+                                <p className="lg:text-2xl  lg:leading-6 text-xs leading-3 px-1 py-2">
                                     enquire now
                                 </p>
                             </Button>

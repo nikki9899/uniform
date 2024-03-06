@@ -17,7 +17,7 @@ const CorporateUniform = ({ data,handleOnClick }) => {
                         className="list-none font-medium text-xs leading-4"
                         key={item.id}
                     >
-                         <Link href={`/plp/${item.attributes.name}`} onClick={handleOnClick}>
+                         <Link href={`/plp/${item.attributes.slug}`} onClick={handleOnClick}>
                             {item.attributes.name}
                         </Link>
                     </li>
