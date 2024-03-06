@@ -1,3 +1,4 @@
+import React,{useState} from 'react'
 import Link from 'next/link'
 import ImageCard from '@/components/atoms/ImageCard'
 import Button from '@/components/atoms/button'
@@ -8,19 +9,22 @@ import { getAPI } from '@/utils/api'
 const Categories = ({ data }) => {
     const { linkText } = categoriesLabels
 
+   
+
     const categories = data.map((entry) => {
         return {
             id: entry.id,
             name: entry.attributes.name,
+            slug: entry.attributes.slug,
             image: entry.attributes.image.data.attributes.url,
         }
     })
-
+    
     return (
         <div className="container w-full my-10  ">
             <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
-                {categories.map(({ name, image, id }) => (
-                    <Link key={id} href={`/plp/${name}`}>
+                {categories.map(({ name, slug , image, id }) => (
+                    <Link key={id} href={`/plp/${slug}`}>
                         <div className="px-1 mt-9">
                             <ImageCard
                                 iconDisplay="hidden"

@@ -8,23 +8,20 @@ import Popular from '@/components/molecules/popular'
 import { getProducts, fetchPopularSearches } from '@/utils/api'
 
 const Plp = ({ params: { subCategory } }) => {
+    const [page, setPage] = useState(1)
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
-    const [total, setTotal] = useState(0)
     const [popularSearches, setPopularSearches] = useState([])
 
     useEffect(() => {
-        async function fetchData(category) {
+        async function fetchData(category, page) {
             try {
                 const {
                     data,
-                    meta: {
-                        pagination: { page, pageSize, pageCount, total },
-                    },
-                } = await getProducts(category)
+                    meta: { pagination },
+                } = await getProducts(category, page)
                 setData(data)
-                setPageCount(pageCount)
-                setTotal(total)
+                setPageCount(pagination.pageCount)
             } catch (error) {
                 console.error('Error fetching products:', error)
             }
@@ -39,21 +36,45 @@ const Plp = ({ params: { subCategory } }) => {
             }
         }
 
-        fetchData(subCategory)
+        fetchData(subCategory, page)
         fetchPopular()
-    }, [subCategory])
+    }, [subCategory, page])
 
-    const popularSearchesLength = popularSearches && popularSearches.products && popularSearches.products.data
-    ? popularSearches.products.data.length
-    : 0;
-    
+    const nextPageHandler = (event) => {
+        const nextPage = page + 1
+        if (nextPage <= pageCount) {
+            setPage(nextPage)
+            event.preventDefault()
+        }
+    }
+
+    const prevPageHandler = (event) => {
+        const prevPage = page - 1
+        if (prevPage >= 1) {
+            setPage(prevPage)
+            event.preventDefault()
+        }
+    }
+
+    const popularSearchesLength =
+        popularSearches &&
+        popularSearches.products &&
+        popularSearches.products.data
+            ? popularSearches.products.data.length
+            : 0
+
     return (
         <div>
             <main className="flex min-h-screen flex-col items-center justify-between ">
                 <IndustrialUniform heading={subCategory} />
                 <div className=" h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Subcategories data={data} />
-                <Pagination totalPage={total} currPage={pageCount} />
+                <Pagination
+                    totalPage={pageCount}
+                    currPage={page}
+                    nextPageHandler={nextPageHandler}
+                    prevPageHandler={prevPageHandler}
+                />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
 
                 <Popular popularSearches={popularSearches} />
@@ -66,6 +87,3 @@ const Plp = ({ params: { subCategory } }) => {
 }
 
 export default Plp
-
-
-

@@ -4,6 +4,7 @@ import Button from '@/components/atoms/button'
 import Link from 'next/link'
 import '../../molecules/styles.css'
 
+
 const PopularCategories = async ({
     popularCategories: {
         categories: { data = [] },
@@ -11,7 +12,6 @@ const PopularCategories = async ({
 }) => {
     return (
         <div className="w-full pb-8 mt-[40px]">
-            {/* <p className="text-left py-1 mb-2 md:mb-6 text-popularTextColor text-sm md:text-3xl not-italic font-normal leading-[26.645px]"> */}
             <p className="text-left text-popularTextColor text-sm md:text-[34px] not-italic font-medium leading-[26.645px] mb-2 md:mb-8">
                 popular categories
             </p>
@@ -39,7 +39,7 @@ const PopularCategories = async ({
                                         ? 'xs:basis-[50%] basis-[100%]'
                                         : 'xs:basis-[50%] basis-[100%]'
                                 } grow-0 shrink-0 relative rounded-lg mx-1`}
-                                key={id}
+                                key={`${id}-${index}`}
                             >
                                 <Link href={`/clp/${slug}`}>
                                     <Image
@@ -97,7 +97,7 @@ const PopularCategories = async ({
                                             ? ' lg:basis-[34%] md:basis-[43%] basis-[50%]'
                                             : ' lg:basis-[34%] md:basis-[43%] basis-[50%]'
                                     } grow-0 shrink-0 relative rounded-lg`}
-                                    key={id}
+                                    key={`${id}-${index}`}
                                 >
                                     <Link href={`/clp/${slug}`}>
                                         <Image

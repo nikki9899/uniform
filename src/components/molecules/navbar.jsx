@@ -22,7 +22,7 @@ const Navbar = () => {
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
     const dropdownRef = useRef(null)
-
+   
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -40,7 +40,7 @@ const Navbar = () => {
                     (category) => category.attributes.name === 'School Uniform'
                 )
                 const hotelUniform = popularCategories.find(
-                    (category) => category.attributes.name === 'hoteluniform'
+                    (category) => category.attributes.name === 'Hotel Uniform'
                 )
 
                 if (corporateUniform) {
