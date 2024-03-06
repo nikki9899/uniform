@@ -18,6 +18,25 @@ export const getAPI = async (path) => {
     }
 }
 
+export const getContactUsData = async () => {
+    let url = baseUrl + '/contact-us?populate=deep';
+
+    try {
+        const loadData = await fetch(url, { cache: 'no-cache' })
+
+        if (loadData.ok) {
+            let result = await loadData.json()
+            console.log('result', result)
+
+            return result
+        } else {
+            return loadData
+        }
+    } catch (error) {
+        throw error
+    }
+}
+
 export const getSubCategories = async (category) => {
     const SubCategoryUrl = `${baseUrl}/sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
 

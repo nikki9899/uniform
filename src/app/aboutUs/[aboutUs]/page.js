@@ -12,6 +12,7 @@ import PaymentMode from '@/components/molecules/aboutUs/packingDetails'
 import WhyUs from '@/components/molecules/aboutUs/whyUs'
 import OurTeam from '@/components/molecules/aboutUs/ourTeam'
 import Line from '@/components/atoms/horizontal-line'
+import AboutUsLine from '@/components/atoms/aboutUs-horizontal-line'
 
 const Page = () => {
     return (
@@ -20,20 +21,20 @@ const Page = () => {
             <Overview />
             <SideImageText />
             <Description />
-            <Line />
+            <AboutUsLine />
             <Factsheet />
-            <Line />
+            <AboutUsLine />
             <UspHead />
-            <Line />
+            <AboutUsLine />
             <StatutoryProfile />
             <HsnDescription />
             <OurTeam />
             <TeamMembers />
-            <Line />
+            <AboutUsLine />
             <PaymentMode />
-            <Line />
+            <AboutUsLine />
             <WhyUs />
-            <Line />
+            <AboutUsLine />
         </div>
     )
 }

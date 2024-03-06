@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body className=" w-full  lg:w-full bg-background overflow-x-hidden">
                 <Navbar />
-                <div className="px-4 md:px-12">{children}</div>
+                <div className="">{children}</div>
                 <Footer />
             </body>
         </html>
