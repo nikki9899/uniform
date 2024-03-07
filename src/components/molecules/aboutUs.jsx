@@ -23,7 +23,7 @@ const AboutUs = ({ aboutUs }) => {
             </h3>
             <h4
                 style={isOpen ? null : descriptionStyle}
-                className="text-sm sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-[51px] font-normal  leading-5 "
+                className="text-sm sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-[51px] font-normal text-justify leading-5 "
             >
                 {description}
             </h4>
