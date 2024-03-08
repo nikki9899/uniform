@@ -18,7 +18,7 @@ const AboutUs = ({ aboutUs }) => {
 
     return (
         <div className="py-16 mx-auto max-w-screen text-center  md:px-52 xs:px-10 px-5">
-            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[114px] font-bold leading-10 mb-2 py-1 sm:pt-10">
+            <h3 className="text-4xl sm:text-7xl sm:leading-[75px] lg:text-[84px] lg:leading-[100px] font-bold leading-10 mb-2 py-1 sm:pt-10">
                 {title}
             </h3>
             <h4
