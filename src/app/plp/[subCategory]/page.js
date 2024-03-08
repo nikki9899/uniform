@@ -6,9 +6,18 @@ import Image from 'next/image'
 import Subcategories from '@/components/organisms/subcategory'
 import Popular from '@/components/molecules/popular'
 import { getProducts, fetchPopularSearches } from '@/utils/api'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const Plp = ({ params: { subCategory } }) => {
-    const [page, setPage] = useState(1)
+    const router = useRouter();
+    const pathName= usePathname();
+    const searchParams = useSearchParams()
+ 
+    const queryPage = searchParams.get('page')
+   
+    const [page, setPage] = useState(queryPage || 1)
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
     const [popularSearches, setPopularSearches] = useState([])
@@ -41,15 +50,18 @@ const Plp = ({ params: { subCategory } }) => {
     }, [subCategory, page])
 
     const nextPageHandler = (event) => {
-        const nextPage = page + 1
+        const nextPage = Number(page )+ 1
+        router.push(`${pathName}?page=${nextPage}`)
         if (nextPage <= pageCount) {
             setPage(nextPage)
             event.preventDefault()
         }
+        
     }
 
     const prevPageHandler = (event) => {
         const prevPage = page - 1
+        router.push(`${pathName}?page=${prevPage}`)
         if (prevPage >= 1) {
             setPage(prevPage)
             event.preventDefault()
@@ -65,7 +77,7 @@ const Plp = ({ params: { subCategory } }) => {
 
     return (
         <div>
-            <main className="flex min-h-screen flex-col items-center justify-between ">
+            <main className="flex min-h-screen flex-col items-center justify-between px-4 md:px-12">
                 <IndustrialUniform heading={subCategory} />
                 <div className=" h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Subcategories data={data} />

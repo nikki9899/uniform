@@ -27,7 +27,7 @@ const WhyUs = ({ data }) => {
 
     return (
         <div className="md:mt-0 mt-8">
-            <div className="text-center  px-2 md:px-12 md:py-10">
+            <div className="text-center  px-4 md:px-12 md:py-10">
                 <div className=" font-semibold lg:text-6xl sm:text-3xl text-2xl md:pb-8 pb-4">
                     {whyUsHead}
                 </div>

@@ -17,7 +17,7 @@ const Dropdown = ({
     handleOnClick,
 }) => {
     return (
-        <div className="flex md:flex-row flex-col justify-between absolute md:top-24 top-12 left-0 bg-white z-10 w-full p-2.5">
+        <div className="flex md:flex-row flex-col justify-between absolute md:top-24 top-12 left-0 bg-background w-full p-2.5 md:px-24 drop-shadow-lg">
             <div className="mt-4">
                
                 <CorporateUniform data={corporateUniformData}  handleOnClick={handleOnClick}/>

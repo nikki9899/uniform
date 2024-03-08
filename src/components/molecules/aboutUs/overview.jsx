@@ -7,7 +7,7 @@ const Overview = ({ data }) => {
 
     return (
         <div>
-            <div className="  text-center md:mt-0 mt-8 md:px-28 lg:px-40 pt-2 px-10 md:py-20">
+            <div className="  text-center md:mt-0 mt-8 md:px-28 lg:px-40 pt-2 px-10 md:py-20 px-4 md:px-12">
                 <h3 className="font-medium  sm:text-3xl md:text-3xl lg:text-4xl  text-2xl lg:leading-[52px] ">
                     {overviewHead}
                 </h3>

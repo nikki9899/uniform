@@ -24,7 +24,7 @@ const Pdp = ({ params: { productId } }) => {
     : 0;
 
     return (
-        <div>
+        <div className="px-4 md:px-12">
             <ProductDetails productId={productId} />
             <Line />
             <Tabs productId={productId} />

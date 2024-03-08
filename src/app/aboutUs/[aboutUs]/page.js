@@ -17,7 +17,6 @@ import Line from '@/components/atoms/horizontal-line'
 import { getAboutUsData } from '@/utils/api'
 
 
-
 import AboutUsLine from '@/components/atoms/aboutUs-horizontal-line'
 
 
@@ -48,20 +47,20 @@ const Page = () => {
                     <Overview data={aboutUsData.Overview} />
                     <SideImageText data={aboutUsData.Overview} />
                     <Description />
-                    <Line />
+                    <AboutUsLine/>
                     <Factsheet factSheet={aboutUsData.factSheet} />
-                    <Line />
+                    <AboutUsLine />
                     <UspHead data={aboutUsData.CompanyUSP} />
-                    <Line />
+                    <AboutUsLine/>
                     <StatutoryProfile  />
                     <HsnDescription />
                     <OurTeam data={aboutUsData.OurTeam} />
                     <TeamMembers teamNames={aboutUsData.OurTeam.teamNames} />
-                    <Line />
+                    <AboutUsLine />
                     <PaymentMode data={aboutUsData.PnP} />
-                    <Line />
+                    <AboutUsLine/>
                     <WhyUs data={aboutUsData.WhyUs} />
-                    <Line />
+                    <AboutUsLine/>
                 </>
             )}
 

@@ -17,6 +17,7 @@ const Banner = ({ aboutUsBanner }) => {
                     alt="Overview Image"
                     height={518}
                     width={1442}
+                    className="w-[100%]"
                 />
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white">

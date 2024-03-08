@@ -6,7 +6,7 @@ const PaymentMode = ({ data }) => {
 
     return (
         <div>
-            <div className=" pb-6  px-2 md:px-12 md:py-10">
+            <div className=" pb-6  px-4 md:px-12 md:py-10">
                 <div className="font-medium lg:text-3xl sm:text-2xl text-xl leading-9 pb-6">
                     {paymentHead}
                 </div>

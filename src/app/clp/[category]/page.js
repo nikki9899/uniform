@@ -4,14 +4,18 @@ import Categories from '@/components/organisms/categories'
 import Pagination from '@/components/atoms/Pagination'
 import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
-
 import { getSubCategories, fetchPopularSearches } from '@/utils/api'
-
-
-
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const Clp = ({ params: { category } }) => {
-    const [page, setPage] = useState(1)
+    const router = useRouter()
+    const pathName = usePathname()
+    const searchParams = useSearchParams()
+    const queryPage = searchParams.get('page')
+
+    const [page, setPage] = useState(queryPage || 1)
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
     const [popularSearches, setPopularSearches] = useState([])
@@ -44,7 +48,8 @@ const Clp = ({ params: { category } }) => {
     }
 
     const nextPageHandler = (event) => {
-        const nextPage = page + 1
+        const nextPage = Number(page) + 1
+        router.push(`${pathName}?page=${nextPage}`)
         if (nextPage <= pageCount) {
             setPage(nextPage)
 
@@ -54,6 +59,7 @@ const Clp = ({ params: { category } }) => {
 
     const prevPageHandler = (event) => {
         const prevPage = page - 1
+        router.push(`${pathName}?page=${prevPage}`)
         if (prevPage >= 1) {
             setPage(prevPage)
 
@@ -63,7 +69,7 @@ const Clp = ({ params: { category } }) => {
 
     return (
         <div>
-            <main className="flex min-h-screen flex-col items-center justify-between ">
+            <main className="flex min-h-screen flex-col items-center justify-between px-4 md:px-12">
                 <IndustrialUniform heading={category} />
                 <div className="h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Categories data={data} />

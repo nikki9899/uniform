@@ -22,7 +22,7 @@ const Navbar = () => {
     const [schoolUniformData, setSchoolUniformData] = useState([])
     const [hotelUniformData, setHotelUniformData] = useState([])
     const dropdownRef = useRef(null)
-   
+
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -120,9 +120,9 @@ const Navbar = () => {
         setIsMobileMenuOpen(false)
     }
     return (
-        <div className="px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-7 flex justify-between md:items-center ">
+        <div className="sticky left-0 top-0 z-10 px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-6 flex justify-between md:items-center ">
             <Link href="/">
-                <h1 className="text-black md:text-3xl  font-black md:leading-7 tracking-[-0.5px] md:font-bold text-sm  md:mt-5 flex">
+                <h1 className="text-black md:text-3xl  font-black md:leading-7 tracking-[-0.5px] md:font-bold text-sm  md:mt-4 flex">
                     {Logo}
                 </h1>
             </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 <>
                     <div
                         ref={dropdownRef}
-                        className="md:hidden absolute top-[75px] left-0 right-0 bg-white z-50"
+                        className="md:hidden absolute top-[75px] left-0 right-0 bg-background z-50"
                     >
                         <Link
                             href={uniformbyProfessionSrc}

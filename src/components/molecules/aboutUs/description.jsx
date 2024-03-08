@@ -13,7 +13,7 @@ const Description = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="overview text-center md:mt-4 mt-16 md:px-20 px-2 pb-8 md:pb-14">
+            <div className="overview text-center md:mt-4 mt-16 md:px-20 px-4 pb-8 md:pb-14">
                 <p className="font-medium md:text-base sm:text-sm text-xs leading-5">
                     {descriptionText1}
                 </p>

@@ -6,7 +6,7 @@ const StatutoryProfile = ({ aboutUs }) => {
 
     return (
         <div>
-            <div className="companyUps pb-6  px-2 md:px-12 md:py-10">
+            <div className="companyUps pb-6  px-4  md:px-12 md:py-10">
                 <div className=" font-normal lg:text-3xl sm:text-2xl text-xl leading-9 md:pb-6 pb-2">
                     {profileHead}
                 </div>

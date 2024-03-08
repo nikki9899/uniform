@@ -24,7 +24,7 @@ const Factsheet = ({ factSheet }) => {
 
     return (
         <div>
-            <div className="factsheet  pb-6  px-2 md:px-12 md:py-10">
+            <div className="factsheet  pb-6  px-4 md:px-12 md:py-10 ">
                 <div className="font-medium lg:text-[28px] text-xl sm:text-2xl leading-9 md:pb-6 pb-2">
                     {factsheetHead}
                 </div>
