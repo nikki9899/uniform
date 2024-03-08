@@ -6,7 +6,7 @@ import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
 import { getAPI, getSubCategories } from '@/utils/api'
 import { fetchPopularSearches } from '@/utils/api'
-import ReactPaginate from 'react-paginate'
+
 
 const Clp = ({ params: { category } }) => {
     const [data, setData] = useState([])
