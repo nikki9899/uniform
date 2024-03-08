@@ -33,7 +33,7 @@ const Home = async () => {
 
     return (
         <div>
-            <main className="min-h-screen flex-col items-center justify-between">
+            <main className="min-h-screen flex-col items-center justify-between px-4 md:px-12">
                 <Hero hero={hero} />
                 <Line />
                 <PopularCategories popularCategories={popularCategories} />
@@ -55,6 +55,7 @@ const Home = async () => {
                     <div className="hidden lg:block h-px w-full mb-[20px] bg-black border-0"></div>
                 )}
                 <AboutUs aboutUs={aboutUs} />
+                
                 <div className="md:hidden">
                     <Line />
                 </div>

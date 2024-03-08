@@ -13,8 +13,12 @@ import PaymentMode from '@/components/molecules/aboutUs/packingDetails'
 import WhyUs from '@/components/molecules/aboutUs/whyUs'
 import OurTeam from '@/components/molecules/aboutUs/ourTeam'
 import Line from '@/components/atoms/horizontal-line'
+
 import { getAboutUsData } from '@/utils/api'
 
+
+
+import AboutUsLine from '@/components/atoms/aboutUs-horizontal-line'
 
 
 const Page = () => {
@@ -36,6 +40,7 @@ const Page = () => {
 
     return (
         <div>
+
            
              {aboutUsData && (
                 <>
@@ -59,6 +64,7 @@ const Page = () => {
                     <Line />
                 </>
             )}
+
         </div>
     )
 }
