@@ -165,6 +165,13 @@ const Navbar = () => {
                         >
                             About Us
                         </Link>
+                        <Link
+                            href="/contactUs/page.js"
+                            className="block p-3 border-b border-gray-300"
+                            onClick={handleAboutUs}
+                        >
+                            Contact Us
+                        </Link>
                     </div>
                 </>
             )}

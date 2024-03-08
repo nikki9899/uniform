@@ -4,7 +4,11 @@ import Categories from '@/components/organisms/categories'
 import Pagination from '@/components/atoms/Pagination'
 import Popular from '@/components/molecules/popular'
 import IndustrialUniform from '@/components/industrialUniform'
+
 import { getSubCategories, fetchPopularSearches } from '@/utils/api'
+
+
+
 
 const Clp = ({ params: { category } }) => {
     const [page, setPage] = useState(1)

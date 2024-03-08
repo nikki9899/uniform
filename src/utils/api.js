@@ -18,14 +18,18 @@ export const getAPI = async (path) => {
     }
 }
 
+
 export const getAboutUsData = async () => {
     const url = baseUrl + '/about-us?populate=deep'
 
-    try {
+    
+     try {
         const loadData = await fetch(url, { cache: 'no-cache' })
 
         if (loadData.ok) {
             let result = await loadData.json()
+            console.log('result', result)
+
             return result
         } else {
             return loadData
@@ -34,6 +38,27 @@ export const getAboutUsData = async () => {
         throw error
     }
 }
+
+export const getContactUsData = async () => {
+    let url = baseUrl + '/contact-us?populate=deep';
+
+    try {
+        const loadData = await fetch(url, { cache: 'no-cache' })
+
+        if (loadData.ok) {
+            let result = await loadData.json()
+            console.log('result', result)
+
+            return result
+        } else {
+            return loadData
+        }
+    } catch (error) {
+        throw error
+    }
+}
+
+
 
 export const getSubCategories = async (category, page) => {
     page = page ? page : 1
@@ -53,6 +78,8 @@ export const getSubCategories = async (category, page) => {
         throw error
     }
 }
+
+
 
 export const getProducts = async (SubCategoryName,page) => {
     page = page ? page : 1
