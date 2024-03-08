@@ -15,7 +15,7 @@ const Banner = ({ contactUsData }) => {
                     alt="Overview Image"
                     height={400}
                     width={1442}
-                    className="h-[500px] md:h-[585px] object-cover"
+                    className="h-[500px]  w-[100%] md:h-[585px] object-cover"
                 />
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
