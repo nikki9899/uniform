@@ -95,24 +95,7 @@ export const getSubCategories = async (category) => {
 // }
 
 
-export const getSubCategories = async (category) => {
-    const SubCategoryUrl = `${baseUrl}/sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
 
-    try {
-        const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
-
-        if (loadData.ok) {
-            let result = await loadData.json()
-            
-
-            return result
-        } else {
-            return loadData
-        }
-    } catch (error) {
-        throw error
-    }
-}
 
 
 export const getProducts = async (SubCategoryName) => {
