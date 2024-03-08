@@ -2,8 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const SideImageText = ({ aboutUs }) => {
+const SideImageText = ({ data }) => {
+    
     let { sideImgText1, sideImgText2, sideImgText3 } = aboutUsLables
+    let imageUrl = data.OverViewImage.data.attributes.formats.small.url;
+
 
     return (
         <div>
@@ -21,7 +24,7 @@ const SideImageText = ({ aboutUs }) => {
                 </div>
                 <div className="image md:mt-0 mb-6 md:w-1/2 order-1 md:order-2">
                     <Image
-                        src="/images/aboutUs2.png"
+                        src={imageUrl}
                         alt="Overview Image"
                         height={541}
                         width={526}

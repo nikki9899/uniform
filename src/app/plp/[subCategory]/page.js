@@ -43,20 +43,29 @@ const Plp = ({ params: { subCategory } }) => {
         fetchPopular()
     }, [subCategory])
 
+    const popularSearchesLength = popularSearches && popularSearches.products && popularSearches.products.data
+    ? popularSearches.products.data.length
+    : 0;
+    
     return (
         <div>
             <main className="flex min-h-screen flex-col items-center justify-between ">
                 <IndustrialUniform heading={subCategory} />
-                <div className="h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
+                <div className=" h-px w-full mt-20 md:mt-40 bg-black border-0 "></div>
                 <Subcategories data={data} />
                 <Pagination totalPage={total} currPage={pageCount} />
                 <div className="h-px w-full my-8 bg-black border-0 "></div>
 
                 <Popular popularSearches={popularSearches} />
-                <div className=" hidden md:block h-px w-full mb-[90px] bg-black border-0 "></div>
+                {popularSearchesLength < 5 && (
+                    <div className="hidden ml:block h-px w-full mb-[60px] bg-black border-0"></div>
+                )}
             </main>
         </div>
     )
 }
 
 export default Plp
+
+
+

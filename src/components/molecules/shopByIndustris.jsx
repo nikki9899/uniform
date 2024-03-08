@@ -70,8 +70,10 @@ const ShopByIndustries = ({ shopByCategory }) => {
         setShowAllProducts(!showAllProducts)
     }
 
+    const shouldDisplaySeeAllButton = !isDesktop && products.length > 3;
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-5 md:gap-x-5 md:gap-y-5 lg:gap-y-9 ">
+        <div className="pb-8 mt-[40px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-5 md:gap-x-5 md:gap-y-5 lg:gap-y-9 ">
             <div className="col-span-1 rounded-lg">
                 <h2 className="text-black font-manrope  sm:hidden lg:hidden text-lg  font-semibold leading-6 ">
                     Shop by Industrial Sectors
@@ -120,7 +122,7 @@ const ShopByIndustries = ({ shopByCategory }) => {
                         </div>
                     </Link>
                 ))}
-            {!isDesktop && (
+            {shouldDisplaySeeAllButton && (
                 <div className="md:hidden flex justify-center item-center mt-[30px] h-6 ">
                     <Button
                         variant="primary"
@@ -138,3 +140,4 @@ const ShopByIndustries = ({ shopByCategory }) => {
 }
 
 export default ShopByIndustries
+

@@ -1,15 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
-import { aboutUsLables } from '@/utils/labels/aboutUsLables'
 
-const Banner = ({ aboutUs }) => {
-    let { topImgHead, topImgText } = aboutUsLables
+const Banner = ({ aboutUsBanner }) => {
+    const { title, description, bannerImage } = aboutUsBanner
+
+    const imageUrl =
+        bannerImage && bannerImage.data
+            ? bannerImage.data.attributes.formats.large.url
+            : ''
 
     return (
         <div className="relative">
             <div className="relative">
                 <Image
-                    src="/images/aboutUs1.png"
+                    src={imageUrl}
                     alt="Overview Image"
                     height={518}
                     width={1442}
@@ -17,10 +21,10 @@ const Banner = ({ aboutUs }) => {
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
                 <p className="font-medium text-base xs:text-lg sm:text-4xl lg:text-8xl">
-                    {topImgHead}
+                    {title}
                 </p>
                 <p className="font-normal text-xs xs:text-sm sm:text-2xl lg:text-4xl">
-                    {topImgText}
+                    {description}
                 </p>
             </div>
         </div>

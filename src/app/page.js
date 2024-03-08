@@ -27,6 +27,10 @@ const Home = async () => {
         },
     } = await getAPI()
 
+    const popularSearchesLength = popularSearches && popularSearches.products && popularSearches.products.data
+    ? popularSearches.products.data.length
+    : 0;
+
     return (
         <div>
             <main className="min-h-screen flex-col items-center justify-between px-4 md:px-12">
@@ -47,6 +51,9 @@ const Home = async () => {
                 <CommercialUniformSection />
                 <Line />
                 <Popular popularSearches={popularSearches} />
+                {popularSearchesLength < 5 && (
+                    <div className="hidden lg:block h-px w-full mb-[20px] bg-black border-0"></div>
+                )}
                 <AboutUs aboutUs={aboutUs} />
                 
                 <div className="md:hidden">

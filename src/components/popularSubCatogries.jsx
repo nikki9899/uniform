@@ -18,7 +18,7 @@ async function PopularSubCategories({
         })) || []
 
     return (
-        <div className="w-full mb-2">
+        <div className="w-full mb-2 pb-8 mt-[40px]">
             <h2 className="text-gray-900 leading-3 font-medium text-sm md:leading-6 md:text-4xl lowercase">
                 popular sub-categories
             </h2>

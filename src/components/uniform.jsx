@@ -7,7 +7,7 @@ const CommercialUniformSection = () => {
         commercialLabels
     return (
         <div>
-            <div className="flex justify-between gap-x-8 mb-6">
+            <div className="flex justify-between gap-x-8 mb-6 pb-8 mt-[40px]">
                 <div className="text-black font-medium text-[14px] leading-tight w-fit shrink-0 sm:text-[32px] sm:leading-8">
                     {heading} <br /> {heading1}
                 </div>
@@ -28,14 +28,14 @@ const CommercialUniformSection = () => {
                     }}
                 />
                 <div className="text-[36px] mx-auto lg:text-[68px] lg:leading-none sm:w-full font-extrabold leading-9 tracking-tighter text-center w-[300px] -mt-10 lg:-mt-16">
-                    Enhance Your Business's Image with Professional Uniforms
+                    {"Enhance Your Business's Image with Professional Uniforms"}
                 </div>
             </div>
             <div className="text-center mt-12">
                 <Button
                     variant="primary"
                     rounded="full"
-                    addStyle={`bg-slate-300  text-gray-400 border-gray-900 opacity-50`}
+                    addStyle="bg-slate-300  text-gray-400 border-gray-900 opacity-50"
                 >
                     <p>shop now</p>
                 </Button>

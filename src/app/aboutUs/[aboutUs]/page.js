@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React,{useState,useEffect} from 'react'
 import Banner from '@/components/molecules/aboutUs/banner'
 import Overview from '@/components/molecules/aboutUs/overview'
 import SideImageText from '@/components/molecules/aboutUs/sideImageText'
@@ -12,29 +13,58 @@ import PaymentMode from '@/components/molecules/aboutUs/packingDetails'
 import WhyUs from '@/components/molecules/aboutUs/whyUs'
 import OurTeam from '@/components/molecules/aboutUs/ourTeam'
 import Line from '@/components/atoms/horizontal-line'
+
+import { getAboutUsData } from '@/utils/api'
+
+
+
 import AboutUsLine from '@/components/atoms/aboutUs-horizontal-line'
 
+
 const Page = () => {
+
+    const [aboutUsData, setAboutUsData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getAboutUsData();
+                setAboutUsData(response.data.attributes);
+            } catch (error) {
+                console.error('Error fetching about us data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <div>
-            <Banner />
-            <Overview />
-            <SideImageText />
-            <Description />
-            <AboutUsLine />
-            <Factsheet />
-            <AboutUsLine />
-            <UspHead />
-            <AboutUsLine />
-            <StatutoryProfile />
-            <HsnDescription />
-            <OurTeam />
-            <TeamMembers />
-            <AboutUsLine />
-            <PaymentMode />
-            <AboutUsLine />
-            <WhyUs />
-            <AboutUsLine />
+
+           
+             {aboutUsData && (
+                <>
+                    <Banner aboutUsBanner={aboutUsData.AboutUsBanner} />
+                    <Overview data={aboutUsData.Overview} />
+                    <SideImageText data={aboutUsData.Overview} />
+                    <Description />
+                    <Line />
+                    <Factsheet factSheet={aboutUsData.factSheet} />
+                    <Line />
+                    <UspHead data={aboutUsData.CompanyUSP} />
+                    <Line />
+                    <StatutoryProfile  />
+                    <HsnDescription />
+                    <OurTeam data={aboutUsData.OurTeam} />
+                    <TeamMembers teamNames={aboutUsData.OurTeam.teamNames} />
+                    <Line />
+                    <PaymentMode data={aboutUsData.PnP} />
+                    <Line />
+                    <WhyUs data={aboutUsData.WhyUs} />
+                    <Line />
+                </>
+            )}
+
         </div>
     )
 }
