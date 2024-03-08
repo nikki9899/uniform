@@ -19,7 +19,7 @@ const Header = ({
                     .slice(0, showAllHeadings ? industrialSectors.length : 3)
                     .map((sector) => (
                         <li key={sector.id}>
-                            <Link href={`/plp/${sector.attributes?.name}`}>
+                            <Link href={`/plp/${sector.attributes?.slug}`}>
                                 {sector.attributes?.name}
                             </Link>
                         </li>
@@ -42,6 +42,7 @@ const ShopByIndustries = ({ shopByCategory }) => {
         shopByCategory.sub_categories?.data?.map((entry) => ({
             id: entry.id,
             title: entry.attributes?.name || '',
+            slug: entry.attributes?.slug || '',
             ImgSrc: entry.attributes?.image?.data?.attributes?.url || '',
             price: entry.attributes?.products?.data[0]?.attributes
                 ?.product_detail?.data?.attributes?.price,
@@ -94,7 +95,7 @@ const ShopByIndustries = ({ shopByCategory }) => {
             {products
                 .slice(0, isDesktop ? 5 : showAllProducts ? products.length : 3)
                 .map((product) => (
-                    <Link key={product.id} href={`/plp/${product.title}`}>
+                    <Link key={product.id} href={`/plp/${product.slug}`}>
                         <div className="col-span-1 mt-4">
                             <ImageCard
                                 iconDisplay="hidden"

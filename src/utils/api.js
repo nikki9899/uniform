@@ -20,7 +20,9 @@ export const getAPI = async (path) => {
 
 
 export const getAboutUsData = async () => {
-    const url =  baseUrl+'/about-us?populate=deep';
+    const url = baseUrl + '/about-us?populate=deep'
+
+    
      try {
         const loadData = await fetch(url, { cache: 'no-cache' })
 
@@ -56,61 +58,43 @@ export const getContactUsData = async () => {
     }
 }
 
-export const getSubCategories = async (category) => {
-    const SubCategoryUrl = `${baseUrl}/sub-categories?filters[category][slug][$eq]=${category}&populate=deep`
 
+
+export const getSubCategories = async (category, page) => {
+    page = page ? page : 1
+    let pageSize = 25
+    const SubCategoryUrl = `${baseUrl}/sub-categories?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[category][slug][$eq]=${category}&populate=deep`
 
     try {
-        const loadData = await fetch(url, { cache: 'no-cache' });
+        const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
 
         if (loadData.ok) {
-            let result = await loadData.json();
-            return result;
+            let result = await loadData.json()
+            return result
         } else {
-            return loadData;
+            return loadData
         }
     } catch (error) {
-        throw error;
+        throw error
     }
 }
 
 
-// export const getSubCategories = async (category) => {
-//     let page =1;
-//     let pageSize=25;
-//     const SubCategoryUrl = `${baseUrl}/sub-categories?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[category][slug][$eq]=${category}&populate=deep`
 
-//     try {
-//         const loadData = await fetch(SubCategoryUrl, { cache: 'no-cache' })
-
-//         if (loadData.ok) {
-//             let result = await loadData.json()
-//             return result
-//         } else {
-//             return loadData
-//         }
-//     } catch (error) {
-//         throw error
-//     }
-// }
-
-
-
-
-
-export const getProducts = async (SubCategoryName) => {
-    let page = 1
+export const getProducts = async (SubCategoryName,page) => {
+    page = page ? page : 1
     let pageSize = 10
 
-    const ProductUrl = `${baseUrl}/products?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[sub_category][name][$eq]=${SubCategoryName}&populate=*`
+    const ProductUrl = `${baseUrl}/products?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[sub_category][slug][$eq]=${(SubCategoryName)}&populate=*`
+    
 
     try {
-        const loadData = await fetch(ProductUrl, { cache: 'force-cache' })
+        const loadData = await fetch(ProductUrl, { cache: 'no-cache' })
+        
 
         if (loadData.ok) {
             let result = await loadData.json()
-            
-
+           
             return result
         } else {
             return loadData

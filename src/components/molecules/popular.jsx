@@ -19,7 +19,7 @@ const Popular = ({
                             classnames="w-[14rem] h-72 sm:w-64 sm:h-[346px] lg:w-[308px] lg:h-[418px] rounded-2xl shrink-0 back"
                             productImage={image.data.attributes.url}
                         />
-                    </Link>
+                  
                     <div>
                         <div className="flex justify-between md:mr-6 ">
                             <h3 className="lg:text-sm sm:text-xs text-[10px] font-bold leading-5 sm:leading-6 lg:leading-7">
@@ -40,6 +40,7 @@ const Popular = ({
                             </Button>
                         </div>
                     </div>
+                    </Link>
                 </div>
             )
         }
