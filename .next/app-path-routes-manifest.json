@@ -1,10 +1,1 @@
-{
-  "/favicon.ico/route": "/favicon.ico",
-  "/page": "/",
-  "/_not-found": "/_not-found",
-  "/contactUs/[contactUs]/page": "/contactUs/[contactUs]",
-  "/clp/[category]/page": "/clp/[category]",
-  "/pdp/[productId]/page": "/pdp/[productId]",
-  "/aboutUs/[aboutUs]/page": "/aboutUs/[aboutUs]",
-  "/plp/[subCategory]/page": "/plp/[subCategory]"
-}
+{"/_not-found":"/_not-found","/clp/[category]/page":"/clp/[category]","/aboutUs/[aboutUs]/page":"/aboutUs/[aboutUs]","/favicon.ico/route":"/favicon.ico","/contactUs/[contactUs]/page":"/contactUs/[contactUs]","/page":"/","/pdp/[productId]/page":"/pdp/[productId]","/plp/[subCategory]/page":"/plp/[subCategory]"}
