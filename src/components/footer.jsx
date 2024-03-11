@@ -69,7 +69,7 @@ const Footer = (props) => {
         customerService: {
             title: 'Customer Service',
             listItems: [
-                { id: 1, item: 'AJOY1969@gmail.com' },
+                { id: 1, item: 'AJAY1969@gmail.com' },
                 { id: 2, item: '+91-9891194126' },
             ],
         },
@@ -183,7 +183,7 @@ const Footer = (props) => {
                     </div>
                 </div>
                 <div className="px-4 mt-16 py-6 bg-gray-100  dark:bg-gray-100 flex items-center justify-between gap-x-4">
-                    <span className="leading-4 tracking-tighter text-xs text-gray-500 font-black dark:text-gray-600">
+                    <span className="leading-4 tracking-tighter  text-xs text-gray-500 font-black dark:text-gray-600">
                         Uniform on Web
                     </span>
                     <div className="flex mt-4 space-x-2.5 text-gray-600 ">

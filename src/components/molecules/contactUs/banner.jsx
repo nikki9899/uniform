@@ -24,13 +24,13 @@ const Banner = ({ contactUsData }) => {
                         {label}
                     </p>
                 </div>
-                <div className="mb-1 md:mb-2 bg-white text-black p-1 md:p-2 w-4/5 lg:w-1/3 flex text-[10px] md:text-base border rounded xl:rounded-2xl xx:text-[15px]">
-                    <div className="w-[30%]">Contact no.:</div>
-                    <div className="w-[69%]">{contact_number}</div>
+                <div className="mb-1 md:mb-2 bg-white text-black p-1 md:p-2 w-4/5 lg:w-1/3  flex text-[10px] md:text-base border rounded xl:rounded-2xl xx:text-[15px]">
+                    <div className="w-[30%] font-semibold lg:text-[20px] pl-2">Contact no.:</div>
+                    <div className="w-[69%] lg:text-[18px]">{contact_number}</div>
                 </div>
                 <div className="bg-white text-black p-1 md:p-2 w-4/5 lg:w-1/3 flex justify-between text-[10px] md:text-base border rounded xl:rounded-2xl xx:text-[15px]">
-                    <div className="w-[30%]">Email:</div>
-                    <div className="w-[69%]">{email}</div>
+                    <div className="w-[30%] font-semibold lg:text-[20px] pl-2">Email:</div>
+                    <div className="w-[69%] lg:text-[18px]">{email}</div>
                 </div>
             </div>
         </div>

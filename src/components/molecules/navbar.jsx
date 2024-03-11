@@ -140,7 +140,7 @@ const Navbar = () => {
                 <>
                     <div
                         ref={dropdownRef}
-                        className="md:hidden absolute top-[75px] left-0 right-0 bg-background z-50"
+                        className="md:hidden absolute top-[68px] left-0 right-0 bg-background z-50"
                     >
                         <Link
                             href={uniformbyProfessionSrc}

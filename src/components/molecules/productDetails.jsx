@@ -62,7 +62,7 @@ function ProductDetails({ productId }) {
                 <div className="block md:hidden">
                     <CarouselWithTimer
                         images={formattedImageData}
-                        interval={5000}
+                        interval={3800}
                     />
                 </div>
                 <div className="hidden md:block md:w-fit mx-auto pr-2 lg:mx-0">
