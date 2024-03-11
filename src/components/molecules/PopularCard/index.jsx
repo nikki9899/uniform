@@ -22,7 +22,7 @@ const PopularCard = ({
                     {productPrice} INR
                 </span>
             </div>
-            <div className="w-full mb-2 text-[6px] sm:text-[10px] sm:leading-6 font-medium leading-4 lg:leading-[26.645px] lg:text-xs float-left mt-0 pt-0 text-slate-400">
+            <div className="w-full  mb-[2px] md:mb-2 text-[6px] sm:text-[10px] sm:leading-6 font-medium leading-4 lg:leading-[26.645px] lg:text-xs float-left mt-0 pt-0 text-slate-400">
                 {productType}
             </div>
             <div className="w-[61px] h-5 sm:w-24 sm:h-8 md:w-28 md:h-[39px] mb-9">

@@ -29,10 +29,10 @@ const Popular = ({
                                 {price} INR
                             </h4>
                         </div>
-                        <p className="sm:text-[10px] lg:text-xs lg:leading-6 sm:leading-5 text-[8px] leading-4 font-medium ml-2 text-start text-gray-500 ">
+                        <p className="sm:text-[10px] lg:text-xs lg:leading-6 sm:leading-5 text-[8px] leading-4 font-medium my-1 text-start text-gray-500 ">
                             {description}
                         </p>
-                        <div className="lg:w-28 lg:h-9 w-[74px] h-[1.5rem] sm:w-[6rem] sm:h-[2rem] text-left ml-2 my-2">
+                        <div className="lg:w-28 lg:h-9 w-[74px] h-[1.5rem] sm:w-[6rem] sm:h-[2rem] text-left   my-1 md:my-2">
                             <Button variant="primary" rounded="full">
                                 <h2 className="lg:text-xs text-[8px] sm:text-[10px] leading-3 leading-[11px] font-medium lg:leading-4">
                                     {searchLabels.buttontext}

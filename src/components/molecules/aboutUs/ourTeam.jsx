@@ -12,18 +12,17 @@ const OurTeam = ({ data }) => {
             : ''
 
     return (
-        <div>
-            <div className="relative mb-10 md:mb-0">
-                <div>
-                    <Image
-                        src={imageUrl}
-                        alt="Overview Image"
-                        height={539}
-                        width={1448}
-                        className="md:h-[539px] h-60 w-[100%] object-cover"
-                    />
-                </div>
-                <div className="text-center text-slate-200 md:w-2/3 m-auto absolute bottom-5 md:bottom-[140px] md:left-32 lg:left-48 px-4 md:px-0">
+        <div className="relative mb-10 md:mb-0">
+        <div className="relative">
+            <Image
+                src={imageUrl}
+                alt="Overview Image"
+                height={539}
+                width={1448}
+                className="md:h-[539px] h-60 w-[100%] object-cover"
+            />
+            <div className="absolute inset-0 flex justify-center items-center text-center text-slate-200 px-4 md:px-0">
+                <div className="md:w-2/3 md:px-8 lg:px-16">
                     <h1 className="font-medium lg:text-6xl lg:leading-[88px] sm:text-3xl xs:text-base pb-1 md:pb-8">
                         Our Team
                     </h1>
@@ -36,6 +35,7 @@ const OurTeam = ({ data }) => {
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 

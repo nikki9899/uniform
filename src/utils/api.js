@@ -62,7 +62,7 @@ export const getContactUsData = async () => {
 
 export const getSubCategories = async (category, page) => {
     page = page ? page : 1
-    let pageSize = 25
+    let pageSize = 24
     const SubCategoryUrl = `${baseUrl}/sub-categories?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[category][slug][$eq]=${category}&populate=deep`
 
     try {
@@ -83,7 +83,7 @@ export const getSubCategories = async (category, page) => {
 
 export const getProducts = async (SubCategoryName,page) => {
     page = page ? page : 1
-    let pageSize = 10
+    let pageSize = 8
 
     const ProductUrl = `${baseUrl}/products?pagination[page]=${page}&pagination[pageSize]=${pageSize}&filters[sub_category][slug][$eq]=${(SubCategoryName)}&populate=*`
     
