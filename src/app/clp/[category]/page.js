@@ -49,21 +49,22 @@ const Clp = ({ params: { category } }) => {
 
     const nextPageHandler = (event) => {
         const nextPage = Number(page) + 1
-        router.push(`${pathName}?page=${nextPage}`)
+        
         if (nextPage <= pageCount) {
             setPage(nextPage)
-
-            event.preventDefault()
+        router.push(`${pathName}?page=${nextPage}`)
+        event.preventDefault()
         }
     }
 
     const prevPageHandler = (event) => {
         const prevPage = page - 1
-        router.push(`${pathName}?page=${prevPage}`)
+        
         if (prevPage >= 1) {
             setPage(prevPage)
+        router.push(`${pathName}?page=${prevPage}`)
+        event.preventDefault()
 
-            event.preventDefault()
         }
     }
 

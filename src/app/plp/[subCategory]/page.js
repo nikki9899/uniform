@@ -11,12 +11,12 @@ import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 
 const Plp = ({ params: { subCategory } }) => {
-    const router = useRouter();
-    const pathName= usePathname();
+    const router = useRouter()
+    const pathName = usePathname()
     const searchParams = useSearchParams()
- 
+
     const queryPage = searchParams.get('page')
-   
+
     const [page, setPage] = useState(queryPage || 1)
     const [data, setData] = useState([])
     const [pageCount, setPageCount] = useState(0)
@@ -50,20 +50,21 @@ const Plp = ({ params: { subCategory } }) => {
     }, [subCategory, page])
 
     const nextPageHandler = (event) => {
-        const nextPage = Number(page )+ 1
-        router.push(`${pathName}?page=${nextPage}`)
+        const nextPage = Number(page) + 1
+
         if (nextPage <= pageCount) {
             setPage(nextPage)
+            router.push(`${pathName}?page=${nextPage}`)
             event.preventDefault()
         }
-        
     }
 
     const prevPageHandler = (event) => {
         const prevPage = page - 1
-        router.push(`${pathName}?page=${prevPage}`)
+
         if (prevPage >= 1) {
             setPage(prevPage)
+            router.push(`${pathName}?page=${prevPage}`)
             event.preventDefault()
         }
     }

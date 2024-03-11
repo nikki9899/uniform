@@ -36,7 +36,7 @@ const AboutUs = ({ aboutUs }) => {
                 {isOpen ? 'Read Less...' : 'Read More...'}
             </Button>
             <div className="flex justify-center item-center sm:hidden lg:flex ">
-                <div className="py-6 w-[73px] lg:w-[166px] lg:h-14 h-[25px] flex justify-center item-center">
+                <div className="py-6 lg:h-14 h-[25px] flex justify-center item-center">
                     <Link href="/aboutUs/page.js">
                         <Button rounded="semi" variant="primary" >
                             <h5 className="text-[10px] font-normal lg:text-2xl lg:leading-6 md:p-2 ">

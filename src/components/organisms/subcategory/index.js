@@ -36,7 +36,7 @@ const Subcategories = ({ data }) => {
                                     <div className="w-full  mb-[2px] md:mb-2 text-[6px] sm:text-[10px] sm:leading-5 lg:text-xs lg:leading-6 font-medium leading-[14px] float-left mt-0 pt-0 text-slate-400">
                                         {subCategoryDescription}
                                     </div>
-                                    <div className="h-6 w-[60px] sm:w-[92px] sm:h-9 lg:h-12 lg:w-28">
+                                    <div className="h-6 sm:h-9 lg:h-12 ">
                                         <Button
                                             rounded="full"
                                             variant="primary"

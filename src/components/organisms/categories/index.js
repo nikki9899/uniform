@@ -34,11 +34,12 @@ const Categories = ({ data }) => {
                             <h5 className="mt-2 mb-2 font-bold text-[10px] leading-4 sm:text-sm sm:leading-5 lg:text-lg lg:leading-[26px]">
                                 {name}
                             </h5>
-                            <div className="h-6 w-[60px] sm:w-[92px] sm:h-9 lg:h-12 lg:w-28">
+                            <div className="h-6  sm:h-9 lg:h-12 ">
                                 <Button rounded="full" variant="primary">
                                     <h2 className="text-[9px] leading-3 sm:text-sm sm:leading-4 lg:text-base lg:leading-5 font-medium">
                                         {' '}
                                         {linkText}
+                                        
                                     </h2>
                                 </Button>
                             </div>
