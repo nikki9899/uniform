@@ -1,3 +1,4 @@
+
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
@@ -6,121 +7,125 @@ import Dropdown from './Dropdown'
 import { getAPI } from '@/utils/api'
 
 const Navbar = () => {
-    let {
+    const {
         Logo,
         Tabs,
-        SearchLink,
         uniformbyProfessionSrc,
         uniformbyProfessionTitle,
         WishLink,
-    } = NavbarLabels
-    const [isHovered, setIsHovered] = useState(false)
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const [categories, setCategories] = useState([])
-    const [corporateUniformData, setCorporateUniformData] = useState([])
-    const [schoolUniformData, setSchoolUniformData] = useState([])
-    const [hotelUniformData, setHotelUniformData] = useState([])
-    const dropdownRef = useRef(null)
+    } = NavbarLabels;
+
+    const [isHovered, setIsHovered] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [categories, setCategories] = useState([]);
+    const [corporateUniformData, setCorporateUniformData] = useState([]);
+    const [schoolUniformData, setSchoolUniformData] = useState([]);
+    const [hotelUniformData, setHotelUniformData] = useState([]);
+    const dropdownRef = useRef(null);
+    const navbarRef = useRef(null);
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await getAPI('home-page')
+                const response = await getAPI('home-page');
                 const popularCategories =
                     response?.data?.attributes?.popularCategories?.categories
-                        ?.data
-                setCategories(popularCategories)
+                        ?.data;
+                setCategories(popularCategories);
 
                 const corporateUniform = popularCategories.find(
                     (category) =>
                         category.attributes.name === 'Corporate uniform'
-                )
+                );
                 const schoolUniform = popularCategories.find(
                     (category) => category.attributes.name === 'School Uniform'
-                )
+                );
                 const hotelUniform = popularCategories.find(
                     (category) => category.attributes.name === 'Hotel Uniform'
-                )
+                );
 
                 if (corporateUniform) {
                     setCorporateUniformData(
                         corporateUniform.attributes.sub_categories.data
-                    )
+                    );
                 }
                 if (schoolUniform) {
                     setSchoolUniformData(
                         schoolUniform.attributes.sub_categories.data
-                    )
+                    );
                 }
                 if (hotelUniform) {
                     setHotelUniformData(
                         hotelUniform.attributes.sub_categories.data
-                    )
+                    );
                 }
             } catch (error) {
-                console.log(error.message)
+                console.log(error.message);
             }
-        }
+        };
 
-        fetchCategories()
-    }, [])
+        fetchCategories();
+    }, []);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target)
+                navbarRef.current &&
+                !navbarRef.current.contains(event.target)
             ) {
-                setIsHovered(false)
-                setIsMobileMenuOpen(false)
+                setIsHovered(false);
+                setIsMobileMenuOpen(false);
             }
-        }
+        };
 
-        document.addEventListener('mousedown', handleClickOutside)
+        document.addEventListener('mousedown', handleClickOutside);
 
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [dropdownRef])
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const handleMobileMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen)
+        setIsMobileMenuOpen(!isMobileMenuOpen);
         if (isHovered) {
-            setIsHovered(false)
+            setIsHovered(false);
         }
-    }
+    };
 
     const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
+        setIsHovered(true);
+    };
 
     const handleMouseLeave = () => {
-        setIsHovered(false)
-    }
+        setIsHovered(false);
+    };
 
     const handleOnClick = () => {
         if (isHovered) {
-            setIsHovered(false)
+            setIsHovered(false);
         } else {
-            setIsHovered(true)
+            setIsHovered(true);
         }
-    }
-
-    const handleOnMobileClick = () => {
-        if (isHovered) {
-            setIsHovered(false)
-            setIsMobileMenuOpen(false)
-        } else {
-            setIsHovered(true)
-        }
-    }
+    };
 
     const handleAboutUs = () => {
-        setIsMobileMenuOpen(false)
-    }
+        setIsMobileMenuOpen(false);
+    };
+
+
+    const handleOnMobileClick = () => {
+                if (isHovered) {
+                    setIsHovered(false)
+                    setIsMobileMenuOpen(false)
+                } else {
+                    setIsHovered(true)
+                }
+            }
     return (
-        <div className="sticky left-0 top-0 z-10 px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-6 flex justify-between md:items-center ">
+        <div
+            ref={navbarRef}
+            className="sticky left-0 top-0 z-10 px-4 md:px-14  shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] bg-background w-full py-6 flex justify-between md:items-center "
+        >
             <Link href="/">
                 <h1 className="text-black md:text-3xl  font-black md:leading-7 tracking-[-0.5px] md:font-bold text-sm  md:mt-4 flex">
                     {Logo}
@@ -215,7 +220,7 @@ const Navbar = () => {
                 />
             )}
         </div>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
